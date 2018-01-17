@@ -81,7 +81,7 @@ export default class Title extends Component {
 						<p className="title mobile">{title}</p>
 						<div className="menu">
 							<a href="mailto:cosmoserdean@gmail.com">Email</a>
-							<a>CV</a>
+							<a href="/static/cv_cosmin_serdean.pdf">CV</a>
 							<a href="https://github.com/c0z0" target="_blank">
 								GitHub
 							</a>
