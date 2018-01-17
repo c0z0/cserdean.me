@@ -58,27 +58,33 @@ export default class Title extends Component {
 				partialVisibility
 				onChange={visible => this.setState({ visible })}
 			>
-				<div className="container">
-					<a
-						href="https://github.com/c0z0/cserdean.me"
-						className="src"
-						target="_blank"
-					>
-						[src]
-					</a>
-					<div className="titleContainer">
-						<p className="title">
-							{titleP1}
-							<span>{titleBold}</span>
-							{titleP2}
+				<div>
+					<div className="container">
+						<a
+							href="https://github.com/c0z0/cserdean.me"
+							className="src"
+							target="_blank"
+						>
+							[src]
+						</a>
+						<div className="titleContainer">
+							<p className="title">
+								{titleP1}
+								<span>{titleBold}</span>
+								{titleP2}
+							</p>
+							<div className="block" />
+						</div>
+						<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
+							try typing
 						</p>
-						<div className="block" />
+						<p className="title mobile">{title}</p>
 					</div>
-					<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
-						try typing
-					</p>
-					<p className="title mobile">{title}</p>
 					<style jsx>{`
+						.place {
+							height: 100vh;
+						}
+
 						@media (min-width: 448px) {
 							.titleContainer {
 								display: flex !important;
@@ -182,6 +188,7 @@ export default class Title extends Component {
 							}
 						}
 					`}</style>
+					<div className="place" />
 				</div>
 			</VisibilitySensor>
 		)
