@@ -1,12 +1,13 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
+const favicon = Math.random() > 0.5 ? 'blue' : 'pink'
+
 export default class MyDocument extends Document {
 	render() {
 		return (
 			<html>
 				<Head>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 					<link
 						href="https://fonts.googleapis.com/css?family=Lato"
 						rel="stylesheet"
@@ -15,13 +16,7 @@ export default class MyDocument extends Document {
 						rel="icon"
 						type="image/png"
 						sizes="32x32"
-						href="/static/favicon-32x32.png"
-					/>
-					<link
-						rel="icon"
-						type="image/png"
-						sizes="16x16"
-						href="/static/favicon-16x16.png"
+						href={`/static/favicon-${favicon}.png`}
 					/>
 					<title>Cosmin Serdean</title>
 					<style>{`body { margin: 0 } /* custom! */`}</style>

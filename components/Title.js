@@ -17,7 +17,10 @@ export default class Title extends Component {
 		if (keyCode == 8) {
 			typed = true
 			remove = remove >= title.length ? remove : remove + 1
-		} else if (title.toLowerCase().search(key) !== -1) {
+		} else if (
+			title.toLowerCase().search(key) !== -1 ||
+			(key >= 'a' && key <= 'z')
+		) {
 			remove = remove > 0 ? remove - 1 : remove
 			typed = true
 		}
@@ -82,7 +85,7 @@ export default class Title extends Component {
 							}
 
 							.tooltip {
-								display: block;
+								display: block !important;
 							}
 
 							.title.mobile {
