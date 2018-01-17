@@ -19,6 +19,11 @@ const WebDevScreen = ({ opacity }) => {
 					color: white !important;
 				}
 
+				p {
+					text-align: justify;
+					padding: 0 16px;
+				}
+
 				.container {
 					height: 100vh;
 					display: flex;

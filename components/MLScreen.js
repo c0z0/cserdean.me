@@ -8,6 +8,10 @@ const MLScreen = ({ opacity }) => {
 				projects using Deep Neural Networks.
 			</p>
 			<style jsx>{`
+				p {
+					text-align: justify;
+					padding: 0 16px;
+				}
 				.container {
 					height: 100vh;
 					display: flex;
