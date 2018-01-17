@@ -6,6 +6,10 @@ export default class MyDocument extends Document {
 			<html>
 				<Head>
 					<link
+						href="https://fonts.googleapis.com/css?family=Lato"
+						rel="stylesheet"
+					/>
+					<link
 						rel="icon"
 						type="image/png"
 						sizes="32x32"
@@ -21,6 +25,11 @@ export default class MyDocument extends Document {
 					<style>{`body { margin: 0 } /* custom! */`}</style>
 				</Head>
 				<body>
+					<style jsx global>{`
+						body {
+							margin: 0;
+						}
+					`}</style>
 					<Main />
 					<NextScript />
 				</body>
