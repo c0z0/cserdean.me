@@ -5,7 +5,12 @@ import averageColors from '../utils/colorAverage'
 
 export default function withColorScroller(WrappedComponent, colors) {
 	return class ColorScroller extends Component {
-		state = { color: colors[0] }
+		state = {
+			color: colors[0],
+			opacityRatios: Array(colors.length)
+				.fill(1)
+				.fill(0, 1)
+		}
 
 		componentDidMount() {
 			document.addEventListener('scroll', this.scroll.bind(this), false)
@@ -21,14 +26,39 @@ export default function withColorScroller(WrappedComponent, colors) {
 				st = 'scrollTop',
 				sh = 'scrollHeight'
 
-			const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)
+			const scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)
 
-			this.setState({ color: averageColors(colors[0], colors[1], 1 - percent) })
+			const color1Index = Math.floor(scroll * (colors.length - 1))
+			const color2Index = Math.ceil(scroll * (colors.length - 1))
+
+			const color1 = colors[color1Index]
+			const color2 = colors[color2Index]
+
+			const ratio =
+				1 -
+				(scroll * (colors.length - 1) -
+					Math.floor(scroll * (colors.length - 1)))
+
+			const color = averageColors(color1, color2, ratio)
+
+			const { opacityRatios } = this.state
+
+			opacityRatios.fill(0)
+			if (color1Index === color2Index) {
+				opacityRatios[color1Index] = 1
+			} else {
+				opacityRatios[color1Index] = ratio
+				opacityRatios[color2Index] = 1 - ratio
+			}
+			this.setState({ color, opacityRatios })
 		}
 		render() {
 			return (
 				<div>
-					<WrappedComponent {...this.props} />
+					<WrappedComponent
+						{...this.props}
+						opacityRatios={this.state.opacityRatios}
+					/>
 					<style jsx global>{`
 						body {
 							background: ${this.state.color};

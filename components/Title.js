@@ -79,11 +79,15 @@ export default class Title extends Component {
 							try typing
 						</p>
 						<p className="title mobile">{title}</p>
+						<div className="menu">
+							<a href="mailto:cosmoserdean@gmail.com">Email</a>
+							<a>CV</a>
+							<a href="https://github.com/c0z0" target="_blank">
+								GitHub
+							</a>
+						</div>
 					</div>
 					<style jsx>{`
-						.place {
-							height: 100vh;
-						}
 
 						@media (min-width: 448px) {
 							.titleContainer {
@@ -99,6 +103,25 @@ export default class Title extends Component {
 							}
 						}
 
+						.menu {
+							position: absolute;
+							bottom: 16px;
+						}
+
+						.menu a:hover {
+							opacity: 1;
+						}
+
+						.menu a {
+							margin: 0 16px;
+							font-size: .8em;
+							text-decoration: none;
+							opacity: 0.5;
+							color: #ff00f1 !important;
+							transition: all 0.2s;
+							font-family: Menlo;
+						}
+
 						.tooltip.visible {
 							opacity: 0.4;
 							animation: fadein 0.5s;
@@ -112,6 +135,7 @@ export default class Title extends Component {
 						}
 
 						.src {
+							font-size: .8em;
 							text-decoration: none;
 							position: absolute;
 							top: 16px;
@@ -119,6 +143,7 @@ export default class Title extends Component {
 							opacity: 0.5;
 							color: #ff00f1 !important;
 							transition: all 0.2s;
+							font-family: Menlo;
 						}
 
 						.src:hover {
@@ -141,7 +166,6 @@ export default class Title extends Component {
 						}
 
 						.title span {
-							/*font-weight: 800;*/
 							font-family: Menlo;
 							text-decoration: underline;
 						}
@@ -150,6 +174,7 @@ export default class Title extends Component {
 							font-weight: normal;
 						}
 						.container {
+							opacity: ${this.props.opacity}
 							position: relative;
 							height: 100vh;
 							color: #484848;
@@ -188,7 +213,6 @@ export default class Title extends Component {
 							}
 						}
 					`}</style>
-					<div className="place" />
 				</div>
 			</VisibilitySensor>
 		)
