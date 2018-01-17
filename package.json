@@ -1,11 +1,14 @@
 {
-  "name": "cserdean.me",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "next": "^4.2.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  }
+	"name": "cserdean.me",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"next": "^4.2.3",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0"
+	},
+	"scripts": {
+		"dev": "next"
+	}
 }
