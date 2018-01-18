@@ -58,34 +58,30 @@ export default class Title extends Component {
 				partialVisibility
 				onChange={visible => this.setState({ visible })}
 			>
-				<div>
-					<div className="container">
-						<a
-							href="https://github.com/c0z0/cserdean.me"
-							className="src"
-							target="_blank"
-						>
-							[src]
+				<div className="container">
+					<a
+						href="https://github.com/c0z0/cserdean.me"
+						className="src"
+						target="_blank"
+					>
+						[src]
+					</a>
+					<p className="title">
+						{titleP1}
+						<span className="name">{titleBold}</span>
+						{titleP2}
+						<span className="block">|</span>
+					</p>
+					<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
+						try typing
+					</p>
+					<p className="title mobile">{title}</p>
+					<div className="menu">
+						<a href="mailto:cosmoserdean@gmail.com">Email</a>
+						<a href="/static/cv_cosmin_serdean.pdf">CV</a>
+						<a href="https://github.com/c0z0" target="_blank">
+							GitHub
 						</a>
-						<div className="titleContainer">
-							<p className="title">
-								{titleP1}
-								<span>{titleBold}</span>
-								{titleP2}
-							</p>
-							<div className="block" />
-						</div>
-						<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
-							try typing
-						</p>
-						<p className="title mobile">{title}</p>
-						<div className="menu">
-							<a href="mailto:cosmoserdean@gmail.com">Email</a>
-							<a href="/static/cv_cosmin_serdean.pdf">CV</a>
-							<a href="https://github.com/c0z0" target="_blank">
-								GitHub
-							</a>
-						</div>
 					</div>
 					<style jsx>{`
 
@@ -152,27 +148,26 @@ export default class Title extends Component {
 
 						.titleContainer {
 							display: none;
-							align-items: center;
 							flex-wrap: wrap;
 						}
 
 						.block {
-							width: 1px;
-							height: 1.5em;
-							margin-left: 1px;
-							background: #484848;
-							display: inline-block;
+							font: Menlo;
+							color: #ff00f1;
+							font-size: 1.1em;
 							animation: cursor 1s infinite;
 						}
 
-						.title span {
+						.name {
 							font-family: Menlo;
 							text-decoration: underline;
 						}
+
 						.title {
 							display: inline-block;
 							font-weight: normal;
 						}
+
 						.container {
 							opacity: ${this.props.opacity}
 							position: relative;
