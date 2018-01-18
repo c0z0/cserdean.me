@@ -19,5 +19,5 @@ class Index extends Component {
 	}
 }
 
-export default withColorScroller(Index, ['#ffffff'])
+export default withColorScroller(Index, ['#ffffff', '#ffffff'])
 // export default withColorScroller(Index, ['#ffffff', '#79ffe1', '#ff00f1'])
