@@ -79,14 +79,7 @@ export default class Title extends Component {
 				partialVisibility
 				onChange={visible => this.setState({ visible })}
 			>
-				<div
-					className="container"
-					onClick={() => {
-						if (this.hiddenInput) {
-							this.hiddenInput.focus()
-						}
-					}}
-				>
+				<div className="container">
 					<a
 						href="https://github.com/c0z0/cserdean.me"
 						className="src"
