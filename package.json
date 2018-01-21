@@ -12,7 +12,8 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "next start"
+		"start": "next start",
+		"deploy": "now && now alias"
 	},
 	"now": {
 		"alias": "cserdean.me"
