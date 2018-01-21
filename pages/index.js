@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 
-import withColorScroller from '../components/ColorScroller'
-
+import isMobile from '../utils/isMobile'
 import Title from '../components/Title'
 
 class Index extends Component {
+	static async getInitialProps({ req }) {
+		if (req) console.log(req.headers['user-agent'])
+		return { isMobile: isMobile(req ? req.headers : {}) }
+	}
+
 	render() {
 		const { opacityRatios } = this.props
 		return (
 			<div>
-				<Title />
+				<Title isMobile={this.props.isMobile} />
 			</div>
 		)
 	}

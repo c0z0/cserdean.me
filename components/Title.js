@@ -37,9 +37,12 @@ export default class Title extends Component {
 	}
 
 	render() {
-		const { title, remove, typed, tooltipVisible } = this.state
+		const { title, remove: stateRemove, typed, tooltipVisible } = this.state
+		const { isMobile } = this.props
 
 		const showTooltip = tooltipVisible && !typed
+
+		const remove = isMobile ? 0 : stateRemove
 
 		// Slice to display only the tiped part of the title
 		const shortenedTitle = title.slice(0, title.length - remove)
@@ -76,7 +79,14 @@ export default class Title extends Component {
 				partialVisibility
 				onChange={visible => this.setState({ visible })}
 			>
-				<div className="container">
+				<div
+					className="container"
+					onClick={() => {
+						if (this.hiddenInput) {
+							this.hiddenInput.focus()
+						}
+					}}
+				>
 					<a
 						href="https://github.com/c0z0/cserdean.me"
 						className="src"
@@ -84,20 +94,39 @@ export default class Title extends Component {
 					>
 						[src]
 					</a>
-					<p className="title">
-						{titleP1}
-						<span className="name">{titleBold}</span>
-						{titleP2}
-						<a href="http://github.com/c0z0/lollio">{stuffText}</a>
-						{titleP3}
-						<a href="http://github.com/c0z0/contrast_neural_net">{magicText}</a>
-						{titleP4}
-						<span className="block">|</span>
-					</p>
-					<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
-						try typing
-					</p>
-					<p className="title mobile">{title}</p>
+					{!isMobile && (
+						<p className="title">
+							{titleP1}
+							<span className="name">{titleBold}</span>
+							{titleP2}
+							<a href="http://github.com/c0z0/lollio">{stuffText}</a>
+							{titleP3}
+							<a href="http://github.com/c0z0/contrast_neural_net">
+								{magicText}
+							</a>
+							{titleP4}
+							<span className="block">|</span>
+						</p>
+					)}
+					{!isMobile && (
+						<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
+							try typing
+						</p>
+					)}
+					{isMobile && (
+						<p className="title mobile">
+							{' '}
+							{titleP1}
+							<span className="name">{titleBold}</span>
+							{titleP2}
+							<a href="http://github.com/c0z0/lollio">{stuffText}</a>
+							{titleP3}
+							<a href="http://github.com/c0z0/contrast_neural_net">
+								{magicText}
+							</a>
+							{titleP4}
+						</p>
+					)}
 					<div className="menu">
 						<a href="mailto:cosmoserdean@gmail.com">Email</a>
 						<a href="/static/cv_cosmin_serdean.pdf">CV</a>
@@ -106,16 +135,6 @@ export default class Title extends Component {
 						</a>
 					</div>
 					<style jsx>{`
-						@media (min-width: 448px) {
-							.tooltip {
-								display: block !important;
-							}
-
-							.title.mobile {
-								display: none;
-							}
-						}
-
 						.menu {
 							position: absolute;
 							bottom: 16px;
