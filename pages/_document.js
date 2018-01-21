@@ -1,5 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
+import { darkBlue as themeColor } from '../utils/colors'
+
 const favicon = 'dark-blue'
 
 export default class MyDocument extends Document {
@@ -8,6 +10,7 @@ export default class MyDocument extends Document {
 			<html>
 				<Head>
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="theme-color" content={themeColor} />
 					<link
 						href="https://fonts.googleapis.com/css?family=Lato"
 						rel="stylesheet"
