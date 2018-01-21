@@ -106,7 +106,6 @@ export default class Title extends Component {
 						</a>
 					</div>
 					<style jsx>{`
-
 						@media (min-width: 448px) {
 							.tooltip {
 								display: block !important;
@@ -122,14 +121,13 @@ export default class Title extends Component {
 							bottom: 16px;
 						}
 
-
 						.menu a:hover {
 							opacity: 1;
 						}
 
 						.menu a {
 							margin: 0 16px;
-							font-size: .8em;
+							font-size: 0.8em;
 							text-decoration: none;
 							opacity: 0.5;
 							color: ${accentColor} !important;
@@ -150,7 +148,7 @@ export default class Title extends Component {
 						}
 
 						.src {
-							font-size: .8em;
+							font-size: 0.8em;
 							text-decoration: none;
 							position: absolute;
 							top: 16px;
@@ -179,7 +177,7 @@ export default class Title extends Component {
 
 						.title {
 							margin: 16px 128px;
-							text-align: justify;				
+							text-align: justify;
 						}
 
 						.title.mobile {
@@ -187,7 +185,6 @@ export default class Title extends Component {
 						}
 
 						.container {
-							opacity: ${this.props.opacity}
 							position: relative;
 							height: 100vh;
 							color: ${textColor};

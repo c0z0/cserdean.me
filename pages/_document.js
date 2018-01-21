@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
-const favicon = Math.random() > 0.5 ? 'blue' : 'pink'
+const favicon = 'dark-blue'
 
 export default class MyDocument extends Document {
 	render() {
@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
 						href={`/static/favicon-${favicon}.png`}
 					/>
 					<title>Cosmin Serdean</title>
-					<style>{`body { margin: 0 } /* custom! */`}</style>
+					<style>{`body { margin: 0; font-family: Lato; }`}</style>
 				</Head>
 				<body>
 					<style jsx global>{`
