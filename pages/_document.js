@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
-import { darkBlue as themeColor } from '../utils/colors'
+import { text as themeColor } from '../utils/colors'
 
 const favicon = 'dark-blue'
 
