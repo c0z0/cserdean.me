@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 export default class Project extends Component {
 	render() {
-		const { title, description, url, imgUrl } = this.props
+		const { title, description, url, imgUrl, footerHeight } = this.props
 
 		return (
-			<div className="container">
+			<div className={`container ${footerHeight ? 'container--footer' : ''}`}>
 				<div className="image-container">
 					<img
 						src="https://avatar.tobi.sh/test?size=512&type=svg&text=Test"
@@ -18,6 +18,10 @@ export default class Project extends Component {
 						display: grid;
 						height: 100vh;
 						grid-template-columns: 50vw 50vw;
+					}
+
+					.container--footer {
+						height: calc(100vh - ${footerHeight || '64px'});
 					}
 
 					.image-container {

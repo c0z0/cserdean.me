@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { red as accentColor } from '../utils/colors'
 import Project from '../components/Project'
+import Footer from '../components/Footer'
 
 class Projects extends Component {
 	render() {
@@ -25,7 +26,8 @@ class Projects extends Component {
 				</div>
 				<Project />
 				<Project />
-				<Project />
+				<Project footerHeight={'64px'} />
+				<Footer center color={accentColor} />
 				<style jsx>{`
 					.menu {
 						position: absolute;

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 
 import { darkBlue as accentColor, text as textColor } from '../utils/colors'
+import Footer from './Footer'
 
 export default class Title extends Component {
 	state = {
@@ -133,41 +134,8 @@ export default class Title extends Component {
 						{titleP4}
 					</p>
 				)}
-				<div className="footer">
-					<a href="mailto:cosmoserdean@gmail.com" className="footer__item">
-						Email
-					</a>
-					<a href="/static/cv_cosmin_serdean.pdf" className="footer__item">
-						CV
-					</a>
-					<a
-						href="https://github.com/c0z0"
-						target="_blank"
-						className="footer__item"
-					>
-						GitHub
-					</a>
-				</div>
+				<Footer absolute color={accentColor} />
 				<style jsx>{`
-					.footer {
-						position: absolute;
-						bottom: 16px;
-					}
-
-					.footer__item :hover {
-						opacity: 1;
-					}
-
-					.footer__item {
-						margin: 0 16px;
-						font-size: 0.8em;
-						text-decoration: none;
-						opacity: 0.5;
-						color: ${accentColor} !important;
-						transition: all 0.2s;
-						font-family: Menlo;
-					}
-
 					.tooltip {
 						margin: 0;
 						font-size: 0.8em;
