@@ -90,40 +90,58 @@ export default class Title extends Component {
 					{!isMobile && (
 						<p className="title">
 							{titleP1}
-							<span className="name">{titleBold}</span>
+							<span className="title__name">{titleBold}</span>
 							{titleP2}
-							<a href="http://github.com/c0z0/lollio">{stuffText}</a>
+							<a href="http://github.com/c0z0/lollio" className="title__link">
+								{stuffText}
+							</a>
 							{titleP3}
-							<a href="http://github.com/c0z0/contrast_neural_net">
+							<a
+								href="http://github.com/c0z0/contrast_neural_net"
+								className="title__link"
+							>
 								{magicText}
 							</a>
 							{titleP4}
-							<span className="block">|</span>
+							<span className="title__block">|</span>
 						</p>
 					)}
 					{!isMobile && (
-						<p className={`tooltip ${showTooltip ? 'visible' : ''}`}>
+						<p className={`tooltip ${showTooltip ? 'tooltip--visible' : ''}`}>
 							try typing
 						</p>
 					)}
 					{isMobile && (
-						<p className="title mobile">
+						<p className="title title--mobile">
 							{' '}
 							{titleP1}
-							<span className="name">{titleBold}</span>
+							<span className="title__name">{titleBold}</span>
 							{titleP2}
-							<a href="http://github.com/c0z0/lollio">{stuffText}</a>
+							<a href="http://github.com/c0z0/lollio" className="title__link">
+								{stuffText}
+							</a>
 							{titleP3}
-							<a href="http://github.com/c0z0/contrast_neural_net">
+							<a
+								href="http://github.com/c0z0/contrast_neural_net"
+								className="title__link"
+							>
 								{magicText}
 							</a>
 							{titleP4}
 						</p>
 					)}
 					<div className="menu">
-						<a href="mailto:cosmoserdean@gmail.com">Email</a>
-						<a href="/static/cv_cosmin_serdean.pdf">CV</a>
-						<a href="https://github.com/c0z0" target="_blank">
+						<a href="mailto:cosmoserdean@gmail.com" className="menu__item">
+							Email
+						</a>
+						<a href="/static/cv_cosmin_serdean.pdf" className="menu__item">
+							CV
+						</a>
+						<a
+							href="https://github.com/c0z0"
+							target="_blank"
+							className="menu__item"
+						>
 							GitHub
 						</a>
 					</div>
@@ -133,11 +151,11 @@ export default class Title extends Component {
 							bottom: 16px;
 						}
 
-						.menu a:hover {
+						.menu :hover {
 							opacity: 1;
 						}
 
-						.menu a {
+						.menu__item {
 							margin: 0 16px;
 							font-size: 0.8em;
 							text-decoration: none;
@@ -147,16 +165,15 @@ export default class Title extends Component {
 							font-family: Menlo;
 						}
 
-						.tooltip.visible {
-							opacity: 0.4;
-							animation: fadein 0.5s;
-						}
-
 						.tooltip {
-							display: none;
 							margin: 0;
 							font-size: 0.8em;
 							opacity: 0;
+						}
+
+						.tooltip--visible {
+							opacity: 0.4;
+							animation: fadein 0.5s;
 						}
 
 						.src {
@@ -175,14 +192,14 @@ export default class Title extends Component {
 							opacity: 1;
 						}
 
-						.block {
+						.title__block {
 							font: Menlo;
 							color: ${accentColor};
 							font-size: 1.1em;
 							animation: cursor 1s infinite;
 						}
 
-						.name {
+						.title__name {
 							font-family: Menlo;
 							text-decoration: underline;
 						}
@@ -192,7 +209,7 @@ export default class Title extends Component {
 							text-align: justify;
 						}
 
-						.title.mobile {
+						.title--mobile {
 							margin: 0 16px;
 						}
 
@@ -200,19 +217,18 @@ export default class Title extends Component {
 							position: relative;
 							height: 100vh;
 							color: ${textColor};
-							font-family: Lato;
 							display: flex;
 							align-items: center;
 							justify-content: center;
 							flex-direction: column;
 						}
 
-						.title a {
+						.title__link {
 							transition: all 0.2s;
 							color: ${textColor} !important;
 						}
 
-						.title a:hover {
+						.title__link:hover {
 							color: ${accentColor} !important;
 						}
 
