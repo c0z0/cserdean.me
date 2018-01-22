@@ -74,13 +74,20 @@ export default class Title extends Component {
 
 		return (
 			<div className="container">
-				<a
-					href="https://github.com/c0z0/cserdean.me"
-					className="src"
-					target="_blank"
-				>
-					[src]
-				</a>
+				<div className="menu">
+					<a
+						href="https://github.com/c0z0/cserdean.me"
+						className="menu__item"
+						target="_blank"
+					>
+						[src]
+					</a>
+					<Link href="/projects">
+						<a href="" className="menu__item" prefetch>
+							projects
+						</a>
+					</Link>
+				</div>
 				{!isMobile && (
 					<p className="title">
 						{titleP1}
@@ -126,32 +133,32 @@ export default class Title extends Component {
 						{titleP4}
 					</p>
 				)}
-				<div className="menu">
-					<a href="mailto:cosmoserdean@gmail.com" className="menu__item">
+				<div className="footer">
+					<a href="mailto:cosmoserdean@gmail.com" className="footer__item">
 						Email
 					</a>
-					<a href="/static/cv_cosmin_serdean.pdf" className="menu__item">
+					<a href="/static/cv_cosmin_serdean.pdf" className="footer__item">
 						CV
 					</a>
 					<a
 						href="https://github.com/c0z0"
 						target="_blank"
-						className="menu__item"
+						className="footer__item"
 					>
 						GitHub
 					</a>
 				</div>
 				<style jsx>{`
-					.menu {
+					.footer {
 						position: absolute;
 						bottom: 16px;
 					}
 
-					.menu :hover {
+					.footer__item :hover {
 						opacity: 1;
 					}
 
-					.menu__item {
+					.footer__item {
 						margin: 0 16px;
 						font-size: 0.8em;
 						text-decoration: none;
@@ -170,22 +177,6 @@ export default class Title extends Component {
 					.tooltip--visible {
 						opacity: 0.4;
 						animation: fadein 0.5s;
-					}
-
-					.src {
-						font-size: 0.8em;
-						text-decoration: none;
-						position: absolute;
-						top: 16px;
-						left: 16px;
-						opacity: 0.5;
-						color: ${accentColor} !important;
-						transition: all 0.2s;
-						font-family: Menlo;
-					}
-
-					.src:hover {
-						opacity: 1;
 					}
 
 					.title__block {
@@ -226,6 +217,27 @@ export default class Title extends Component {
 
 					.title__link:hover {
 						color: ${accentColor} !important;
+					}
+
+					.menu {
+						position: absolute;
+						top: 16px;
+						left: 16px;
+					}
+					.menu__item {
+						font-size: 0.8em;
+						text-decoration: none;
+						opacity: 0.5;
+						color: ${accentColor} !important;
+						transition: all 0.2s;
+						font-family: Menlo;
+					}
+					.menu__item:not(:last-child) {
+						padding-right: 8px;
+					}
+
+					.menu__item:hover {
+						opacity: 1;
 					}
 
 					@keyframes cursor {
