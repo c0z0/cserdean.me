@@ -1,3 +1,5 @@
+// Returns true if userangent is a mobile browser
+
 export default function isMobile(headers) {
 	var a =
 		headers['user-agent'] ||
