@@ -25,7 +25,7 @@ class Projects extends Component {
 					</Link>
 				</div>
 				<Project />
-				<Project />
+				<Project color="#fff" />
 				<Project footerHeight={'64px'} />
 				<Footer center color={accentColor} />
 				<style jsx>{`
@@ -59,4 +59,4 @@ class Projects extends Component {
 	}
 }
 
-export default colorScroller(Projects, ['#ffffff', '#00ff00', '#0000ff'])
+export default colorScroller(Projects, ['#ffffff', '#000000', '#0000ff'])

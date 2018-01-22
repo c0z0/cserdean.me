@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
-import { text as themeColor } from '../utils/colors'
+import { text as themeColor, text } from '../utils/colors'
 
 const favicon = 'dark-blue'
 
@@ -40,12 +40,13 @@ export default class MyDocument extends Document {
 					/>
 					<meta name="theme-color" content="#ffffff" />
 					<title>Cosmin Serdean</title>
-					<style>{`body { margin: 0; font-family: Lato; }`}</style>
 				</Head>
 				<body>
 					<style jsx global>{`
 						body {
 							margin: 0;
+							font-family: Lato;
+							color: ${text};
 						}
 					`}</style>
 					<Main />

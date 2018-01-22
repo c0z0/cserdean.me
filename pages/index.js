@@ -5,7 +5,6 @@ import Title from '../components/Title'
 
 class Index extends Component {
 	static async getInitialProps({ req }) {
-		if (req) console.log(req.headers['user-agent'])
 		return { isMobile: isMobile(req ? req.headers : {}) }
 	}
 
