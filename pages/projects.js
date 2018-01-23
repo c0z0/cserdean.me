@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import colorScroller from '../utils/colorScroller'
 import Link from 'next/link'
 
-import { red as accentColor } from '../utils/colors'
+import { red as accentColor, blue, darkBlue } from '../utils/colors'
 import Project from '../components/Project'
 import Footer from '../components/Footer'
 
@@ -25,9 +25,9 @@ class Projects extends Component {
 					</Link>
 				</div>
 				<Project />
-				<Project color="#fff" />
-				<Project footerHeight={'64px'} />
-				<Footer center color={accentColor} />
+				<Project color={'#fff'} titleColor={blue} />
+				<Project footerHeight={'64px'} id="ml" />
+				<Footer center color={'#000'} />
 				<style jsx>{`
 					.menu {
 						position: absolute;
@@ -59,4 +59,4 @@ class Projects extends Component {
 	}
 }
 
-export default colorScroller(Projects, ['#ffffff', '#000000', '#0000ff'])
+export default colorScroller(Projects, ['#ffffff', '#000000', '#ffffff'])
