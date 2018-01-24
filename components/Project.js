@@ -83,11 +83,11 @@ export default class Project extends Component {
 						text-align: justify;
 					}
 
-					@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+					@media only screen and (min-width : 320px) and (max-width : 480px) {
 						.container {
 							height: 100vh;
 							grid-template-columns: 100%;
-							padding-top: 12px;
+							padding-top: 24px;
 						}
 
 						.container--footer {
@@ -96,7 +96,7 @@ export default class Project extends Component {
 	
 
 						.text-container {
-							padding: 16px;
+							padding: 0 16px;
 						}
 
 						.image {
