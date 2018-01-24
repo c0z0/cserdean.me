@@ -88,7 +88,7 @@ export default class Title extends Component {
 						<span className="title__name">{titleBold}</span>
 						{titleP2}
 						<Link href="/projects" prefetch>
-							<a href="" className="title__link">
+							<a href="/stuff" className="title__link">
 								{stuffText}
 							</a>
 						</Link>
