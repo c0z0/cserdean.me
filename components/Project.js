@@ -80,7 +80,7 @@ export default class Project extends Component {
 					}
 					
 					.image--loading {
-						filter: blur(5px);
+						filter: blur(10px);
 					}
 					
 					.image-contain {

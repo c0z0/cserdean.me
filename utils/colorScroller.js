@@ -18,6 +18,7 @@ export default function withColorScroller(WrappedComponent, colors) {
 		}
 
 		componentDidMount() {
+			this.scroll()
 			document.addEventListener('scroll', this.scroll.bind(this), false)
 		}
 
