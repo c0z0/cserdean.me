@@ -9,12 +9,7 @@ class Index extends Component {
 	}
 
 	render() {
-		const { opacityRatios } = this.props
-		return (
-			<div>
-				<Title isMobile={this.props.isMobile} />
-			</div>
-		)
+		return <Title isMobile={this.props.isMobile} />
 	}
 }
 

@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { darkBlue as accentColor, text as textColor } from '../utils/colors'
 import Footer from './Footer'
+import Menu from './Menu'
 
 export default class Title extends Component {
 	state = {
@@ -75,20 +76,8 @@ export default class Title extends Component {
 
 		return (
 			<div className="container">
-				<div className="menu">
-					<a
-						href="https://github.com/c0z0/cserdean.me"
-						className="menu__item"
-						target="_blank"
-					>
-						[src]
-					</a>
-					<Link href="/projects">
-						<a href="" className="menu__item" prefetch>
-							projects
-						</a>
-					</Link>
-				</div>
+				<Menu color={accentColor} active="/" />
+
 				{!isMobile && (
 					<p className="title">
 						{titleP1}

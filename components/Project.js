@@ -22,16 +22,13 @@ export default class Project extends Component {
 			>
 				<div className="image-container">
 					<img
-						src={
-							imgUrl ||
-							`https://avatar.tobi.sh/${title}?size=512&type=svg&text=No image`
-						}
+						src={imgUrl || `https://avatar.tobi.sh/${title}?size=512&type=svg`}
 						className="image"
 					/>
 				</div>
 				<div className="text-container">
 					<h3 className="title">
-						<a href={url} className="title__url">
+						<a href={url} className="title__url" target="_blank">
 							{title}
 						</a>
 					</h3>
