@@ -22,7 +22,7 @@ export default class Project extends Component {
 			>
 				<div className="image-container">
 					<img
-						src={imgUrl || `/gengrad/${title}s?size=512&type=svg`}
+						src={imgUrl || `https://avatar.tobi.sh/${title}?size=512&type=svg`}
 						className="image"
 					/>
 				</div>

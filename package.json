@@ -4,19 +4,15 @@
 	"main": "index.js",
 	"license": "MIT",
 	"dependencies": {
-		"color": "^2.0.1",
-		"micro": "^9.1.0",
 		"next": "^4.2.3",
 		"react": "^16.2.0",
-		"react-dom": "^16.2.0",
-		"sharp": "^0.19.0",
-		"url": "^0.11.0"
+		"react-dom": "^16.2.0"
 	},
 	"scripts": {
-		"start": "NODE_ENV=production node server.js",
+		"dev": "next",
 		"build": "next build",
-		"dev": "nodemon --watch server.js --watch server/ server.js",
-		"deploy": "now --docker && now alias"
+		"start": "next start",
+		"deploy": "now && now alias"
 	},
 	"now": {
 		"alias": "cserdean.me"
