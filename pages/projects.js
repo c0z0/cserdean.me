@@ -6,6 +6,16 @@ import { red as accentColor, blue, darkBlue } from '../utils/colors'
 import Project from '../components/Project'
 import Footer from '../components/Footer'
 
+const projects = [
+	{
+		title: 'Email login',
+		url: 'https://email-login.demos.cserdean.me',
+		description:
+			'Simple login strategy demo by sending an email with a verification link.',
+		color: '#fff'
+	}
+]
+
 class Projects extends Component {
 	render() {
 		return (
@@ -24,10 +34,14 @@ class Projects extends Component {
 						</a>
 					</Link>
 				</div>
-				<Project />
-				<Project color={'#fff'} titleColor={blue} />
-				<Project footerHeight={'64px'} id="ml" />
-				<Footer center color={'#000'} />
+				{projects.map((p, i) => (
+					<Project
+						key={i}
+						{...p}
+						footerHeight={i === projects.length - 1 ? '64px' : undefined}
+					/>
+				))}
+				<Footer center color={'#fff'} />
 				<style jsx>{`
 					.menu {
 						position: absolute;
@@ -37,7 +51,7 @@ class Projects extends Component {
 					.menu__item {
 						font-size: 0.8em;
 						text-decoration: none;
-						opacity: 0.5;
+						opacity: 0.8;
 						color: ${accentColor} !important;
 						transition: all 0.2s;
 						font-family: Menlo;
@@ -54,9 +68,16 @@ class Projects extends Component {
 						position: relative;
 					}
 				`}</style>
+				<style jsx global>{`
+					body {
+						background: black;
+					}
+				`}</style>
 			</div>
 		)
 	}
 }
 
-export default colorScroller(Projects, ['#ffffff', '#000000', '#ffffff'])
+export default Projects
+
+//export default colorScroller(Projects, ['#00000', '#000000'])

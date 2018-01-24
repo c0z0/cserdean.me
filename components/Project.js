@@ -22,17 +22,20 @@ export default class Project extends Component {
 			>
 				<div className="image-container">
 					<img
-						src="https://avatar.tobi.sh/?size=512&type=svg"
+						src={
+							imgUrl ||
+							`https://avatar.tobi.sh/${title}?size=512&type=svg&text=No image`
+						}
 						className="image"
 					/>
 				</div>
 				<div className="text-container">
-					<h3 className="title">Project 1</h3>
-					<p className="description">
-						Lorem ipsum dolor amet umami flexitarian fanny pack kitsch tumblr
-						cardigan hashtag prism godard. Wolf pinterest before they sold out
-						post-ironic DIY.
-					</p>
+					<h3 className="title">
+						<a href={url} className="title__url">
+							{title}
+						</a>
+					</h3>
+					<p className="description">{description}</p>
 				</div>
 				<style jsx>{`
 					.container {
@@ -71,7 +74,11 @@ export default class Project extends Component {
 						font-family: Menlo;
 						${titleColor ? `color: ${titleColor};` : ''}
 						font-weight: normal;
-						text-align: right;
+						text-align: left;
+					}
+
+					.title__url {
+						color: inherit !important;
 					}
 
 					.description {
@@ -83,6 +90,7 @@ export default class Project extends Component {
 						.container {
 							height: 100vh;
 							grid-template-columns: 100%;
+							padding-top: 12px;
 						}
 
 						.container--footer {
