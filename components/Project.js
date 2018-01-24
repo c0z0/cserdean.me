@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import ProgressiveImage from '../components/ProgessiveImage'
 import { text as textColor } from '../utils/colors'
 
 export default class Project extends Component {
@@ -12,7 +13,8 @@ export default class Project extends Component {
 			footerHeight,
 			color,
 			titleColor,
-			id
+			id,
+			placeholderUrl
 		} = this.props
 
 		return (
@@ -21,10 +23,25 @@ export default class Project extends Component {
 				id={id}
 			>
 				<div className="image-container">
-					<img
-						src={imgUrl || `https://avatar.tobi.sh/${title}s?size=512&type=svg`}
-						className="image"
-					/>
+					{imgUrl ? (
+						<ProgressiveImage src={imgUrl} placeholder={placeholderUrl}>
+							{(src, loading) => (
+								<div className="image-contain">
+									<img
+										src={src}
+										className={`image ${loading ? 'image--loading' : ''}`}
+									/>
+								</div>
+							)}
+						</ProgressiveImage>
+					) : (
+						<img
+							src={
+								imgUrl || `https://avatar.tobi.sh/${title}s?size=512&type=svg`
+							}
+							className="image image--loading"
+						/>
+					)}
 				</div>
 				<div className="text-container">
 					<h3 className="title">
@@ -55,9 +72,21 @@ export default class Project extends Component {
 					
 					.image {
 						max-height: calc(100vh - 128px);
-						max-height: calc(50vw - 128px);
-						border-radius: 4px;
+						width: calc(50vw - 128px);
 						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
+						margin: -5px -10px -10px -5px;
+						border-radius: 4px;
+						
+					}
+					
+					.image--loading {
+						filter: blur(5px);
+					}
+					
+					.image-contain {
+						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
+						border-radius: 4px;
+						overflow: hidden;
 					}
 					
 					.text-container {

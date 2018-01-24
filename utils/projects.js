@@ -5,6 +5,7 @@ const projects = [
 		description:
 			'Simple login strategy demo by sending an email with a verification link.',
 		imgUrl: '/static/projects/email-login.png',
+		placeholderUrl: '/static/projects/email-login-small.png',
 		background: '#fff'
 	},
 	{
@@ -15,6 +16,7 @@ const projects = [
 		color: '#fff',
 		imgUrl: '/static/projects/pyboard.png',
 		background: '#1890ff',
+		placeholderUrl: '/static/projects/pyboard-small.png',
 		footerColor: '#fff'
 	}
 ]
