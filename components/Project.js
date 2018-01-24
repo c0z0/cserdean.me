@@ -26,7 +26,11 @@ export default class Project extends Component {
 					{imgUrl ? (
 						<ProgressiveImage src={imgUrl} placeholder={placeholderUrl}>
 							{(src, loading) => (
-								<div className="image-contain">
+								<div
+									className={`image-contain ${
+										loading ? 'image-contain--loading' : ''
+									}`}
+								>
 									<img
 										src={src}
 										className={`image ${loading ? 'image--loading' : ''}`}
@@ -83,10 +87,13 @@ export default class Project extends Component {
 						filter: blur(10px);
 					}
 					
-					.image-contain {
+					.image-contain  {
 						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
 						border-radius: 4px;
 						overflow: hidden;
+					}
+					.image-contain--loading {
+						box-shadow: none;
 					}
 					
 					.text-container {
