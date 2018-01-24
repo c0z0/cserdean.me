@@ -22,7 +22,7 @@ export default class Project extends Component {
 			>
 				<div className="image-container">
 					<img
-						src={imgUrl || `https://avatar.tobi.sh/${title}?size=512&type=svg`}
+						src={imgUrl || `https://avatar.tobi.sh/${title}s?size=512&type=svg`}
 						className="image"
 					/>
 				</div>
@@ -52,13 +52,14 @@ export default class Project extends Component {
 						align-items: center;
 						justify-content: center;
 					}
-
+					
 					.image {
 						max-height: calc(100vh - 128px);
 						max-height: calc(50vw - 128px);
+						border-radius: 4px;
 						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
 					}
-
+					
 					.text-container {
 						grid-columns: 1 1;
 						display: flex;

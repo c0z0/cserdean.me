@@ -4,6 +4,11 @@ import colorAverage from '../utils/colorAverage'
 import averageColors from '../utils/colorAverage'
 
 export default function withColorScroller(WrappedComponent, colors) {
+	colors = colors.map(c => {
+		if (c.length === 7) return c
+		return '#' + c[1] + c[1] + c[2] + c[2] + c[3] + c[3]
+	})
+
 	return class ColorScroller extends Component {
 		state = {
 			color: colors[0],
