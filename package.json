@@ -16,7 +16,7 @@
 		"start": "NODE_ENV=production node server.js",
 		"build": "next build",
 		"dev": "nodemon --watch server.js --watch server/ server.js",
-		"deploy": "now && now alias"
+		"deploy": "now --docker && now alias"
 	},
 	"now": {
 		"alias": "cserdean.me"
