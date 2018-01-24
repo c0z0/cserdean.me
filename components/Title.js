@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { darkBlue as accentColor, text as textColor } from '../utils/colors'
 import Footer from './Footer'
@@ -76,6 +77,9 @@ export default class Title extends Component {
 
 		return (
 			<div className="container">
+				<Head>
+					<title>Cosmin Serdean</title>
+				</Head>
 				<Menu color={accentColor} active="/" />
 
 				{!isMobile && (

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import colorScroller from '../utils/colorScroller'
 import Link from 'next/link'
+import Head from 'next/head'
+
 import projects from '../utils/projects'
 
 import {
@@ -17,6 +19,9 @@ class Projects extends Component {
 	render() {
 		return (
 			<div className="container">
+				<Head>
+					<title>Projects | Cosmin Serdean</title>
+				</Head>
 				<Menu color={accentColor} active="projects" />
 				{projects.map((p, i) => (
 					<Project
