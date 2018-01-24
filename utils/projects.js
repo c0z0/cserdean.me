@@ -9,8 +9,19 @@ const projects = [
 		background: '#fff'
 	},
 	{
+		title: 'Lollio',
+		url: 'https://lollio.tech',
+		description: 'A simple event planner built using React, NextJS and Apollo.',
+		color: '#fff',
+		imgUrl: '/static/projects/lollio.png',
+		background: '#ed174c',
+		placeholderUrl: '/static/projects/lollio-small.png',
+		footerColor: '#fff',
+		srcUrl: 'https://github.com/c0z0/lollio'
+	},
+	{
 		title: 'PyBoard',
-		url: 'https://github.com/c0z0/pyboard.git',
+		url: 'https://github.com/c0z0/pyboard',
 		description:
 			'Little app for tracking ML models learning progress. Built using React, Apollo (GraphQL) and NodeJS.',
 		color: '#fff',

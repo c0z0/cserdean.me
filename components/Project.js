@@ -14,7 +14,8 @@ export default class Project extends Component {
 			color,
 			titleColor,
 			id,
-			placeholderUrl
+			placeholderUrl,
+			srcUrl
 		} = this.props
 
 		return (
@@ -40,9 +41,7 @@ export default class Project extends Component {
 						</ProgressiveImage>
 					) : (
 						<img
-							src={
-								imgUrl || `https://avatar.tobi.sh/${title}s?size=512&type=svg`
-							}
+							src={`https://avatar.tobi.sh/${title}s?size=512&type=svg`}
 							className="image image--loading"
 						/>
 					)}
@@ -52,6 +51,11 @@ export default class Project extends Component {
 						<a href={url} className="title__url" target="_blank">
 							{title}
 						</a>
+						{srcUrl && (
+							<a href={srcUrl} className="title__url" target="_blank">
+								[src]
+							</a>
+						)}
 					</h3>
 					<p className="description">{description}</p>
 				</div>
@@ -113,6 +117,12 @@ export default class Project extends Component {
 
 					.title__url {
 						color: inherit !important;
+					}
+
+					.title__url:nth-child(2) {
+						color: inherit !important;
+						text-decoration: none;
+						margin-left: 4px;
 					}
 
 					.description {
