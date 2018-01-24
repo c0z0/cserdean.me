@@ -25,7 +25,7 @@ class Projects extends Component {
 						footerHeight={i === projects.length - 1 ? '64px' : undefined}
 					/>
 				))}
-				<Footer center color={textColor} />
+				<Footer center color={projects[projects.length - 1].footerColor} />
 				<style jsx>{`
 					.container {
 						position: relative;
@@ -41,4 +41,4 @@ class Projects extends Component {
 	}
 }
 
-export default colorScroller(Projects, ['#fff', '#1890ff'])
+export default colorScroller(Projects, projects.map(p => p.background))
