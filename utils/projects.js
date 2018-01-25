@@ -3,7 +3,7 @@ const projects = [
 		title: 'Email login',
 		url: 'https://email-login.demos.cserdean.me',
 		description:
-			'Simple login strategy demo by sending an email with a verification link.',
+			'Simple login strategy demo. Works by sending an email with a verification link.',
 		imgUrl: '/static/projects/email-login.png',
 		placeholderUrl: '/static/projects/email-login-small.png',
 		background: '#fff'
