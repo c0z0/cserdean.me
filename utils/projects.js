@@ -9,9 +9,21 @@ const projects = [
 		background: '#fff'
 	},
 	{
+		title: 'Gem',
+		url: 'https://gem.demos.cserdean.me',
+		description:
+			'Simple web app for keeping your online finds (Pocket inspired). Built with NextJS and GraphQL',
+		color: '#fff',
+		imgUrl: '/static/projects/gem.png',
+		background: '#FF8C5A',
+		placeholderUrl: '/static/projects/gem-small.png',
+		footerColor: '#fff',
+		srcUrl: 'https://github.com/c0z0/gem'
+	},
+	{
 		title: 'Lollio',
 		url: 'https://lollio.tech',
-		description: 'A simple event planner built using React, NextJS and Apollo.',
+		description: 'Simple event planner built using React, NextJS and Apollo.',
 		color: '#fff',
 		imgUrl: '/static/projects/lollio.png',
 		background: '#ed174c',
