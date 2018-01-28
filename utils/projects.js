@@ -12,12 +12,11 @@ const projects = [
 		title: 'Gem',
 		url: 'https://gem.demos.cserdean.me',
 		description:
-			'Simple web app for keeping your online finds (Pocket inspired). Built with NextJS and GraphQL',
+			'Simple web app for keeping your online finds (Pocket inspired). Built with NextJS and GraphQL.',
 		color: '#fff',
 		imgUrl: '/static/projects/gem.png',
 		background: '#FF8C5A',
 		placeholderUrl: '/static/projects/gem-small.png',
-		footerColor: '#fff',
 		srcUrl: 'https://github.com/c0z0/gem'
 	},
 	{
@@ -28,7 +27,6 @@ const projects = [
 		imgUrl: '/static/projects/lollio.png',
 		background: '#ed174c',
 		placeholderUrl: '/static/projects/lollio-small.png',
-		footerColor: '#fff',
 		srcUrl: 'https://github.com/c0z0/lollio'
 	},
 	{
@@ -39,7 +37,15 @@ const projects = [
 		color: '#fff',
 		imgUrl: '/static/projects/pyboard.png',
 		background: '#1890ff',
-		placeholderUrl: '/static/projects/pyboard-small.png',
+		placeholderUrl: '/static/projects/pyboard-small.png'
+	},
+	{
+		title: 'SHRT',
+		srcUrl: 'https://github.com/c0z0/shrt',
+		url: 'http://sh.cserdean.me',
+		description: 'Little link shortening microservice.',
+		background: '#BC5AF7',
+		color: '#fff',
 		footerColor: '#fff'
 	}
 ]

@@ -41,8 +41,8 @@ export default class Project extends Component {
 						</ProgressiveImage>
 					) : (
 						<img
-							src={`https://avatar.tobi.sh/${title}s?size=512&type=svg`}
-							className="image image--loading"
+							src={`https://avatar.tobi.sh/${title.toLowerCase()}g?size=512&type=svg`}
+							className="image"
 						/>
 					)}
 				</div>
