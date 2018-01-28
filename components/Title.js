@@ -55,7 +55,6 @@ export default class Title extends Component {
 		const stuffEnd = stuffStart + 'stuff'.length
 
 		const magicStart = title.search('magic')
-		console.log(magicStart)
 		const magicEnd = magicStart + 'magic'.length
 
 		// Text before name
