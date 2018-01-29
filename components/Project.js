@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import ProgressiveImage from '../components/ProgessiveImage'
 import { text as textColor } from '../utils/colors'
 
 export default class Project extends Component {
@@ -24,27 +23,14 @@ export default class Project extends Component {
 				id={id}
 			>
 				<div className="image-container">
-					{imgUrl ? (
-						<ProgressiveImage src={imgUrl} placeholder={placeholderUrl}>
-							{(src, loading) => (
-								<div
-									className={`image-contain ${
-										loading ? 'image-contain--loading' : ''
-									}`}
-								>
-									<img
-										src={src}
-										className={`image ${loading ? 'image--loading' : ''}`}
-									/>
-								</div>
-							)}
-						</ProgressiveImage>
-					) : (
-						<img
-							src={`https://avatar.tobi.sh/${title.toLowerCase()}g?size=512&type=svg`}
-							className="image"
-						/>
-					)}
+					<img
+						src={
+							imgUrl
+								? imgUrl
+								: `https://avatar.tobi.sh/${title.toLowerCase()}g?size=512&type=svg`
+						}
+						className="image"
+					/>
 				</div>
 				<div className="text-container">
 					<h3 className="title">
@@ -62,9 +48,8 @@ export default class Project extends Component {
 				<style jsx>{`
 					.container {
 						color: ${color || textColor}
-						display: grid;
+						display: flex;
 						height: 100vh;
-						grid-template-columns: 50vw 50vw;
 					}
 
 					.container--footer {
@@ -72,40 +57,24 @@ export default class Project extends Component {
 					}
 
 					.image-container {
-						grid-column: 1 1;
+						flex: 1;
 						display: flex;
 						align-items: center;
 						justify-content: center;
 					}
 					
 					.image {
-						max-height: calc(100vh - 128px);
-						width: calc(50vw - 128px);
-						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
-						margin: -5px -10px -10px -5px;
-						border-radius: 4px;
-						
-					}
-					
-					.image--loading {
-						filter: blur(10px);
-					}
-					
-					.image-contain  {
+						max-width: calc(100% - 128px);
+						max-height: calc(100% - 128px);
 						box-shadow: 5px 5px 29px 0px rgba(0, 0, 0, 0.4);
 						border-radius: 4px;
-						overflow: hidden;
-					}
-					.image-contain--loading {
-						box-shadow: none;
 					}
 					
 					.text-container {
-						grid-columns: 1 1;
+						flex: 1;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						padding: 64px;
 					}
 
 					.title {
@@ -113,6 +82,7 @@ export default class Project extends Component {
 						${titleColor ? `color: ${titleColor};` : ''}
 						font-weight: normal;
 						text-align: left;
+						padding: 0 64px;						
 					}
 
 					.title__url {
@@ -126,32 +96,29 @@ export default class Project extends Component {
 					}
 
 					.description {
-						/*font-family: Menlo;*/
+						padding: 0 64px;						
 						text-align: justify;
 					}
 
-					@media only screen and (min-width : 320px) and (max-width : 480px) {
-						.container {
-							height: 100vh;
-							grid-template-columns: 100%;
-							padding-top: 24px;
-						}
+					@media only screen and (max-width : 1024px) {
+							.container {
+								flex-direction: column;
+							}
 
-						.container--footer {
-							height: calc(100vh - ${footerHeight || '64px'});
-						}
-	
+							.image-container {
+								flex: 2;
+							}
 
-						.text-container {
-							padding: 0 16px;
-						}
+							.image {
+								max-width: calc(100% - 32px);
+								max-height: calc(100% - 32px);
+								
+							}
 
-						.image {
-							max-height: 50vh;
-							max-width: calc(100vw - 32px);
+							.title, .description {
+								padding: 0 16px;
+							}
 						}
-					}
-						
 				`}</style>
 			</div>
 		)
