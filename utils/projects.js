@@ -2,6 +2,7 @@ const projects = [
 	{
 		title: 'Email login',
 		url: 'https://email-login.demos.cserdean.me',
+		srcUrl: 'https://github.com/c0z0/email-login',
 		description:
 			'Simple login strategy demo. Works by sending an email with a verification link.',
 		imgUrl: '/static/projects/email-login.png',
@@ -40,10 +41,10 @@ const projects = [
 		placeholderUrl: '/static/projects/pyboard-small.png'
 	},
 	{
-		title: 'SHRT',
-		srcUrl: 'https://github.com/c0z0/shrt',
-		url: 'http://sh.cserdean.me',
-		description: 'Little link shortening microservice.',
+		title: 'shrt',
+		srcUrl: 'https://github.com/c0z0/shrt-ui',
+		url: 'http://shrt.demos.cserdean.me',
+		description: 'Little link shortening app.',
 		background: '#BC5AF7',
 		color: '#fff',
 		footerColor: '#fff'
