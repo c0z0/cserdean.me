@@ -6,7 +6,6 @@ const projects = [
 		description:
 			'Simple login strategy demo. Works by sending an email with a verification link.',
 		imgUrl: '/static/projects/email-login.png',
-		placeholderUrl: '/static/projects/email-login-small.png',
 		background: '#fff'
 	},
 	{
@@ -17,7 +16,6 @@ const projects = [
 		color: '#fff',
 		imgUrl: '/static/projects/gem.png',
 		background: '#FF8C5A',
-		placeholderUrl: '/static/projects/gem-small.png',
 		srcUrl: 'https://github.com/c0z0/gem'
 	},
 	{
@@ -27,7 +25,6 @@ const projects = [
 		color: '#fff',
 		imgUrl: '/static/projects/lollio.png',
 		background: '#ed174c',
-		placeholderUrl: '/static/projects/lollio-small.png',
 		srcUrl: 'https://github.com/c0z0/lollio'
 	},
 	{
@@ -37,8 +34,7 @@ const projects = [
 			'Little app for tracking ML models learning progress. Built using React, Apollo (GraphQL) and NodeJS.',
 		color: '#fff',
 		imgUrl: '/static/projects/pyboard.png',
-		background: '#1890ff',
-		placeholderUrl: '/static/projects/pyboard-small.png'
+		background: '#1890ff'
 	},
 	{
 		title: 'shrt',
