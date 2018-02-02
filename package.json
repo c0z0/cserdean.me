@@ -14,5 +14,7 @@
 		"start": "next start",
 		"deploy": "now && now alias"
 	},
-	"now": {}
+	"now": {
+		"alias": "f.cserdean.me"
+	}
 }

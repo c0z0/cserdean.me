@@ -120,13 +120,13 @@ export default class Sentiment extends Component {
 				{initializing && <p className="initializing">loading...</p>}
 				{error && <p className="error">something went wrong</p>}
 				{!(error || initializing) && this.renderInput()}
-				<div className="scale" />
-				<span className="positive">positive</span>
-				<span className="negative">negative</span>
-				<span className="neutral">neutral</span>
+				<div className="scale">
+					<span className="scale__indicator" />
+				</div>
 				<style jsx>{`
 					.container {
 						display: flex;
+						flex-direction: column;
 						justify-content: center;
 						align-items: center;
 						height: 100vh;
@@ -144,42 +144,25 @@ export default class Sentiment extends Component {
 					}
 
 					.scale {
+						position: relative;
+						height: 2px;
+						width: 300px;
+						background: linear-gradient(to right, ${sentimentColors.join(',')});
+					}
+
+					.scale__indicator {
 						position: absolute;
-						bottom: 16px;
-						left: 16px;
-						height: 150px;
-						width: 10px;
-						background: linear-gradient(
-							to bottom,
-							${sentimentColors.join(',')}
-						);
-					}
-
-					.positive,
-					.negative,
-					.neutral {
-						position: absolute;
-						font-family: Menlo;
-						font-size: 13px;
-						left: 30px;
-						opacity: 0.3;
-					}
-
-					.positive {
-						bottom: 16px;
-					}
-
-					.neutral {
-						bottom: 91px;
-					}
-
-					.negative {
-						bottom: 156px;
+						top: -5px;
+						bottom: -5px;
+						background: white;
+						width: 2px;
+						left: ${prediction !== undefined ? prediction / 4 * 300 : 150}px;
+						transition: all 0.5s;
 					}
 				`}</style>
 				<style jsx global>{`
 					body {
-						background: ${prediction !== undefined
+						background: ${prediction !== undefined && false
 							? this.getColor(prediction)
 							: 'black'};
 					}
