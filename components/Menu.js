@@ -28,6 +28,14 @@ const Menu = ({ color, active }) => (
 				projects
 			</a>
 		</Link>
+		<Link href="/ai/sentiment">
+			<a
+				href="/projects"
+				className={`menu__item ${active === 'ai' ? 'menu__item--active' : ''}`}
+			>
+				ai
+			</a>
+		</Link>
 		<style jsx>{`
 			.menu {
 				position: absolute;
