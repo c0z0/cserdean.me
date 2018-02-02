@@ -1,0 +1,10 @@
+{
+	"rules": [
+		{
+			"pathname": "/sentiment/**",
+			"method": ["GET", "POST"],
+			"dest": "sentiment.cserdean.me"
+		},
+		{ "dest": "f.cserdean.me" }
+	]
+}
