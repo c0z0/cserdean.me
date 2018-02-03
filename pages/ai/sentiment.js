@@ -5,9 +5,25 @@ import { errorRed, sentimentColors } from '../../utils/colors.js'
 
 const apiRoot = 'http://0.0.0.0:8080/sentiment'
 
+function debounce(fn, delay) {
+	var timer = null
+	return e => {
+		e.persist()
+		var context = this,
+			args = arguments
+		clearTimeout(timer)
+		timer = setTimeout(function() {
+			fn.bind(context, e)
+		}, delay)
+	}
+}
+
 export default class Sentiment extends Component {
 	state = {
-		initializing: true
+		initializing: true,
+		text: '',
+		prediction: undefined,
+		loading: false
 	}
 
 	async componentDidMount() {
@@ -25,7 +41,7 @@ export default class Sentiment extends Component {
 
 	async predict({ target: { value } }) {
 		try {
-			this.setState({ loading: true })
+			this.setState({ loading: true, text: value })
 			const res = await fetch(apiRoot + '/predict', {
 				method: 'POST',
 				headers: {
@@ -49,10 +65,19 @@ export default class Sentiment extends Component {
 	}
 
 	renderInput() {
-		const { loading } = this.state
+		const { loading, text } = this.state
 		return (
 			<div className="input__container">
+				{text.length > 0 && (
+					<button
+						className="input__clear"
+						onClick={() => this.setState({ text: '', prediction: undefined })}
+					>
+						x
+					</button>
+				)}
 				<input
+					value={text}
 					type="text"
 					onChange={this.predict.bind(this)}
 					className={`input ${loading ? '' : 'input--not-loading'}`}
@@ -87,6 +112,18 @@ export default class Sentiment extends Component {
 						margin: 32px;
 					}
 
+					.input__clear {
+						background: none;
+						border: none;
+						outline: none;
+						color: white;
+						cursor: pointer;
+						position: absolute;
+						right: 0;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+
 					@keyframes loading {
 						0% {
 							left: 0;
@@ -106,13 +143,8 @@ export default class Sentiment extends Component {
 		)
 	}
 
-	getColor(prediction) {
-		console.log(sentimentColors[prediction])
-		return sentimentColors[prediction]
-	}
-
 	render() {
-		const { initializing, error, prediction } = this.state
+		const { initializing, error, prediction, loading } = this.state
 
 		return (
 			<div className="container">
@@ -121,7 +153,7 @@ export default class Sentiment extends Component {
 				{error && <p className="error">something went wrong</p>}
 				{!(error || initializing) && this.renderInput()}
 				<div className="scale">
-					<span className="scale__indicator" />
+					<span className={`scale__indicator`} />
 				</div>
 				<style jsx>{`
 					.container {
