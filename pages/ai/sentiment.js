@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Head from 'next/head'
 
 import Menu from '../../components/Menu.js'
 import Footer from '../../components/Footer.js'
@@ -83,7 +84,7 @@ export default class Sentiment extends Component {
 						animation: loading 2s infinite;
 					}
 					.input {
-						width: 300px;
+						width: 290px;
 						padding-right: 10px;
 						height: 18px;
 						border: none;
@@ -94,6 +95,7 @@ export default class Sentiment extends Component {
 						background: none;
 						transition: 0.2s all;
 						color: white;
+						padding-right: 10px;
 					}
 					.input--not-loading:focus {
 						border-color: rgba(255, 255, 255, 1);
@@ -111,7 +113,7 @@ export default class Sentiment extends Component {
 						color: white;
 						cursor: pointer;
 						position: absolute;
-						right: 0;
+						right: -5px;
 						top: 50%;
 						transform: translate(0, -50%);
 					}
@@ -140,11 +142,17 @@ export default class Sentiment extends Component {
 
 		return (
 			<div>
+				<Head>
+					<title>Ai | Cosmin Serdean</title>
+				</Head>
 				<div className="container">
 					<Menu color="white" active="ai" />
-					<p className="title">
-						Sentiment prediction from movie reviews <a>[src]</a>
-					</p>
+					<h4 className="title">
+						Sentiment prediction from movie reviews{' '}
+						<a href="https://github.com/c0z0" className="src">
+							[src]
+						</a>
+					</h4>
 					{initializing && <p className="initializing">loading...</p>}
 					{error && <p className="error">something went wrong</p>}
 					{!(error || initializing) && this.renderInput()}
@@ -152,8 +160,14 @@ export default class Sentiment extends Component {
 						<span className={`scale__indicator`} />
 					</div>
 					<style jsx>{`
+						.src {
+							color: white;
+							text-decoration: none;
+						}
+
 						.title {
 							font-size: 0.8em;
+							font-weight: normal;
 						}
 
 						.container {

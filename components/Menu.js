@@ -28,7 +28,7 @@ const Menu = ({ color, active }) => (
 				projects
 			</a>
 		</Link>
-		<Link href="/ai/">
+		<Link href="/ai/" prefetch>
 			<a
 				href="/ai/"
 				className={`menu__item ${active === 'ai' ? 'menu__item--active' : ''}`}
