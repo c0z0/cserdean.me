@@ -87,17 +87,16 @@ export default class Title extends Component {
 						<span className="title__name">{titleBold}</span>
 						{titleP2}
 						<Link href="/projects" prefetch>
-							<a href="/stuff" className="title__link">
+							<a href="/projects" className="title__link">
 								{stuffText}
 							</a>
 						</Link>
 						{titleP3}
-						<a
-							href="http://github.com/c0z0/contrast_neural_net"
-							className="title__link"
-						>
-							{magicText}
-						</a>
+						<Link href="/ai">
+							<a href="/ai" className="title__link">
+								{magicText}
+							</a>
+						</Link>
 						{titleP4}
 						<span className="title__block">|</span>
 					</p>
@@ -113,16 +112,17 @@ export default class Title extends Component {
 						{titleP1}
 						<span className="title__name">{titleBold}</span>
 						{titleP2}
-						<a href="http://github.com/c0z0/lollio" className="title__link">
-							{stuffText}
-						</a>
+						<Link href="/projects">
+							<a href="/projects" className="title__link">
+								{stuffText}
+							</a>
+						</Link>
 						{titleP3}
-						<a
-							href="http://github.com/c0z0/contrast_neural_net"
-							className="title__link"
-						>
-							{magicText}
-						</a>
+						<Link href="/ai">
+							<a href="/ai" className="title__link">
+								{magicText}
+							</a>
+						</Link>
 						{titleP4}
 					</p>
 				)}

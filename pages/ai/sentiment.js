@@ -5,7 +5,7 @@ import Menu from '../../components/Menu.js'
 import Footer from '../../components/Footer.js'
 import { errorRed, sentimentColors } from '../../utils/colors.js'
 
-const apiRoot = 'http://0.0.0.0:8080/sentiment'
+const apiRoot = '/sentiment'
 
 export default class Sentiment extends Component {
 	state = {
@@ -210,9 +210,7 @@ export default class Sentiment extends Component {
 					`}</style>
 					<style jsx global>{`
 						body {
-							background: ${prediction !== undefined && false
-								? this.getColor(prediction)
-								: 'black'};
+							background: black;
 						}
 					`}</style>
 				</div>
