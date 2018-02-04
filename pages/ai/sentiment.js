@@ -154,7 +154,18 @@ export default class Sentiment extends Component {
 		return (
 			<div>
 				<div className="container">
+					<div className="ai-menu">
+						<a
+							href="/ai/sentiment"
+							className="ai-menu__item ai-menu__item--active"
+						>
+							sentiment
+						</a>
+					</div>
 					<Menu color="white" active="ai" />
+					<p className="title">
+						Sentiment prediction from movie reviews <a>[src]</a>
+					</p>
 					{initializing && <p className="initializing">loading...</p>}
 					{error && <p className="error">something went wrong</p>}
 					{!(error || initializing) && this.renderInput()}
@@ -162,7 +173,28 @@ export default class Sentiment extends Component {
 						<span className={`scale__indicator`} />
 					</div>
 					<style jsx>{`
+						.title {
+							font-size: 0.8em;
+						}
+
+						.ai-menu {
+							position: absolute;
+							top: 16px;
+							right: 16px;
+							font-family: Menlo;
+						}
+
+						.ai-menu__item {
+							color: white;
+							font-size: 0.8em;
+						}
+
+						.ai-menu__item--active {
+							text-decoration: underline;
+						}
+
 						.container {
+							font-family: Menlo;
 							display: flex;
 							flex-direction: column;
 							justify-content: center;
@@ -172,12 +204,10 @@ export default class Sentiment extends Component {
 						}
 
 						.initializing {
-							font-family: Menlo;
 							opacity: 0.2;
 						}
 
 						.error {
-							font-family: Menlo;
 							color: ${errorRed};
 						}
 
