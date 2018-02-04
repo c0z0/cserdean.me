@@ -40,6 +40,8 @@ export default class Sentiment extends Component {
 	}
 
 	async predict({ target: { value } }) {
+		if (value.length === 0)
+			return this.setState({ text: value, prediction: undefined })
 		try {
 			this.setState({ loading: true, text: value })
 			const res = await fetch(apiRoot + '/predict', {
@@ -94,6 +96,7 @@ export default class Sentiment extends Component {
 					}
 					.input {
 						width: 300px;
+						padding-right: 10px;
 						height: 18px;
 						border: none;
 						border-bottom: solid rgba(255, 255, 255, 0.4) 1px;
@@ -110,6 +113,7 @@ export default class Sentiment extends Component {
 					.input__container {
 						position: relative;
 						margin: 32px;
+						margin-top: 16px;
 					}
 
 					.input__clear {
@@ -121,7 +125,7 @@ export default class Sentiment extends Component {
 						position: absolute;
 						right: 0;
 						top: 50%;
-						transform: translateY(-50%);
+						transform: translate(0, -50%);
 					}
 
 					@keyframes loading {
