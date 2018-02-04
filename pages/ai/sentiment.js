@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Menu from '../../components/Menu.js'
+import Footer from '../../components/Footer.js'
 import { errorRed, sentimentColors } from '../../utils/colors.js'
 
 const apiRoot = 'http://0.0.0.0:8080/sentiment'
@@ -151,58 +152,64 @@ export default class Sentiment extends Component {
 		const { initializing, error, prediction, loading } = this.state
 
 		return (
-			<div className="container">
-				<Menu color="white" active="ai" />
-				{initializing && <p className="initializing">loading...</p>}
-				{error && <p className="error">something went wrong</p>}
-				{!(error || initializing) && this.renderInput()}
-				<div className="scale">
-					<span className={`scale__indicator`} />
+			<div>
+				<div className="container">
+					<Menu color="white" active="ai" />
+					{initializing && <p className="initializing">loading...</p>}
+					{error && <p className="error">something went wrong</p>}
+					{!(error || initializing) && this.renderInput()}
+					<div className="scale">
+						<span className={`scale__indicator`} />
+					</div>
+					<style jsx>{`
+						.container {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							height: calc(100vh - 64px);
+							color: white;
+						}
+
+						.initializing {
+							font-family: Menlo;
+							opacity: 0.2;
+						}
+
+						.error {
+							font-family: Menlo;
+							color: ${errorRed};
+						}
+
+						.scale {
+							position: relative;
+							height: 2px;
+							width: 300px;
+							background: linear-gradient(
+								to right,
+								${sentimentColors.join(',')}
+							);
+						}
+
+						.scale__indicator {
+							position: absolute;
+							top: -5px;
+							bottom: -5px;
+							background: white;
+							width: 2px;
+							left: ${prediction !== undefined ? prediction / 4 * 300 : 150}px;
+							transition: all 0.5s;
+						}
+					`}</style>
+					<style jsx global>{`
+						body {
+							background: ${prediction !== undefined && false
+								? this.getColor(prediction)
+								: 'black'};
+						}
+					`}</style>
 				</div>
-				<style jsx>{`
-					.container {
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
-						height: 100vh;
-						color: white;
-					}
-
-					.initializing {
-						font-family: Menlo;
-						opacity: 0.2;
-					}
-
-					.error {
-						font-family: Menlo;
-						color: ${errorRed};
-					}
-
-					.scale {
-						position: relative;
-						height: 2px;
-						width: 300px;
-						background: linear-gradient(to right, ${sentimentColors.join(',')});
-					}
-
-					.scale__indicator {
-						position: absolute;
-						top: -5px;
-						bottom: -5px;
-						background: white;
-						width: 2px;
-						left: ${prediction !== undefined ? prediction / 4 * 300 : 150}px;
-						transition: all 0.5s;
-					}
-				`}</style>
-				<style jsx global>{`
-					body {
-						background: ${prediction !== undefined && false
-							? this.getColor(prediction)
-							: 'black'};
-					}
-				`}</style>
+				<Footer color="white" />
 			</div>
 		)
 	}
