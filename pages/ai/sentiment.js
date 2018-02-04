@@ -6,19 +6,6 @@ import { errorRed, sentimentColors } from '../../utils/colors.js'
 
 const apiRoot = 'http://0.0.0.0:8080/sentiment'
 
-function debounce(fn, delay) {
-	var timer = null
-	return e => {
-		e.persist()
-		var context = this,
-			args = arguments
-		clearTimeout(timer)
-		timer = setTimeout(function() {
-			fn.bind(context, e)
-		}, delay)
-	}
-}
-
 export default class Sentiment extends Component {
 	state = {
 		initializing: true,
@@ -154,14 +141,6 @@ export default class Sentiment extends Component {
 		return (
 			<div>
 				<div className="container">
-					<div className="ai-menu">
-						<a
-							href="/ai/sentiment"
-							className="ai-menu__item ai-menu__item--active"
-						>
-							sentiment
-						</a>
-					</div>
 					<Menu color="white" active="ai" />
 					<p className="title">
 						Sentiment prediction from movie reviews <a>[src]</a>
@@ -175,22 +154,6 @@ export default class Sentiment extends Component {
 					<style jsx>{`
 						.title {
 							font-size: 0.8em;
-						}
-
-						.ai-menu {
-							position: absolute;
-							top: 16px;
-							right: 16px;
-							font-family: Menlo;
-						}
-
-						.ai-menu__item {
-							color: white;
-							font-size: 0.8em;
-						}
-
-						.ai-menu__item--active {
-							text-decoration: underline;
 						}
 
 						.container {

@@ -28,9 +28,9 @@ const Menu = ({ color, active }) => (
 				projects
 			</a>
 		</Link>
-		<Link href="/ai/sentiment">
+		<Link href="/ai/">
 			<a
-				href="/projects"
+				href="/ai/"
 				className={`menu__item ${active === 'ai' ? 'menu__item--active' : ''}`}
 			>
 				ai
