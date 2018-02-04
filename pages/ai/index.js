@@ -17,10 +17,13 @@ const AiIndex = () => (
 				<li>
 					<Link href="/ai/sentiment">
 						<a className="item" href="/ai/sentiment">
-							Sentiment prediction trained on movie reviews
+							Sentiment classifier trained on movie reviews
 						</a>
 					</Link>{' '}
-					<a href="https://github.com/c0z0" className="item">
+					<a
+						href="https://github.com/c0z0/sentiment-classifier"
+						className="item"
+					>
 						[src]
 					</a>
 				</li>

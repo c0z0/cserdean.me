@@ -5,7 +5,7 @@ import Menu from '../../components/Menu.js'
 import Footer from '../../components/Footer.js'
 import { errorRed, sentimentColors } from '../../utils/colors.js'
 
-const apiRoot = '/sentiment'
+const apiRoot = 'http://0.0.0.0:8080/sentiment'
 
 export default class Sentiment extends Component {
 	state = {
@@ -148,8 +148,11 @@ export default class Sentiment extends Component {
 				<div className="container">
 					<Menu color="white" active="ai" />
 					<h4 className="title">
-						Sentiment prediction from movie reviews{' '}
-						<a href="https://github.com/c0z0" className="src">
+						Sentiment classifier trained on movie reviews{' '}
+						<a
+							href="https://github.com/c0z0/sentiment-classifier"
+							className="src"
+						>
 							[src]
 						</a>
 					</h4>
