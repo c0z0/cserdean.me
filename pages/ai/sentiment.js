@@ -5,7 +5,7 @@ import Menu from '../../components/Menu.js'
 import Footer from '../../components/Footer.js'
 import { errorRed, sentimentColors } from '../../utils/colors.js'
 
-const apiRoot = 'http://0.0.0.0:8080/ai-api'
+const apiRoot = 'https://ai.cserdean.me/ai-api'
 
 export default class Sentiment extends Component {
 	state = {

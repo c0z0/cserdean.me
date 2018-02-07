@@ -30,13 +30,10 @@ const AiIndex = () => (
 				<li>
 					<Link href="/ai/translate">
 						<a className="item" href="/ai/translate">
-							Neural English to German translator
+							Neural English to German translation
 						</a>
 					</Link>{' '}
-					<a
-						href="https://github.com/c0z0/sentiment-classifier"
-						className="item"
-					>
+					<a href="https://github.com/c0z0/neural-translation" className="item">
 						[src]
 					</a>
 				</li>

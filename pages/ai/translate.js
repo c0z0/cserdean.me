@@ -5,7 +5,7 @@ import Menu from '../../components/Menu.js'
 import Footer from '../../components/Footer.js'
 import { errorRed, sentimentColors } from '../../utils/colors.js'
 
-const apiRoot = 'http://0.0.0.0:8080/ai-api'
+const apiRoot = 'https://ai.cserdean.me/ai-api'
 
 export default class Translate extends Component {
 	state = {
@@ -174,9 +174,9 @@ export default class Translate extends Component {
 				<div className="container">
 					<Menu color="white" active="ai" />
 					<h4 className="title">
-						Neural English to German translator{' '}
+						Neural English to German translation{' '}
 						<a
-							href="https://github.com/c0z0/sentiment-classifier"
+							href="https://github.com/c0z0/neural-translation"
 							className="src"
 						>
 							[src]

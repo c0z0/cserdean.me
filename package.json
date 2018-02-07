@@ -15,6 +15,6 @@
 		"deploy": "now && now alias"
 	},
 	"now": {
-		"alias": "f.cserdean.me"
+		"alias": "cserdean.me"
 	}
 }
