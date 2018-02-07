@@ -1,9 +1,9 @@
 {
 	"rules": [
 		{
-			"pathname": "/sentiment/**",
+			"pathname": "/ai-api/**",
 			"method": ["GET", "POST"],
-			"dest": "sentiment.cserdean.me"
+			"dest": "ai.cserdean.me"
 		},
 		{ "dest": "f.cserdean.me" }
 	]
