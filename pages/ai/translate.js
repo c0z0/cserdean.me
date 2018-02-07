@@ -7,7 +7,7 @@ import { errorRed, sentimentColors } from '../../utils/colors.js'
 
 const apiRoot = 'http://0.0.0.0:8080/ai-api'
 
-export default class Sentiment extends Component {
+export default class Translate extends Component {
 	state = {
 		initializing: true,
 		text: '',
@@ -30,10 +30,10 @@ export default class Sentiment extends Component {
 
 	async predict({ target: { value } }) {
 		if (value.length === 0)
-			return this.setState({ text: value, prediction: undefined })
+			return this.setState({ text: value, prediction: '' })
 		try {
 			this.setState({ loading: true, text: value })
-			const res = await fetch(apiRoot + '/sentiment', {
+			const res = await fetch(apiRoot + '/translate', {
 				method: 'POST',
 				headers: {
 					Accept: 'application/json',
@@ -46,7 +46,10 @@ export default class Sentiment extends Component {
 
 			if (res.ok) {
 				const { prediction } = await res.json()
-				return this.setState({ prediction, loading: false })
+				return this.setState({
+					prediction: this.state.text.length > 0 ? prediction : '',
+					loading: false
+				})
 			}
 			this.setState({ error: true, loading: false })
 		} catch (e) {
@@ -55,26 +58,39 @@ export default class Sentiment extends Component {
 		}
 	}
 
-	renderInput() {
-		const { loading, text } = this.state
+	renderInputs() {
+		const { loading, text, prediction } = this.state
 		return (
-			<div className="input__container">
-				{text.length > 0 && (
-					<button
-						className="input__clear"
-						onClick={() => this.setState({ text: '', prediction: undefined })}
-					>
-						+
-					</button>
-				)}
-				<input
-					value={text}
-					type="text"
-					onChange={this.predict.bind(this)}
-					className={`input ${loading ? '' : 'input--not-loading'}`}
-					placeholder="Type something..."
-				/>
-				{loading && <span className="input__loading" />}
+			<div>
+				<div className="input__container">
+					<img
+						className="flag"
+						src="https://cdn.rawgit.com/hjnilsson/country-flags/6dc35d6c/png250px/gb.png"
+					/>
+					{text.length > 0 && (
+						<button
+							className="input__clear"
+							onClick={() => this.setState({ text: '', prediction: '' })}
+						>
+							+
+						</button>
+					)}
+					<input
+						value={text}
+						type="text"
+						onChange={this.predict.bind(this)}
+						className={`input ${loading ? '' : 'input--not-loading'}`}
+						placeholder="Type something..."
+					/>
+					{loading && <span className="input__loading" />}
+				</div>
+				<div className="input__container">
+					<img
+						className="flag"
+						src="https://cdn.rawgit.com/hjnilsson/country-flags/6dc35d6c/png250px/de.png"
+					/>
+					<input value={prediction} type="text" disabled className={`input `} />
+				</div>
 				<style jsx>{`
 					.input__loading {
 						position: absolute;
@@ -83,9 +99,17 @@ export default class Sentiment extends Component {
 						height: 1px;
 						animation: loading 2s infinite;
 					}
+
+					.flag {
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translate(0, -50%);
+						height: 18px;
+					}
+
 					.input {
-						width: 290px;
-						padding-right: 10px;
+						width: 250px;
 						height: 18px;
 						border: none;
 						border-bottom: solid rgba(255, 255, 255, 0.4) 1px;
@@ -96,11 +120,13 @@ export default class Sentiment extends Component {
 						transition: 0.2s all;
 						color: white;
 						padding-right: 10px;
+						padding-left: 40px;
 					}
 					.input--not-loading:focus {
 						border-color: rgba(255, 255, 255, 1);
 					}
 					.input__container {
+						display: inline-block;
 						position: relative;
 						margin: 32px;
 						margin-top: 16px;
@@ -148,7 +174,7 @@ export default class Sentiment extends Component {
 				<div className="container">
 					<Menu color="white" active="ai" />
 					<h4 className="title">
-						Sentiment classifier trained on movie reviews{' '}
+						Neural English to German translator{' '}
 						<a
 							href="https://github.com/c0z0/sentiment-classifier"
 							className="src"
@@ -158,10 +184,7 @@ export default class Sentiment extends Component {
 					</h4>
 					{initializing && <p className="initializing">loading...</p>}
 					{error && <p className="error">something went wrong</p>}
-					{!(error || initializing) && this.renderInput()}
-					<div className="scale">
-						<span className={`scale__indicator`} />
-					</div>
+					{!(error || initializing) && this.renderInputs()}
 					<style jsx>{`
 						.src {
 							color: white;
@@ -189,26 +212,6 @@ export default class Sentiment extends Component {
 
 						.error {
 							color: ${errorRed};
-						}
-
-						.scale {
-							position: relative;
-							height: 2px;
-							width: 300px;
-							background: linear-gradient(
-								to right,
-								${sentimentColors.join(',')}
-							);
-						}
-
-						.scale__indicator {
-							position: absolute;
-							top: -5px;
-							bottom: -5px;
-							background: white;
-							width: 2px;
-							left: ${prediction !== undefined ? prediction / 4 * 300 : 150}px;
-							transition: all 0.5s;
 						}
 					`}</style>
 					<style jsx global>{`

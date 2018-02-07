@@ -27,6 +27,19 @@ const AiIndex = () => (
 						[src]
 					</a>
 				</li>
+				<li>
+					<Link href="/ai/translate">
+						<a className="item" href="/ai/translate">
+							Neural English to German translator
+						</a>
+					</Link>{' '}
+					<a
+						href="https://github.com/c0z0/sentiment-classifier"
+						className="item"
+					>
+						[src]
+					</a>
+				</li>
 			</ul>
 			<style jsx>{`
 				.container {
@@ -51,6 +64,10 @@ const AiIndex = () => (
 
 				.list {
 					list-style-type: square;
+				}
+
+				.list li {
+					margin: 12px 0;
 				}
 			`}</style>
 			<style jsx global>{`
