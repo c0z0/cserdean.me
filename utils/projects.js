@@ -9,6 +9,15 @@ const projects = [
 		background: '#fff'
 	},
 	{
+		title: 'Transfer',
+		url: 'https://transfer.cserdean.me',
+		srcUrl: 'https://github.com/c0z0/transfer',
+		description: 'Tiny WeTransfer clone built with NextJS and Amazon S3',
+		imgUrl: '/static/projects/transfer.png',
+		background: '#000',
+		color: 'white'
+	},
+	{
 		title: 'Gem',
 		url: 'https://gem.demos.cserdean.me',
 		description:
