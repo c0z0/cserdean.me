@@ -9,10 +9,7 @@ const Footer = ({ color, absolute, background, height }) => (
 			<a href="mailto:cosmoserdean@gmail.com" className="footer__item">
 				Email
 			</a>
-			<a
-				href="https://s3.eu-central-1.amazonaws.com/cserdean/cv_cosmin_serdean.pdf"
-				className="footer__item"
-			>
+			<a href="/static/cv_cosmin_serdean.pdf" className="footer__item">
 				CV
 			</a>
 			<a
