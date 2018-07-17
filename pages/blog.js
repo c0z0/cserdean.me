@@ -1,17 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import Error from 'next/error';
+import Head from 'next/head';
 
 import Menu from '../components/Menu';
 import { darkBlue } from '../utils/colors.js';
 import { components } from '../components/blog';
 
-import blog, { getTitles } from '../blog';
+import blog, { getTitles, idToTitle } from '../blog';
 
 export default ({ url: { query: { post } } }) => {
   if (!post)
     return (
       <div className="container">
+        <Head>
+          <title>Blog | Cosmin Serdean</title>
+        </Head>
         <Menu color={darkBlue} active="blog" />
         <div>
           <h4 className="title">Blog posts</h4>
@@ -65,6 +69,9 @@ export default ({ url: { query: { post } } }) => {
 
   return (
     <div className="container">
+      <Head>
+        <title>{idToTitle(post)} | Cosmin Serdean</title>
+      </Head>
       <Menu color={darkBlue} active="blog" />
       <Page components={components} />
 

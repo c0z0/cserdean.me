@@ -8,8 +8,10 @@ export default (page) => {
   return true && posts[page];
 };
 
+export const idToTitle = (k) => k[0].toUpperCase() + k.replace('-', ' ').slice(1);
+
 export const getTitles = () =>
   Object.keys(posts).map((k) => ({
-    title: k[0].toUpperCase() + k.replace('-', ' ').slice(1),
+    title: idToTitle(k),
     id: k
   }));
