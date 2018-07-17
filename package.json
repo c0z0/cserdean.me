@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "next": "^4.2.3",
+    "@mdx-js/mdx": "^0.14.0",
+    "@zeit/next-mdx": "^1.1.0",
+    "next": "^6.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
