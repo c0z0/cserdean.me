@@ -1,7 +1,8 @@
 .next
 node_modules
 yarn-error.log
-.DS_Store
+**/.DS_Store
 static/.DS_Store
 static/.DS_Store
 out
+static/.DS_Store

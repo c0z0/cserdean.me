@@ -6,7 +6,7 @@ const H1 = ({ children, ...props }) => (
 
     <style jsx>{`
       font-size: 1.5rem;
-      color: ${colors.darkBlue};
+      color: ${colors.blue};
       font-weight: 400;
       margin-top: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
