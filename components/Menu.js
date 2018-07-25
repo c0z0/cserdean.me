@@ -1,58 +1,134 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Menu = ({ color, active }) => (
-  <div className="menu">
-    <a href="https://github.com/c0z0/cserdean.me" className="menu__item" target="_blank">
-      [src]
-    </a>
-    <Link href="/" prefetch>
-      <a href="/" className={`menu__item ${active === '/' ? 'menu__item--active' : ''}`}>
-        home
-      </a>
-    </Link>
-    <Link href="/projects" prefetch>
-      <a href="/projects" className={`menu__item ${active === 'projects' ? 'menu__item--active' : ''}`}>
-        projects
-      </a>
-    </Link>
-    <Link href="/ai/" prefetch>
-      <a href="/ai/" className={`menu__item ${active === 'ai' ? 'menu__item--active' : ''}`}>
-        ai
-      </a>
-    </Link>
-    <Link href="/blog/" prefetch>
-      <a href="/blog/" className={`menu__item ${active === 'blog' ? 'menu__item--active' : ''}`}>
-        blog
-      </a>
-    </Link>
-    <style jsx>{`
-      .menu {
-        position: absolute;
-        top: 16px;
-        left: 16px;
-      }
-      .menu__item {
-        font-size: 0.8em;
-        text-decoration: none;
-        opacity: 1;
-        color: ${color} !important;
-        transition: all 0.2s;
-        font-family: Menlo;
-      }
-      .menu__item:not(:last-child) {
-        padding-right: 8px;
-      }
+import { blue, pink } from '../utils/colors';
 
-      .menu__item:hover {
-        opacity: 1;
-      }
+const items = [
+  {
+    title: 'Home',
+    target: '/',
+  },
+  {
+    title: 'Projects',
+    target: '/projects',
+  },
+  {
+    title: 'AI Experiments',
+    target: '/ai',
+  },
+  {
+    title: 'CV',
+    target: '/static/cv_cosmin_serdean.pdf',
+    right: true,
+  },
+  {
+    title: 'GitHub',
+    target: 'https://github.com/c0z0',
+    right: true,
+  },
+  {
+    title: 'Email',
+    target: 'mailto:cosmoserdean@gmail.com',
+    right: true,
+    primary: true,
+  },
+];
 
-      .menu__item--active {
-        text-decoration: underline;
-      }
-    `}</style>
-  </div>
-);
+export default function Navbar({ active = '/' }) {
+  const leftItems = items.filter(({ right }) => !right);
 
-export default Menu;
+  const rightItems = items.filter(({ right }) => right);
+
+  return (
+    <div className="menu">
+      <div className="menu__left">
+        <a href="https://github.com/c0z0/cserdean.me" target="_blank">
+          <img src="/static/triangle-gs.svg" alt="logo" className="menu__logo" />
+        </a>
+        {leftItems.map(({ title, target, primary, right }, k) => (
+          <Link href={target} prefetch={!right} key={k}>
+            <a
+              href={target}
+              className={`menu__item ${active === target ? 'menu__item--active' : ''} ${primary
+                ? 'menu__item--primary'
+                : ''}`}
+            >
+              {title}
+            </a>
+          </Link>
+        ))}
+      </div>
+      <div className="menu__right">
+        {rightItems.map(({ title, target, primary, right }, k) => (
+          <a
+            key={k}
+            href={target}
+            className={`menu__item ${active === target ? 'menu__item--active' : ''} ${primary
+              ? 'menu__item--primary'
+              : ''}`}
+            target="_blank"
+          >
+            {title}
+          </a>
+        ))}
+      </div>
+      <style jsx>{`
+        .menu {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 900px;
+          width: 100%;
+          margin: 40px auto;
+          font-size: 12px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+            'Fira Sans';
+        }
+
+        .menu__left {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .menu__item {
+          margin: 0 10px;
+          color: #888;
+          font-size: 12px;
+          text-decoration: none;
+        }
+
+        .menu__item--active {
+          color: #484848 !important;
+        }
+
+        .menu__item--primary {
+          color: #484848;
+          border-radius: 2rem;
+          background-color: ${pink};
+          padding: 0.625rem 1.5rem;
+          color: white;
+        }
+
+        .menu__logo {
+          height: 40px;
+          margin-right: 20px;
+          transition: all 0.2s;
+          transform: rotate(90deg);
+        }
+
+        .menu__logo:hover {
+        }
+
+        .menu__dot {
+          display: inline-block;
+          width: 34px;
+          background: ${blue};
+          border-radius: 100%;
+          margin-right: 12px;
+        }
+      `}</style>
+    </div>
+  );
+}

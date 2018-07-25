@@ -17,6 +17,7 @@ module.exports = withMDX({
     return {
       '/': { page: '/' },
       '/projects': { page: '/projects' },
+      '/__projects': { page: '/__projects' },
       '/ai': { page: '/ai' },
       '/ai/sentiment': { page: '/ai/sentiment' },
       '/ai/translate': { page: '/ai/translate' },
