@@ -1,15 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Menu from '../components/Menu';
+import Menu from "../components/Menu";
 
 export default function Projects() {
   return (
     <div className="container">
-      <style jsx global>{`
-        body {
-          background: black;
-        }
-      `}</style>
       <Menu active="/projects" />
       <div className="content">
         <div className="title">Projects</div>
@@ -19,8 +14,8 @@ export default function Projects() {
         .container {
           font-size: 12px;
           color: #484848;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-            'Fira Sans';
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+            "Oxygen", "Ubuntu", "Cantarell", "Fira Sans";
         }
 
         .content {
