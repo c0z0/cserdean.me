@@ -1,28 +1,13 @@
 import React from "react";
 
-import Menu from "../components/Menu";
+import Page from "../components/Page";
 
 export default function Projects() {
   return (
-    <div className="container">
-      <Menu active="/projects" />
-      <div className="content">
-        <div className="title">Projects</div>
-        <div className="subtitle">Small web development projects</div>
-      </div>
+    <Page active="/projects">
+      <div className="title">Projects</div>
+      <div className="subtitle">Small web development projects</div>
       <style jsx>{`
-        .container {
-          font-size: 12px;
-          color: #484848;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-            "Oxygen", "Ubuntu", "Cantarell", "Fira Sans";
-        }
-
-        .content {
-          max-width: 900px;
-          margin: 32px auto;
-        }
-
         .title {
           font-size: 2.5em;
           margin-bottom: 12px;
@@ -34,6 +19,6 @@ export default function Projects() {
           margin-bottom: 30px;
         }
       `}</style>
-    </div>
+    </Page>
   );
 }

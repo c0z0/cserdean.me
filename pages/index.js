@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { blue } from '../utils/colors';
-import Menu from '../components/Menu';
+import { blue } from "../utils/colors";
+import * as breakPoints from "../utils/breakPoints.js";
+
+import Page from "../components/Page";
 
 const Index = () => (
-  <div className="container">
-    <Menu active="/" />
-    <div className="content">
-      <div className="content__left">
+  <Page active="/" fullHeight>
+    <div className="content__wrapper">
+      <div className="content">
         <h3 className="greeting">
           Hi, I'm <span className="greeting__name">Cosmin</span>.
           <span className="greeting__secondary">
@@ -15,18 +16,10 @@ const Index = () => (
             JavaScript Developer & Machine Learning Enthusiast
           </span>
         </h3>
-      </div>
-      <div className="content__right">
         <img src="/static/triangle.svg" className="triangle" />
       </div>
     </div>
     <style jsx>{`
-      .footer {
-        display: flex;
-        justify-content: center;
-        margin: 20px 0;
-      }
-
       @keyframes hover {
         0,
         100% {
@@ -40,13 +33,17 @@ const Index = () => (
       .triangle {
         height: 50vh;
         transform: rotate(10deg) translateX(10%);
+        position: fixed;
+        top: 30%;
+        left: 45%;
+        z-index: -1;
+        overflow: hidden;
         animation: hover 20s infinite ease-in-out;
+        display: none;
       }
 
-      .footer__item {
-        color: #888;
-        margin: 0 30px;
-        text-decoration: none;
+      .content {
+        position: relative;
       }
 
       .greeting {
@@ -61,51 +58,27 @@ const Index = () => (
         color: ${blue};
       }
 
+      @media (${breakPoints.tabletUp}) {
+        .triangle {
+          display: block;
+        }
+      }
+
+      .content__wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        flex: 1;
+      }
+
       .greeting__secondary {
         line-height: 1rem;
 
         font-size: 1rem;
         color: #888;
       }
-
-      .content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        font-size: 12px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-          'Fira Sans';
-      }
-
-      .footer {
-        padding: 40px;
-        background: #eee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row-reverse;
-      }
-
-      .footer__triangle {
-        height: 60px;
-        filter: grayscale() opacity(0.4);
-      }
-
-      .footer__name {
-        margin: 10px;
-        color: #888;
-      }
     `}</style>
-  </div>
+  </Page>
 );
 
 export default Index;

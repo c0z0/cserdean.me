@@ -18,5 +18,6 @@
   },
   "now": {
     "alias": "cserdean.me"
-  }
+  },
+  "devDependencies": {}
 }
