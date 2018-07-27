@@ -19,7 +19,7 @@ export default function Projects({ children, active, fullHeight, dark }) {
           margin: 0 auto;
 
           ${fullHeight &&
-            "min-height: calc(100vh - 40px); display: flex; flex-direction: column;"};
+            "height: 100vh; display: flex; flex-direction: column;"};
         }
 
         .content {

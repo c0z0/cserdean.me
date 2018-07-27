@@ -6,18 +6,18 @@ import * as breakPoints from "../utils/breakPoints";
 import Page from "../components/Page";
 
 const Index = () => (
-  <Page active="/" fullHeight>
-    <div className="content__wrapper">
-      <div className="content">
+  <Page active="/">
+    <div className="content">
+      <div className="text">
         <h3 className="greeting">
           Hi, I{`'`}m <span className="greeting__name">Cosmin</span>.
-          <span className="greeting__secondary">
-            <br />
-            JavaScript Developer & Machine Learning Enthusiast
-          </span>
         </h3>
-        <img src="/static/triangle.svg" className="triangle" alt="" />
+        <p className="greeting__secondary">
+          {" "}
+          JavaScript Developer & Machine Learning Enthusiast
+        </p>
       </div>
+      <img src="/static/triangle.svg" className="triangle" alt="" />
     </div>
     <style jsx>{`
       @keyframes hover {
@@ -31,47 +31,56 @@ const Index = () => (
       }
 
       .triangle {
-        height: 50vh;
-        transform: rotate(10deg) translateX(10%);
+        height: 450px;
         position: fixed;
-        top: 30%;
-        left: 45%;
-        z-index: -1;
-        overflow: hidden;
-        animation: hover 20s infinite ease-in-out;
+        left: 110%;
+        top: -50%;
         display: none;
-      }
-
-      .content {
-        position: relative;
+        transform: rotate(10deg) translateX(10%);
+        animation: hover 20s infinite ease-in-out;
       }
 
       .greeting {
-        white-space: nowrap;
         font-weight: 300;
         font-size: 3rem;
         text-align: center;
         color: #484848;
+        margin: 3rem 0;
       }
 
       .greeting__name {
         color: ${blue};
       }
 
-      .content__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        flex: 1;
+      .content {
+        margin-top: 30vh;
+      }
+
+      .greeting__secondary {
+        line-height: 1.2rem;
+        text-align: center;
+
+        font-size: 1rem;
+        color: #888;
       }
 
       @media (${breakPoints.tabletUp}) {
+        .content {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: calc(100vh - 900) / 2;
+          transform: translateY(-50%);
+          display: flex;
+          flex-direction: row;
+        }
+
         .triangle {
           display: block;
         }
 
         .greeting {
+          white-space: nowrap;
           font-size: 4rem;
           text-align: center;
         }
@@ -79,13 +88,6 @@ const Index = () => (
         .content__wrapper {
           justify-content: flex-start;
         }
-      }
-
-      .greeting__secondary {
-        line-height: 1rem;
-
-        font-size: 1rem;
-        color: #888;
       }
     `}</style>
   </Page>
