@@ -124,6 +124,7 @@ export default class Menu extends Component {
 
             .menu__item--active {
               background: #eee;
+              font-weight: 500;
             }
 
             .menu__item--primary {
@@ -145,6 +146,12 @@ export default class Menu extends Component {
             }
 
             .menu__arrow {
+              background: none;
+              border: none;
+              outline: none;
+              box-shadow: none;
+              appearance: none;
+
               transition: all 0.2s;
               transform: rotate(${!open ? "0" : "180deg"});
             }
@@ -195,6 +202,7 @@ export default class Menu extends Component {
               }
 
               .menu__item--active {
+                font-weight: normal;
                 color: #222;
                 background: none;
               }
