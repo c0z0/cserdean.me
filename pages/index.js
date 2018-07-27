@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { blue } from "../utils/colors";
-import * as breakPoints from "../utils/breakPoints.js";
+import * as breakPoints from "../utils/breakPoints";
 
 import Page from "../components/Page";
 
@@ -10,13 +10,13 @@ const Index = () => (
     <div className="content__wrapper">
       <div className="content">
         <h3 className="greeting">
-          Hi, I'm <span className="greeting__name">Cosmin</span>.
+          Hi, I{`'`}m <span className="greeting__name">Cosmin</span>.
           <span className="greeting__secondary">
             <br />
             JavaScript Developer & Machine Learning Enthusiast
           </span>
         </h3>
-        <img src="/static/triangle.svg" className="triangle" />
+        <img src="/static/triangle.svg" className="triangle" alt="" />
       </div>
     </div>
     <style jsx>{`

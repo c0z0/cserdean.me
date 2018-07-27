@@ -7,6 +7,7 @@
     "@mdx-js/mdx": "^0.14.0",
     "@zeit/next-mdx": "^1.1.0",
     "next": "^6.1.1",
+    "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -19,5 +20,12 @@
   "now": {
     "alias": "cserdean.me"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
+  }
 }

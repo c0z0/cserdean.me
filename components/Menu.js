@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-import { blue, pink } from "../utils/colors";
-import * as breakPoints from "../utils/breakPoints.js";
+import { pink } from "../utils/colors";
+import * as breakPoints from "../utils/breakPoints";
 
 const items = [
   {
@@ -35,8 +36,11 @@ const items = [
   }
 ];
 
-export default class Navbar extends Component {
-  state = { open: false };
+export default class Menu extends Component {
+  constructor(p) {
+    super(p);
+    this.state = { open: false };
+  }
 
   render() {
     const { active } = this.props;
@@ -50,24 +54,28 @@ export default class Navbar extends Component {
       <header>
         <div className="menu__wrapper">
           <div className="menu__logo__wrapper">
-            <a href="https://github.com/c0z0/cserdean.me" target="_blank">
+            <a
+              href="https://github.com/c0z0/cserdean.me"
+              rel="noopener noreferrer"
+            >
               <img
                 src="/static/triangle-gs.svg"
                 alt="logo"
                 className="menu__logo"
               />
             </a>
-            <img
-              src="/static/arrow.svg"
-              alt="logo"
-              className="menu__arrow"
+            <button
               onClick={() => this.setState({ open: !open })}
-            />
+              type="button"
+              className="menu__arrow"
+            >
+              <img src="/static/arrow.svg" alt="menu-arrow" />
+            </button>
           </div>
           <div className={`menu ${open ? "menu--open" : ""}`}>
             <div className="menu__left">
-              {leftItems.map(({ title, target, primary, right }, k) => (
-                <Link href={target} prefetch={!right} key={k}>
+              {leftItems.map(({ title, target, primary, right }) => (
+                <Link href={target} prefetch={!right} key={target}>
                   <a
                     href={target}
                     className={`menu__item ${
@@ -80,14 +88,15 @@ export default class Navbar extends Component {
               ))}
             </div>
             <div className="menu__right">
-              {rightItems.map(({ title, target, primary, right }, k) => (
+              {rightItems.map(({ title, target, primary }) => (
                 <a
-                  key={k}
+                  key={target}
                   href={target}
                   className={`menu__item ${
                     active === target ? "menu__item--active" : ""
                   } ${primary ? "menu__item--primary" : ""}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {title}
                 </a>
@@ -98,33 +107,26 @@ export default class Navbar extends Component {
             .menu__wrapper {
               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                 "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans";
+              margin-top: 20px;
             }
 
             .menu__item {
               color: #888;
+              color: #222;
               font-size: 12px;
               text-decoration: none;
               display: block;
-              padding: 0.625rem 1.5rem;
-              text-align: center;
+              padding: 16px;
+              padding-left: 20px;
               border-bottom: 1px solid #eee;
             }
 
-            .menu__item:nth-last-child(2) {
-              border: none;
-            }
-
             .menu__item--active {
-              color: #484848 !important;
+              background: #eee;
             }
 
             .menu__item--primary {
-              color: #484848;
-              border-radius: 2rem;
-              background-color: ${pink};
-              padding: 0.625rem 1.5rem;
-              color: white;
-              margin: 0 20px;
+              color: ${pink};
             }
 
             .menu__logo {
@@ -138,15 +140,16 @@ export default class Navbar extends Component {
               display: flex;
               align-items: center;
               justify-content: space-between;
+              margin: 20px;
             }
 
             .menu__arrow {
-              cursor: pointer;
               transition: all 0.2s;
               transform: rotate(${open ? "0" : "180deg"});
             }
 
             .menu {
+              margin-top: 20px;
               display: none;
             }
 
@@ -169,6 +172,7 @@ export default class Navbar extends Component {
               }
 
               .menu {
+                margin: 0;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -183,12 +187,22 @@ export default class Navbar extends Component {
                 margin: 0 10px;
                 display: inline-block;
                 padding: 0;
+                color: #888;
                 text-align: left;
                 border-bottom: none;
               }
 
+              .menu__item--active {
+                color: #222;
+                background: none;
+              }
+
               .menu__item--primary {
+                border-radius: 2rem;
+                background-color: ${pink};
                 padding: 0.625rem 1.5rem;
+                color: white;
+                margin: 0 20px;
               }
             }
           `}</style>
@@ -197,3 +211,7 @@ export default class Navbar extends Component {
     );
   }
 }
+
+Menu.propTypes = {
+  active: PropTypes.oneOf(items.map(i => i.target)).isRequired
+};
