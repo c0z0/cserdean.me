@@ -145,7 +145,7 @@ export default class Menu extends Component {
 
             .menu__arrow {
               transition: all 0.2s;
-              transform: rotate(${open ? "0" : "180deg"});
+              transform: rotate(${!open ? "0" : "180deg"});
             }
 
             .menu {
