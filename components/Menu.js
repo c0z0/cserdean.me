@@ -119,6 +119,7 @@ export default class Menu extends Component {
               padding: 16px;
               padding-left: 20px;
               border-bottom: 1px solid #eee;
+              text-transform: uppercase;
             }
 
             .menu__item--active {
@@ -190,6 +191,7 @@ export default class Menu extends Component {
                 color: #888;
                 text-align: left;
                 border-bottom: none;
+                text-transform: none;
               }
 
               .menu__item--active {
