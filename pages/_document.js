@@ -10,6 +10,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content={themeColor} />
+          <meta
+            name="Description"
+            content="Cosmin Serdan JavaScript Developer & Machine Learning Enthusiast"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=Lato"
             rel="stylesheet"
