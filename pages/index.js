@@ -49,7 +49,7 @@ const Index = () => (
       .greeting {
         white-space: nowrap;
         font-weight: 300;
-        font-size: 4rem;
+        font-size: 3rem;
         text-align: center;
         color: #484848;
       }
@@ -58,17 +58,27 @@ const Index = () => (
         color: ${blue};
       }
 
+      .content__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex: 1;
+      }
+
       @media (${breakPoints.tabletUp}) {
         .triangle {
           display: block;
         }
-      }
 
-      .content__wrapper {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        flex: 1;
+        .greeting {
+          font-size: 4rem;
+          text-align: center;
+        }
+
+        .content__wrapper {
+          justify-content: flex-start;
+        }
       }
 
       .greeting__secondary {

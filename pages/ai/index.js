@@ -1,40 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import Menu from '../../components/Menu';
-import * as colors from '../../utils/colors';
+import Page from "../../components/Page";
+import * as colors from "../../utils/colors";
 
 const Ai = () => (
-  <div className="container">
-    <Menu active="/ai" />
-    <div className="content">
-      <h3 className="title">AI Experiments</h3>
-      <p className="subtitle">Tiny Machine Learning demos</p>
-      <div className="experiments">
-        <div className="experiment">
-          <a className="experiment__anchor" href="/ai/sentiment">
-            Sentiment classifier trained on movie reviews
-          </a>
-        </div>
-        <div className="experiment">
-          <a className="experiment__anchor" href="/ai/sentiment">
-            Neural English to German translation
-          </a>
-        </div>
+  <Page active="/ai">
+    <h3 className="title">AI Experiments</h3>
+    <p className="subtitle">Tiny Machine Learning demos</p>
+    <div className="experiments">
+      <div className="experiment">
+        <a className="experiment__anchor" href="/ai/sentiment">
+          Sentiment classifier trained on movie reviews
+        </a>
+      </div>
+      <div className="experiment">
+        <a className="experiment__anchor" href="/ai/sentiment">
+          Neural English to German translation
+        </a>
       </div>
     </div>
     <style jsx>{`
-      .container {
-        font-size: 12px;
-        color: #484848;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-          'Fira Sans';
-      }
-
-      .content {
-        max-width: 900px;
-        margin: 32px auto;
-      }
-
       .title {
         font-size: 2.5em;
         margin-bottom: 12px;
@@ -61,7 +46,7 @@ const Ai = () => (
         text-decoration: none;
       }
     `}</style>
-  </div>
+  </Page>
 );
 
 export default Ai;

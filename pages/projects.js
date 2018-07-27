@@ -5,8 +5,8 @@ import Page from "../components/Page";
 export default function Projects() {
   return (
     <Page active="/projects">
-      <div className="title">Projects</div>
-      <div className="subtitle">Small web development projects</div>
+      <h3 className="title">Projects</h3>
+      <p className="subtitle">Small web development projects</p>
       <style jsx>{`
         .title {
           font-size: 2.5em;

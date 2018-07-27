@@ -64,7 +64,7 @@ export default class Navbar extends Component {
               onClick={() => this.setState({ open: !open })}
             />
           </div>
-          <div className="menu">
+          <div className={`menu ${open ? "menu--open" : ""}`}>
             <div className="menu__left">
               {leftItems.map(({ title, target, primary, right }, k) => (
                 <Link href={target} prefetch={!right} key={k}>
@@ -110,6 +110,10 @@ export default class Navbar extends Component {
               border-bottom: 1px solid #eee;
             }
 
+            .menu__item:nth-last-child(2) {
+              border: none;
+            }
+
             .menu__item--active {
               color: #484848 !important;
             }
@@ -143,7 +147,11 @@ export default class Navbar extends Component {
             }
 
             .menu {
-              display: ${open ? "block" : "none"};
+              display: none;
+            }
+
+            .menu--open {
+              display: block;
             }
 
             @media (${breakPoints.tabletUp}) {
