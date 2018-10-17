@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "start": "next start",
+    "start": "serve -p 3000 out",
     "deploy": "now && now alias"
   },
   "now": {
@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "serve": "^10.0.2"
   }
 }
