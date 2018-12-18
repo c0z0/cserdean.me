@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import Head from "next/head";
 
-import Menu from "../../components/Menu.js";
+import Page from "../../components/Page";
+import * as breakPoints from "../../utils/breakPoints";
+
 import { errorRed, sentimentColors } from "../../utils/colors.js";
 
-const apiRoot = "https://ai.cserdean.me/ai-api";
+const apiRoot = "https://s.ai.cserdean.me";
 
 export default class Sentiment extends Component {
   state = {
@@ -101,8 +102,8 @@ export default class Sentiment extends Component {
           }
           .input__container {
             position: relative;
-            margin: 32px;
             margin-top: 16px;
+            margin-bottom: 32px;
           }
 
           .input__clear {
@@ -140,12 +141,8 @@ export default class Sentiment extends Component {
     const { initializing, error, prediction, loading } = this.state;
 
     return (
-      <div>
-        <Head>
-          <title>Ai | Cosmin Serdean</title>
-        </Head>
-        <div className="container">
-          <Menu color="white" active="ai" />
+      <Page active="/ai" dark>
+        <div className="content">
           <h4 className="title">
             Sentiment classifier trained on movie reviews{" "}
             <a
@@ -168,18 +165,7 @@ export default class Sentiment extends Component {
             }
 
             .title {
-              font-size: 0.8em;
               font-weight: normal;
-            }
-
-            .container {
-              font-family: Menlo;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              height: calc(100vh - 64px);
-              color: white;
             }
 
             .initializing {
@@ -188,9 +174,12 @@ export default class Sentiment extends Component {
 
             .error {
               color: ${errorRed};
+              margin-top: 16px;
+              margin-bottom: 32px;
             }
 
             .scale {
+              margin: 0 auto;
               position: relative;
               height: 2px;
               width: 300px;
@@ -211,6 +200,20 @@ export default class Sentiment extends Component {
                 : 150}px;
               transition: all 0.5s;
             }
+
+            .content {
+              text-align: center;
+            }
+
+            @media (${breakPoints.tabletUp}) {
+              .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                left: 50%;
+              }
+            }
           `}</style>
           <style jsx global>{`
             body {
@@ -218,7 +221,7 @@ export default class Sentiment extends Component {
             }
           `}</style>
         </div>
-      </div>
+      </Page>
     );
   }
 }

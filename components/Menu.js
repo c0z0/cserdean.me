@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import { pink } from "../utils/colors";
+import { pink, text } from "../utils/colors";
 import * as breakPoints from "../utils/breakPoints";
 
 const items = [
@@ -43,8 +43,10 @@ export default class Menu extends Component {
   }
 
   render() {
-    const { active } = this.props;
+    const { active, dark } = this.props;
     const { open } = this.state;
+
+    const textColor = !dark ? "#484848" : "white";
 
     const leftItems = items.filter(({ right }) => !right);
 
@@ -67,9 +69,12 @@ export default class Menu extends Component {
             <button
               onClick={() => this.setState({ open: !open })}
               type="button"
-              className="menu__arrow"
+              className="menu__button"
             >
-              <img src="/static/arrow.svg" alt="menu-arrow" />
+              <div className="menu__icon">
+                <div className="menu__icon__top" />
+                <div className="menu__icon__bottom" />
+              </div>
             </button>
           </div>
           <div className={`menu ${open ? "menu--open" : ""}`}>
@@ -111,20 +116,18 @@ export default class Menu extends Component {
             }
 
             .menu__item {
-              color: #888;
-              color: #222;
+              color: ${textColor};
               font-size: 12px;
               text-decoration: none;
               display: block;
               padding: 16px;
               padding-left: 20px;
-              border-bottom: 1px solid #eee;
+              border-bottom: 1px solid ${!dark ? "#eee" : "#222"};
               text-transform: uppercase;
             }
 
             .menu__item--active {
-              background: #eee;
-              font-weight: 500;
+              background: ${!dark ? "#eee" : "#222"};
             }
 
             .menu__item--primary {
@@ -145,15 +148,18 @@ export default class Menu extends Component {
               margin: 20px;
             }
 
-            .menu__arrow {
+            .menu__button {
               background: none;
               border: none;
               outline: none;
               box-shadow: none;
               appearance: none;
-
-              transition: all 0.2s;
-              transform: rotate(${!open ? "0" : "180deg"});
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              padding: 0;
             }
 
             .menu {
@@ -165,8 +171,25 @@ export default class Menu extends Component {
               display: block;
             }
 
+            .menu__icon * {
+              transition: all 0.2s;
+              width: 22px;
+              height: 1px;
+              background-color: ${textColor};
+            }
+
+            .menu__icon__top {
+              transform: rotate(${open ? "45deg" : 0})
+                translateY(${open ? "1px" : "-4px"});
+            }
+
+            .menu__icon__bottom {
+              transform: rotate(${open ? "-45deg" : 0})
+                translateY(${open ? "-1px" : "4px"});
+            }
+
             @media (${breakPoints.tabletUp}) {
-              .menu__arrow {
+              .menu__icon {
                 display: none;
               }
 
@@ -195,15 +218,14 @@ export default class Menu extends Component {
                 margin: 0 10px;
                 display: inline-block;
                 padding: 0;
-                color: #888;
+                color: ${textColor};
                 text-align: left;
                 border-bottom: none;
                 text-transform: none;
               }
 
               .menu__item--active {
-                font-weight: normal;
-                color: #222;
+                color: ${!dark ? "black" : pink};
                 background: none;
               }
 
@@ -223,5 +245,10 @@ export default class Menu extends Component {
 }
 
 Menu.propTypes = {
-  active: PropTypes.oneOf(items.map(i => i.target)).isRequired
+  active: PropTypes.oneOf(items.map(i => i.target)).isRequired,
+  dark: PropTypes.bool
+};
+
+Menu.defaultProps = {
+  dark: false
 };

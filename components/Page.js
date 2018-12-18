@@ -5,14 +5,17 @@ import Menu from "./Menu";
 import * as breakPoints from "../utils/breakPoints";
 
 export default function Projects({ children, active, fullHeight, dark }) {
+  const textColor = !dark ? "#484848" : "white";
+
   return (
     <div className="container">
-      <Menu active={active} />
+      <Menu active={active} dark={dark} />
       {fullHeight ? children : <div className="content">{children}</div>}
+
       <style jsx>{`
         .container {
           font-size: 12px;
-          color: #484848;
+          color: ${textColor};
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
             "Oxygen", "Ubuntu", "Cantarell", "Fira Sans";
           max-width: 900px;

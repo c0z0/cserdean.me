@@ -13,7 +13,6 @@ const Index = () => (
           Hi, I{`'`}m <span className="greeting__name">Cosmin</span>.
         </h3>
         <p className="greeting__secondary">
-          {" "}
           JavaScript Developer & Machine Learning Enthusiast
         </p>
       </div>
@@ -32,7 +31,7 @@ const Index = () => (
 
       .triangle {
         height: 450px;
-        position: fixed;
+        position: absolute;
         left: 110%;
         top: -50%;
         display: none;
@@ -53,7 +52,7 @@ const Index = () => (
       }
 
       .content {
-        margin-top: 30vh;
+        margin-top: 128px;
       }
 
       .greeting__secondary {
@@ -83,10 +82,6 @@ const Index = () => (
           white-space: nowrap;
           font-size: 4rem;
           text-align: center;
-        }
-
-        .content__wrapper {
-          justify-content: flex-start;
         }
       }
     `}</style>

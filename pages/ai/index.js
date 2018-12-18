@@ -4,7 +4,7 @@ import Page from "../../components/Page";
 import * as colors from "../../utils/colors";
 
 const Ai = () => (
-  <Page active="/ai">
+  <Page active="/ai" dark>
     <h3 className="title">AI Experiments</h3>
     <p className="subtitle">Tiny Machine Learning demos</p>
     <div className="experiments">
@@ -32,7 +32,7 @@ const Ai = () => (
       }
 
       .experiments {
-        border-top: 1px #ddd solid;
+        border-top: 1px #222 solid;
       }
 
       .experiment {
