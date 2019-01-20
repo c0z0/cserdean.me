@@ -43,7 +43,7 @@ jobs:
           command: sudo npm install --global --unsafe-perm now
       - deploy:
           name: Deploy and alias
-          command: ls && now --token $ZEIT_TOKEN && now alias $([ "$CIRCLE_BRANCH" == "master" ] && echo "cserdean.me" || echo "$CIRCLE_BRANCH") --token $ZEIT_TOKEN
+          command: ls && now --token $ZEIT_TOKEN && now alias $([ "$CIRCLE_BRANCH" == "master" ] && echo "cserdean.me" || echo "$CIRCLE_BRANCH.cserdean.me") --token $ZEIT_TOKEN
 
 workflows:
   version: 2
