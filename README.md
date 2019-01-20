@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/c0z0/cserdean.me.svg?style=svg)](https://circleci.com/gh/c0z0/cserdean.me)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ef3668eac79d22e9c479/maintainability)](https://codeclimate.com/github/c0z0/cserdean.me/maintainability)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+
 # [cserdean.me](https://cserdean.me)
 
 ## My personal website

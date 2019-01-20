@@ -1,69 +1,68 @@
-import React, { Component } from "react";
+import React, {Component} from 'react'
 
-import Page from "../../components/Page";
-import * as breakPoints from "../../utils/breakPoints";
+import Page from '../../components/Page'
+import * as breakPoints from '../../utils/breakPoints'
 
-import { errorRed, sentimentColors } from "../../utils/colors.js";
+import {errorRed, sentimentColors} from '../../utils/colors.js'
 
-const apiRoot = "https://ai.cserdean.me";
+const apiRoot = 'https://ai.cserdean.me'
 
 export default class Sentiment extends Component {
   state = {
     initializing: true,
-    text: "",
+    text: '',
     prediction: undefined,
-    loading: false
-  };
+    loading: false,
+  }
 
   async componentDidMount() {
     try {
-      const res = await fetch(apiRoot + "/ping");
+      const res = await fetch(apiRoot + '/ping')
 
       if (res.ok) {
-        return this.setState({ initializing: false });
+        return this.setState({initializing: false})
       }
-      this.setState({ error: true, initializing: false });
+      this.setState({error: true, initializing: false})
     } catch (e) {
-      this.setState({ error: true, initializing: false });
+      this.setState({error: true, initializing: false})
     }
   }
 
-  async predict({ target: { value } }) {
+  async predict({target: {value}}) {
     if (value.length === 0)
-      return this.setState({ text: value, prediction: undefined });
+      return this.setState({text: value, prediction: undefined})
     try {
-      this.setState({ loading: true, text: value });
-      const res = await fetch(apiRoot + "/sentiment", {
-        method: "POST",
+      this.setState({loading: true, text: value})
+      const res = await fetch(apiRoot + '/sentiment', {
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          text: value
-        })
-      });
+          text: value,
+        }),
+      })
 
       if (res.ok) {
-        const { prediction } = await res.json();
-        return this.setState({ prediction, loading: false });
+        const {prediction} = await res.json()
+        return this.setState({prediction, loading: false})
       }
-      this.setState({ error: true, loading: false });
+      this.setState({error: true, loading: false})
     } catch (e) {
-      console.log(e);
-      this.setState({ error: true, loading: false });
+      console.log(e)
+      this.setState({error: true, loading: false})
     }
   }
 
   renderInput() {
-    const { loading, text } = this.state;
+    const {loading, text} = this.state
     return (
       <div className="input__container">
         {text.length > 0 && (
           <button
             className="input__clear"
-            onClick={() => this.setState({ text: "", prediction: undefined })}
-          >
+            onClick={() => this.setState({text: '', prediction: undefined})}>
             +
           </button>
         )}
@@ -71,7 +70,7 @@ export default class Sentiment extends Component {
           value={text}
           type="text"
           onChange={this.predict.bind(this)}
-          className={`input ${loading ? "" : "input--not-loading"}`}
+          className={`input ${loading ? '' : 'input--not-loading'}`}
           placeholder="Type something..."
         />
         {loading && <span className="input__loading" />}
@@ -136,21 +135,20 @@ export default class Sentiment extends Component {
           }
         `}</style>
       </div>
-    );
+    )
   }
 
   render() {
-    const { initializing, error, prediction, loading } = this.state;
+    const {initializing, error, prediction, loading} = this.state
 
     return (
       <Page active="/ai" dark>
         <div className="content">
           <h4 className="title">
-            Sentiment classifier trained on movie reviews{" "}
+            Sentiment classifier trained on movie reviews{' '}
             <a
               href="https://github.com/c0z0/sentiment-classifier"
-              className="src"
-            >
+              className="src">
               [src]
             </a>
           </h4>
@@ -189,7 +187,7 @@ export default class Sentiment extends Component {
               width: 300px;
               background: linear-gradient(
                 to right,
-                ${sentimentColors.join(",")}
+                ${sentimentColors.join(',')}
               );
             }
 
@@ -226,6 +224,6 @@ export default class Sentiment extends Component {
           `}</style>
         </div>
       </Page>
-    );
+    )
   }
 }
