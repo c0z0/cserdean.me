@@ -46,11 +46,13 @@ export default function Projects() {
           font-size: 1.5em;
           font-weight: 400;
           padding: 24px 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
         }
 
         .experiment__src {
           color: ${colors.blue};
-          float: right;
           text-decoration: none;
           font-family: Menlo;
         }
@@ -58,6 +60,7 @@ export default function Projects() {
         .experiment__anchor {
           color: ${colors.blue};
           text-decoration: none;
+          margin-right: 12px;
         }
 
         .subtitle {

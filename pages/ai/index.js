@@ -55,11 +55,15 @@ const Ai = () => (
         font-size: 1.5em;
         font-weight: 400;
         padding: 24px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
 
       .experiment__anchor {
         color: ${colors.blue};
         text-decoration: none;
+        margin-right: 12px;
       }
     `}</style>
   </Page>
