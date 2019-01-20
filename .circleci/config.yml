@@ -38,11 +38,11 @@ jobs:
     working_directory: ~/repo
     steps:
       - run:
-        name: Install now cli
-        command: sudo npm install --global --unsafe-perm now
+          name: Install now cli
+          command: sudo npm install --global --unsafe-perm now
       - deploy:
-        name: Deploy and alias
-        command: now --token $ZEIT_TOKEN && now alias ci.cserdean.me --token $ZEIT_TOKEN
+          name: Deploy and alias
+          command: now --token $ZEIT_TOKEN && now alias ci.cserdean.me --token $ZEIT_TOKEN
 
 workflows:
   version: 2
