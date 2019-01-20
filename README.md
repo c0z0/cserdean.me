@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/c0z0/cserdean.me.svg?style=svg)](https://circleci.com/gh/c0z0/cserdean.me)
+
 # [cserdean.me](https://cserdean.me)
 
 ## My personal website
