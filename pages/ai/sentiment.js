@@ -5,7 +5,7 @@ import * as breakPoints from "../../utils/breakPoints";
 
 import { errorRed, sentimentColors } from "../../utils/colors.js";
 
-const apiRoot = "https://s.ai.cserdean.me";
+const apiRoot = "https://ai.cserdean.me";
 
 export default class Sentiment extends Component {
   state = {
@@ -102,6 +102,7 @@ export default class Sentiment extends Component {
           }
           .input__container {
             position: relative;
+            display: inline-block;
             margin-top: 16px;
             margin-bottom: 32px;
           }
@@ -113,6 +114,7 @@ export default class Sentiment extends Component {
             color: white;
             cursor: pointer;
             position: absolute;
+            font-size: 1.5em;
             right: -5px;
             top: 50%;
             transform: translate(0, -50%) rotate(45deg);
@@ -162,10 +164,12 @@ export default class Sentiment extends Component {
             .src {
               color: white;
               text-decoration: none;
+              font-family: Menlo;
             }
 
             .title {
               font-weight: normal;
+              font-size: 1.5em;
             }
 
             .initializing {

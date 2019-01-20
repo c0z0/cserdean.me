@@ -1,11 +1,10 @@
 {
-  "alias": "dev.cserdean.me",
+  "alias": "cserdean.me",
   "version": 2,
   "builds": [
     {
-      "src": "next.config.js",
+      "src": "package.json",
       "use": "@now/next"
-    },
-    { "src": "static/*.png", "use": "@now/optipng" }
+    }
   ]
 }

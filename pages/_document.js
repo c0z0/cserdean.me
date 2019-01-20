@@ -8,6 +8,20 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-86522507-2"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-86522507-2');`
+            }}
+          />
+
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content={themeColor} />
           <meta

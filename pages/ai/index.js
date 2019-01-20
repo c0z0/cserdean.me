@@ -13,11 +13,11 @@ const Ai = () => (
           Sentiment classifier trained on movie reviews
         </a>
       </div>
-      <div className="experiment">
+      {/* <div className="experiment">
         <a className="experiment__anchor" href="/ai/sentiment">
           Neural English to German translation
         </a>
-      </div>
+      </div> */}
     </div>
     <style jsx>{`
       .title {
@@ -28,6 +28,7 @@ const Ai = () => (
 
       .subtitle {
         color: #888;
+        font-size: 1.5em;
         margin-bottom: 30px;
       }
 
