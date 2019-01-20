@@ -43,3 +43,12 @@ jobs:
       - deploy:
         name: Deploy and alias
         command: now --token $ZEIT_TOKEN && now alias ci.cserdean.me --token $ZEIT_TOKEN
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+     - build
+     - deploy:
+      requires:
+        - build
