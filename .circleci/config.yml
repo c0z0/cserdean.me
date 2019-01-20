@@ -4,7 +4,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.12
-      
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -18,9 +18,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run: yarn install
 
@@ -28,7 +28,15 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+
       # run tests!
       - run: yarn test
-
+  deploy:
+    working_directory: ~/repo
+    steps:
+      - run:
+        name: Install now cli
+        command: sudo npm install --global --unsafe-perm now
+      - deploy:
+        name: Deploy and alias
+        command: now --token $ZEIT_TOKEN && now alias ci.cserdean.me --token $ZEIT_TOKEN
