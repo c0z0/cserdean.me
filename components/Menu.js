@@ -144,7 +144,7 @@ export default function Menu({active, dark}) {
             appearance: none;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             width: 40px;
             height: 40px;
             padding: 0;
