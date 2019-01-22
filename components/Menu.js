@@ -78,8 +78,8 @@ export default function Menu({active, dark}) {
         </div>
         <div className={`menu ${open ? 'menu--open' : ''}`}>
           <div className="menu__left">
-            {leftItems.map(({title, target, primary, right}) => (
-              <Link href={target} prefetch={!right} key={target}>
+            {leftItems.map(({title, target, primary}) => (
+              <Link href={target} prefetch key={target}>
                 <a
                   href={target}
                   className={`menu__item ${
@@ -112,6 +112,7 @@ export default function Menu({active, dark}) {
             background: ${open ? 'white' : 'none'};
             padding-top: 20px;
             position: ${open ? 'fixed' : 'static'};
+            z-index: 100;
             top: 0;
             left: 0;
             bottom: 0;
