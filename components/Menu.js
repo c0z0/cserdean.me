@@ -39,7 +39,14 @@ const items = [
 export default function Menu({active, dark}) {
   const [open, setMenu] = useState(false)
 
-  const textColor = !dark ? '#484848' : 'white'
+  const textColorDesktop = !dark ? '#999999' : 'rgba(255, 255, 255, 0.66)'
+  const textColorMobile = !dark ? '#484848' : 'white'
+
+  const hoverTextColor = !dark ? 'black' : 'white'
+
+  const activeTextColor = !dark ? 'black' : 'white'
+
+  const activeColorMobile = !dark ? '#eee' : 'rgba(255, 255, 255, .2)'
 
   const leftItems = items.filter(({right}) => !right)
 
@@ -54,6 +61,7 @@ export default function Menu({active, dark}) {
             <img
               src="/static/triangle-gs.svg"
               alt="logo"
+              title="source"
               className="menu__logo"
             />
           </a>
@@ -104,18 +112,19 @@ export default function Menu({active, dark}) {
           }
 
           .menu__item {
-            color: ${textColor};
+            color: ${textColorMobile};
             font-size: 12px;
             text-decoration: none;
             display: block;
             padding: 16px;
             padding-left: 20px;
-            border-bottom: 1px solid ${!dark ? '#eee' : '#222'};
+            border-bottom: 1px solid ${activeColorMobile};
             text-transform: uppercase;
           }
 
           .menu__item--active {
-            background: ${!dark ? '#eee' : '#222'};
+            background: ${activeColorMobile};
+            border-color: rgba(0, 0, 0, 0);
           }
 
           .menu__item--primary {
@@ -124,9 +133,16 @@ export default function Menu({active, dark}) {
 
           .menu__logo {
             height: 40px;
+            transform-origin: center;
             margin-right: 20px;
-            transition: all 0.2s;
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             transform: rotate(90deg);
+          }
+
+          .menu__logo:hover {
+            transform: rotate(90deg) scale(1.2);
+            filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.2));
           }
 
           .menu__logo__wrapper {
@@ -163,7 +179,7 @@ export default function Menu({active, dark}) {
             transition: all 0.2s;
             width: 22px;
             height: 1px;
-            background-color: ${textColor};
+            background-color: ${textColorMobile};
           }
 
           .menu__icon__top {
@@ -206,14 +222,19 @@ export default function Menu({active, dark}) {
               margin: 0 10px;
               display: inline-block;
               padding: 0;
-              color: ${textColor};
+              color: ${textColorDesktop};
               text-align: left;
               border-bottom: none;
               text-transform: none;
+              transition: all 0.2s linear;
+            }
+
+            .menu__item:hover {
+              color: ${hoverTextColor};
             }
 
             .menu__item--active {
-              color: ${!dark ? blue : pink};
+              color: ${activeTextColor};
               background: none;
             }
 
