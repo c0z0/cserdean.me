@@ -1,24 +1,93 @@
-import React from "react";
+import React from 'react'
 
-import { blue } from "../utils/colors";
-import * as breakPoints from "../utils/breakPoints";
+import * as breakPoints from '../utils/breakPoints'
 
-import Page from "../components/Page";
+import Page from '../components/Page'
 
 const Index = () => (
-  <Page active="/">
-    <div className="content">
-      <div className="text">
-        <h3 className="greeting">
-          Hi, I{`'`}m <span className="greeting__name">Cosmin</span>.
-        </h3>
-        <p className="greeting__secondary">
-          JavaScript Developer & Machine Learning Enthusiast
-        </p>
+  <Page active="/" whiteMenu>
+    <div>
+      <div className="stripes" aria-hidden>
+        <div className="stripe" />
+        <div className="stripe" />
+        <div className="stripe" />
+        <div className="stripe" />
+        <div className="stripe" />
       </div>
-      <img src="/static/triangle.svg" className="triangle" alt="" />
+      <div className="content">
+        <div className="text">
+          <h3 className="greeting">
+            Hi, I{`'`}m <span className="greeting__name">Cosmin</span>.
+          </h3>
+          <p className="greeting__secondary">
+            JavaScript Developer & Machine Learning Enthusiast
+          </p>
+        </div>
+        <img
+          src="/static/triangle-gs.svg"
+          className="triangle"
+          alt="triangle-logo"
+        />
+      </div>
     </div>
     <style jsx>{`
+      .stripes {
+        box-shadow: inset 0px -20px 60px -25px rgba(0, 0, 0, 0.25);
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: skewY(-12deg);
+        top: 0;
+        transform-origin: 0;
+        left: 0;
+        right: 0;
+
+        background: linear-gradient(
+          45deg,
+          #dd47e0 0%,
+          #0787ea 51%,
+          #0b69dd 99%
+        );
+      }
+
+      .stripe {
+        width: 33%;
+        height: 15%;
+        display: inline-block;
+      }
+
+      .stripe:first-child {
+        background: linear-gradient(135deg, #137fef 0%, #2279e7 100%);
+        width: 34%;
+      }
+
+      .stripe:nth-child(2) {
+        background: linear-gradient(135deg, #137fef 0%, #5b75ef 100%);
+        width: 50%;
+      }
+
+      .stripe:nth-child(3) {
+        background: linear-gradient(135deg, #726fee 0%, #6f70ee 100%);
+        opacity: 0;
+      }
+
+      .stripe:nth-child(4) {
+        background: linear-gradient(45deg, #e12fdb 15%, #726fee 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+      }
+
+      .stripe:nth-child(5) {
+        background: linear-gradient(315deg, #0082ef 0%, #8a67ed 100%);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 20%;
+        opacity: 0;
+      }
+
       @keyframes hover {
         0,
         100% {
@@ -32,6 +101,7 @@ const Index = () => (
       .triangle {
         height: 450px;
         position: absolute;
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
         left: 110%;
         top: -50%;
         display: none;
@@ -43,12 +113,8 @@ const Index = () => (
         font-weight: 300;
         font-size: 3rem;
         text-align: center;
-        color: #484848;
+        color: white;
         margin: 3rem 0;
-      }
-
-      .greeting__name {
-        color: ${blue};
       }
 
       .content {
@@ -60,7 +126,7 @@ const Index = () => (
         text-align: center;
 
         font-size: 1rem;
-        color: #888;
+        color: white;
       }
 
       @media (${breakPoints.tabletUp}) {
@@ -72,6 +138,26 @@ const Index = () => (
           transform: translateY(-50%);
           display: flex;
           flex-direction: row;
+        }
+
+        .stripe {
+          height: 25%;
+        }
+
+        .stripe:nth-child(2) {
+          width: 33%;
+        }
+
+        .stripe:nth-child(3) {
+          opacity: 1;
+        }
+
+        .stripe:nth-child(4) {
+          width: 20%;
+        }
+
+        .stripe:nth-child(5) {
+          opacity: 1;
         }
 
         .triangle {
@@ -86,6 +172,6 @@ const Index = () => (
       }
     `}</style>
   </Page>
-);
+)
 
-export default Index;
+export default Index
