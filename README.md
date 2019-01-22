@@ -17,5 +17,3 @@ $ yarn dev
 $ npm install
 $ npm start dev
 ```
-
-Gradient generator courtesy of [tobiaslins](https://github.com/tobiaslins/avatar)
