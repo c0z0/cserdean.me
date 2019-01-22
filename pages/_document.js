@@ -29,10 +29,6 @@ export default class MyDocument extends Document {
             content="Cosmin Serdan JavaScript Developer & Machine Learning Enthusiast"
           />
           <link
-            href="https://fonts.googleapis.com/css?familyRoboto+Mono"
-            rel="stylesheet"
-          />
-          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/static/favicon/apple-touch-icon.png"

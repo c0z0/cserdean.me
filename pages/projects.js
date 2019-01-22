@@ -52,7 +52,6 @@ export default function Projects() {
           color: ${colors.blue};
           float: right;
           text-decoration: none;
-          font-family: Menlo;
         }
 
         .experiment__anchor {
