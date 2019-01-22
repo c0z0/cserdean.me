@@ -39,14 +39,15 @@ const items = [
 export default function Menu({active, dark}) {
   const [open, setMenu] = useState(false)
 
-  const textColorDesktop = !dark ? '#999999' : 'rgba(255, 255, 255, 0.66)'
-  const textColorMobile = !dark ? '#484848' : 'white'
+  const textColorDesktop =
+    !dark || open ? '#999999' : 'rgba(255, 255, 255, 0.66)'
+  const textColorMobile = !dark || open ? '#484848' : 'white'
 
-  const hoverTextColor = !dark ? 'black' : 'white'
+  const hoverTextColor = !dark || open ? 'black' : 'white'
 
-  const activeTextColor = !dark ? 'black' : 'white'
+  const activeTextColor = !dark || open ? 'black' : 'white'
 
-  const activeColorMobile = !dark ? '#eee' : 'rgba(255, 255, 255, .2)'
+  const activeColorMobile = !dark || open ? '#eee' : 'rgba(255, 255, 255, .2)'
 
   const leftItems = items.filter(({right}) => !right)
 
@@ -108,7 +109,13 @@ export default function Menu({active, dark}) {
           .menu__wrapper {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans';
-            margin-top: 20px;
+            background: ${open ? 'white' : 'none'};
+            padding-top: 20px;
+            position: ${open ? 'fixed' : 'static'};
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
           }
 
           .menu__item {
@@ -129,6 +136,7 @@ export default function Menu({active, dark}) {
 
           .menu__item--primary {
             color: ${pink};
+            background: white;
           }
 
           .menu__logo {
@@ -150,6 +158,7 @@ export default function Menu({active, dark}) {
             align-items: center;
             justify-content: space-between;
             margin: 20px;
+            margin-top: 0;
           }
 
           .menu__button {
@@ -167,11 +176,12 @@ export default function Menu({active, dark}) {
           }
 
           .menu {
-            margin-top: 20px;
+            padding-top: 20px;
             display: none;
           }
 
           .menu--open {
+            background: white;
             display: block;
           }
 
@@ -204,10 +214,16 @@ export default function Menu({active, dark}) {
             .menu__wrapper {
               width: 100%;
               display: flex;
+              background: none;
+            }
+
+            .menu--open {
+              background: none;
             }
 
             .menu {
-              margin: 0;
+              padding: 0;
+              position: static;
               display: flex;
               flex-direction: row;
               align-items: center;
