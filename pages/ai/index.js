@@ -2,11 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 
 import Page from '../../components/Page'
+import ServiceStatus from '../../components/ServiceStatus'
 import * as colors from '../../utils/colors'
 
 const Ai = () => (
   <Page active="/ai" dark>
-    <h3 className="title">AI Experiments</h3>
+    <h3 className="title">
+      AI Experiments <ServiceStatus />
+    </h3>
     <p className="subtitle">Tiny Machine Learning demos</p>
     <div className="experiments">
       <p className="experiment">
@@ -38,6 +41,10 @@ const Ai = () => (
         font-size: 2.5em;
         margin-bottom: 12px;
         font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .subtitle {
@@ -54,11 +61,15 @@ const Ai = () => (
         font-size: 1.5em;
         font-weight: 400;
         padding: 24px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
 
       .experiment__anchor {
         color: ${colors.blue};
         text-decoration: none;
+        margin-right: 12px;
       }
     `}</style>
   </Page>
