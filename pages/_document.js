@@ -1,7 +1,7 @@
-import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import React from 'react'
+import Document, {Head, Main, NextScript} from 'next/document'
 
-import { text as themeColor, text } from "../utils/colors";
+import {text} from '../utils/colors'
 
 export default class MyDocument extends Document {
   render() {
@@ -18,42 +18,44 @@ export default class MyDocument extends Document {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-86522507-2');`
+  gtag('config', 'UA-86522507-2');`,
             }}
           />
 
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content={themeColor} />
+          <meta name="theme-color" content="#ffffff" />
           <meta
             name="Description"
             content="Cosmin Serdan JavaScript Developer & Machine Learning Enthusiast"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Lato"
-            rel="stylesheet"
-          />
-          <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/static/apple-touch-icon.png"
+            href="/static/favicon/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/favicon-32x32.png"
+            href="/static/favicon/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicon-16x16.png"
+            href="/static/favicon/favicon-16x16.png"
           />
-          <link rel="manifest" href="/static/manifest.json" />
-          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="manifest" href="/static/favicon/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/static/favicon/safari-pinned-tab.svg"
+            color="#0787ea"
+          />
+          <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#0787ea" />
           <meta
             name="msapplication-config"
-            content="/static/browserconfig.xml"
+            content="/static/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
           <style>
@@ -73,6 +75,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }

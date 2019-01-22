@@ -35,7 +35,6 @@ const Ai = () => (
         color: ${colors.blue};
         float: right;
         text-decoration: none;
-        font-family: Menlo;
       }
 
       .title {

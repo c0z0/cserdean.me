@@ -162,7 +162,6 @@ export default class Sentiment extends Component {
             .src {
               color: white;
               text-decoration: none;
-              font-family: Menlo;
             }
 
             .title {

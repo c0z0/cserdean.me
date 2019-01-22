@@ -4,13 +4,7 @@ import PropTypes from 'prop-types'
 import Menu from './Menu'
 import * as breakPoints from '../utils/breakPoints'
 
-export default function Projects({
-  children,
-  active,
-  fullHeight,
-  dark,
-  whiteMenu,
-}) {
+export default function Page({children, active, fullHeight, dark, whiteMenu}) {
   const textColor = !dark ? '#484848' : 'white'
 
   return (
@@ -50,13 +44,13 @@ export default function Projects({
   )
 }
 
-Projects.defaultProps = {
+Page.defaultProps = {
   fullHeight: false,
   dark: false,
   whiteMenu: false,
 }
 
-Projects.propTypes = {
+Page.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.string.isRequired,
   fullHeight: PropTypes.bool,
