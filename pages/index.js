@@ -24,7 +24,7 @@ const Index = () => (
           </p>
         </div>
         <img
-          src="/static/triangle-gs.svg"
+          src="/static/svg/triangle-gs.svg"
           className="triangle"
           alt="triangle-logo"
         />
@@ -33,7 +33,7 @@ const Index = () => (
     <style jsx>{`
       .stripes {
         box-shadow: inset 0px -20px 60px -25px rgba(0, 0, 0, 0.25);
-        height: 100%;
+        height: 95%;
         position: absolute;
         z-index: -1;
         transform: skewY(-12deg);
@@ -45,8 +45,8 @@ const Index = () => (
         background: linear-gradient(
           45deg,
           #dd47e0 0%,
-          #0787ea 51%,
-          #0b69dd 99%
+          #0787ea 50%,
+          #0b69dd 100%
         );
       }
 

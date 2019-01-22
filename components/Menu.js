@@ -59,7 +59,7 @@ export default function Menu({active, dark}) {
             href="https://github.com/c0z0/cserdean.me"
             rel="noopener noreferrer">
             <img
-              src="/static/triangle-gs.svg"
+              src="/static/svg/triangle-gs.svg"
               alt="logo"
               title="source"
               className="menu__logo"
