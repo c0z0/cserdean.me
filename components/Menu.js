@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import {pink, blue} from '../utils/colors'
+import {pink} from '../utils/colors'
 import * as breakPoints from '../utils/breakPoints'
 
 const items = [
@@ -56,16 +56,21 @@ export default function Menu({active, dark}) {
     <header>
       <div className="menu__wrapper">
         <div className="menu__logo__wrapper">
-          <a
-            href="https://github.com/c0z0/cserdean.me"
-            rel="noopener noreferrer">
-            <img
-              src="/static/svg/triangle-gs.svg"
-              alt="logo"
-              title="source"
-              className="menu__logo"
-            />
-          </a>
+          <Link href="/" prefetch>
+            <a
+              href="/"
+              onContextMenu={e => {
+                e.preventDefault()
+                window.location.href = 'http://github.com/c0z0/cserdean.me'
+              }}>
+              <img
+                src="/static/svg/triangle-gs.svg"
+                alt="logo"
+                title="source"
+                className="menu__logo"
+              />
+            </a>
+          </Link>
           <button
             onClick={() => setMenu(!open)}
             type="button"
@@ -149,10 +154,12 @@ export default function Menu({active, dark}) {
             transform: rotate(90deg);
           }
 
+          /*
           .menu__logo:hover {
             transform: rotate(90deg) scale(1.2);
             filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.2));
           }
+          */
 
           .menu__logo__wrapper {
             display: flex;
