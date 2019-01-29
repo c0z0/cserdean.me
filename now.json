@@ -7,18 +7,5 @@
       "src": "package.json",
       "use": "@now/next"
     }
-  ],
-  "routes": [
-    {
-      "src": "/^([a-zA-Z0-9]{5,6})$",
-      "status": 302,
-      "headers": {
-        "location": "https://s.cserdean.me/$1"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
   ]
 }
