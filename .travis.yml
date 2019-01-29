@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- stable
+deploy:
+  - provider: script
+    script: npm install -g now && now --token=$NOW_TOKEN && now alias cserdean.me
+    on:
+      branch: master
+  - provider: script
+    script: npm install -g now && now --token=$NOW_TOKEN && now alias dev.cserdean.me
+    on:
+      branch: dev
