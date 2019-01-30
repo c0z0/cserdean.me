@@ -268,7 +268,7 @@ export default function Menu({active, dark}) {
               padding: 0.625rem 1.5rem;
               color: white;
               margin: 0;
-              margin-left: 0px;
+              margin-left: 20px;
             }
           }
         `}</style>
