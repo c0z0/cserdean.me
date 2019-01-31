@@ -10,3 +10,7 @@ deploy:
     script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias dev.cserdean.me
     on:
       branch: dev
+notifications:
+  email:
+    onfailure: always
+    on_success: never
