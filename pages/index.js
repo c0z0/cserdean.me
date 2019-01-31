@@ -80,22 +80,12 @@ const Index = () => (
       }
 
       .stripe:nth-child(5) {
-        background: linear-gradient(315deg, #0082ef 0%, #8a67ed 100%);
+        background: linear-gradient(315deg, #0082ef 0%, #3d7fe8 100%);
         position: absolute;
         bottom: 0;
         right: 0;
         width: 20%;
         opacity: 0;
-      }
-
-      @keyframes hover {
-        0,
-        100% {
-          transform: rotate(10deg) translateX(10%);
-        }
-        50% {
-          transform: rotate(5deg) translate(11%, -10%);
-        }
       }
 
       .triangle {
@@ -106,7 +96,6 @@ const Index = () => (
         top: -50%;
         display: none;
         transform: rotate(10deg) translateX(10%);
-        animation: hover 20s infinite ease-in-out;
       }
 
       .greeting {
