@@ -65,16 +65,7 @@ export default class MyDocument extends Document {
             content="/static/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-          <style>
-            {`
-							body {
-              margin: 0;
-              font-size: 12px;
-              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans";
-							color: ${text};
-							}
-							`}
-          </style>
+
           <title>Cosmin Serdean</title>
         </Head>
         <body>
