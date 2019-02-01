@@ -2,7 +2,7 @@
   "name": "cserdean.me",
   "alias": "cserdean.me",
   "version": 2,
-  "regions": ["all"],
+  "regions": ["bru1"],
   "builds": [
     {
       "src": "package.json",
