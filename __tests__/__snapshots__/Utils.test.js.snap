@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Break points match snapshot 1`] = `
+Object {
+  "bigDesktopUp": "min-width: 1800px",
+  "desktopUp": "min-width: 1200px",
+  "phoneOnly": "max-width: 992px",
+  "tabletUp": "min-width: 992px",
+}
+`;
+
+exports[`Colors match snapshot 1`] = `
+Object {
+  "blue": "#3997F9",
+  "errorRed": "#ff001f",
+  "pink": "#FE51BB",
+  "red": "#ff0080",
+  "sentimentColors": Array [
+    "#E52D2D",
+    "#C928A3",
+    "#288BC9",
+    "#28CCB3",
+    "#28CC6C",
+  ],
+  "text": "#484848",
+}
+`;

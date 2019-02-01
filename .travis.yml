@@ -1,6 +1,15 @@
 language: node_js
 node_js:
-- stable
+  - stable
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - yarn lint
+  - yarn test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   - provider: script
     script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias cserdean.me
@@ -12,5 +21,5 @@ deploy:
       branch: dev
 notifications:
   email:
-    onfailure: always
+    on_failure: always
     on_success: never
