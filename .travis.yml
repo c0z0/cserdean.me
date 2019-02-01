@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - stable
+script:
+  - yarn lint
+  - yarn test
 deploy:
   - provider: script
     script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias cserdean.me
