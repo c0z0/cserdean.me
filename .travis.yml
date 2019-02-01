@@ -12,5 +12,5 @@ deploy:
       branch: dev
 notifications:
   email:
-    onfailure: always
+    on_failure: always
     on_success: never
