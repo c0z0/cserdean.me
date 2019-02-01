@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+.c0 {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 10px;
+  height: 10px;
+  background: #f4d142;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+<div>
+  <div
+    class="c0"
+    title="AI Service Status"
+  />
+</div>
+`;

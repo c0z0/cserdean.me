@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup, fireEvent } from "react-testing-library";
 import Router from "next/router";
-import Menu, { items } from "../components/Menu";
+import Menu, { items } from "../../components/Menu";
 
 const mockedRouter = {
   push: jest.fn(async () => {}),
