@@ -3,28 +3,32 @@ import React, {Component} from 'react'
 import Page from '../../components/Page'
 import * as breakPoints from '../../utils/breakPoints'
 
-import {errorRed, sentimentColors} from '../../utils/colors.js'
+import {errorRed, sentimentColors} from '../../utils/colors'
 
 const apiRoot = 'https://ai.cserdean.me'
 
 export default class Sentiment extends Component {
-  state = {
-    initializing: true,
-    text: '',
-    prediction: undefined,
-    loading: false,
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      initializing: true,
+      text: '',
+      prediction: undefined,
+      loading: false,
+    }
   }
 
   async componentDidMount() {
     try {
-      const res = await fetch(apiRoot + '/ping')
+      const res = await fetch(`${apiRoot}/ping`)
 
       if (res.ok) {
         return this.setState({initializing: false})
       }
-      this.setState({error: true, initializing: false})
+      return this.setState({error: true, initializing: false})
     } catch (e) {
-      this.setState({error: true, initializing: false})
+      return this.setState({error: true, initializing: false})
     }
   }
 
@@ -33,7 +37,7 @@ export default class Sentiment extends Component {
       return this.setState({text: value, prediction: undefined})
     try {
       this.setState({loading: true, text: value})
-      const res = await fetch(apiRoot + '/sentiment', {
+      const res = await fetch(`${apiRoot}/sentiment`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -48,10 +52,9 @@ export default class Sentiment extends Component {
         const {prediction} = await res.json()
         return this.setState({prediction, loading: false})
       }
-      this.setState({error: true, loading: false})
+      return this.setState({error: true, loading: false})
     } catch (e) {
-      console.log(e)
-      this.setState({error: true, loading: false})
+      return this.setState({error: true, loading: false})
     }
   }
 
@@ -61,6 +64,7 @@ export default class Sentiment extends Component {
       <div className="input__container">
         {text.length > 0 && (
           <button
+            type="button"
             className="input__clear"
             onClick={() => this.setState({text: '', prediction: undefined})}>
             +
@@ -139,7 +143,7 @@ export default class Sentiment extends Component {
   }
 
   render() {
-    const {initializing, error, prediction, loading} = this.state
+    const {initializing, error, prediction} = this.state
 
     return (
       <Page active="/ai" dark>
@@ -156,7 +160,7 @@ export default class Sentiment extends Component {
           {error && <p className="error">something went wrong</p>}
           {!(error || initializing) && this.renderInput()}
           <div className="scale">
-            <span className={`scale__indicator`} />
+            <span className="scale__indicator" />
           </div>
           <style jsx>{`
             .src {
