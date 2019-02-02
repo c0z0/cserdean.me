@@ -12,9 +12,6 @@ const Container = styled.div`
     "Ubuntu", "Cantarell", "Fira Sans";
   max-width: 900px;
   margin: 0 auto;
-
-  ${({ fullHeight }) =>
-    fullHeight && "height: 100vh; display: flex; flex-direction: column;"};
 `;
 
 const Content = styled.div`
@@ -25,19 +22,13 @@ const Content = styled.div`
   }
 `;
 
-export default function Page({
-  children,
-  active,
-  fullHeight,
-  dark,
-  whiteMenu
-}) {
+export default function Page({ children, active, dark, whiteMenu }) {
   const textColor = !dark ? "#484848" : "white";
 
   return (
-    <Container fullHeight={fullHeight} textColor={textColor}>
+    <Container textColor={textColor}>
       <Menu active={active} dark={dark || whiteMenu} />
-      {fullHeight ? children : <Content>{children}</Content>}
+      <Content>{children}</Content>
       <style>{`
         body {
           background: ${dark ? "black" : "none"};
@@ -48,7 +39,6 @@ export default function Page({
 }
 
 Page.defaultProps = {
-  fullHeight: false,
   dark: false,
   whiteMenu: false
 };
@@ -56,7 +46,6 @@ Page.defaultProps = {
 Page.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.string.isRequired,
-  fullHeight: PropTypes.bool,
   dark: PropTypes.bool,
   whiteMenu: PropTypes.bool
 };
