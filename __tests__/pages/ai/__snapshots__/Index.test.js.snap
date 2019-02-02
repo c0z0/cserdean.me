@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ai page matches snapshot 1`] = `
+<div
+  class="sc-dnqmqq bxGTDQ"
+>
+  <header>
+    <div
+      class="sc-bdVaJa gSDgBl"
+    >
+      <div
+        class="sc-bwzfXH bsmKCX"
+      >
+        <a
+          data-testid="menu-logo"
+          href="/"
+        >
+          <img
+            alt="logo"
+            class="sc-htpNat cqNGZM"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDE2IiBoZWlnaHQ9IjEyMjAiIHZpZXdCb3g9IjAgMCA3MDggNjEwIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNDMUMxQzE7ICAgICAgfSAgICAgIC5jbHMtMSwgLmNscy0yLCAuY2xzLTMgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogI0QwRDBEMDsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICNCNkI2QjY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTg4Ljc4NiwyNTguOTY0bDUzLjQ0MSw5NS4yMDdMNDkxLjMzNCw2MTMuMzQySDk5NC4zMUw5NDQuMDEzLDcwNUgzNDAuNDQxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODcsNjEzLjM0MkwzNDAuNDQxLDcwNSw1ODguNzg2LDI2NS42NzNsMTUwLjg5MywyNjQuOGgxMDAuNkw1OTEuOTI5LDk1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01MzguNjQsNTMxLjE2Nkw0OTAuOCw2MTMuMzQySDk5NUw2OTguMTIyLDk1LjU0SDU5MS4yNEw4MzguNTA5LDUyOC4wMDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjg3IC05NSkiLz48L3N2Zz4="
+            title="source"
+          />
+        </a>
+        <button
+          class="sc-bxivhb cGjZfZ"
+          data-testid="menu-button"
+          type="button"
+        >
+          <div
+            class="sc-ifAKCX bTSODv"
+          >
+            <div
+              class="sc-EHOje gxQiPh"
+            />
+            <div
+              class="sc-bZQynM hrtvGh"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="sc-gzVnrw jmEgEA"
+        data-testid="menu-wrapper"
+      >
+        <div>
+          <a
+            class="sc-htoDjs elorzL"
+            data-testid="menu-item-target-/"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="sc-htoDjs elorzL"
+            data-testid="menu-item-target-/projects"
+            href="/projects"
+          >
+            Projects
+          </a>
+          <a
+            class="sc-htoDjs hKRjuU"
+            data-testid="menu-item-target-/ai"
+            href="/ai"
+          >
+            AI Experiments
+          </a>
+        </div>
+        <div>
+          <a
+            class="sc-htoDjs elorzL"
+            data-testid="menu-item-target-/static/cv_cosmin_serdean.pdf"
+            href="/static/cv_cosmin_serdean.pdf"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            CV
+          </a>
+          <a
+            class="sc-htoDjs elorzL"
+            data-testid="menu-item-target-https://github.com/c0z0"
+            href="https://github.com/c0z0"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </a>
+          <a
+            class="sc-htoDjs zizbk"
+            data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
+            href="mailto:cosmoserdean@gmail.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div
+    class="sc-iwsKbI eNrzXP"
+  >
+    <div
+      class="sc-kAzzGY fPKsmE"
+    >
+      <div
+        class="sc-gqjmRU dcdoFE"
+      >
+        AI Experiments
+      </div>
+      <div
+        class="sc-gZMcBi ggYorB"
+        title="AI Service Status"
+      />
+    </div>
+    <div
+      class="sc-VigVT oFzVU"
+    >
+      Tiny Machine Learning demos
+    </div>
+    <div
+      class="sc-fjdhpX fFitZe"
+    >
+      <p
+        class="sc-jTzLTM kgctPk"
+      >
+        <a
+          class="sc-cSHVUG ivlTCl"
+          href="/ai/sentiment"
+        >
+          Sentiment classifier trained on movie reviews
+        </a>
+        <a
+          class="sc-jzJRlG daATTI"
+          href="https://github.com/c0z0/sentiment-classifier"
+        >
+          [src]
+        </a>
+      </p>
+    </div>
+  </div>
+  <style>
+    
+        body {
+          background: black;
+        }
+      
+  </style>
+</div>
+`;
