@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import * as breakPoints from "../utils/breakPoints";
-import Page from "../components/Page";
-import triangle from "../static/svg/triangle-gs.json";
+import * as breakPoints from '../utils/breakPoints'
+import Page from '../components/Page'
+import triangle from '../utils/triangle-gs.json'
 
-const StripesWrapper = styled.div.attrs({ "aria-hidden": "" })`
+const StripesWrapper = styled.div.attrs({'aria-hidden': ''})`
   box-shadow: inset 0px -20px 60px -25px rgba(0, 0, 0, 0.25);
   height: 95%;
   position: absolute;
@@ -17,7 +17,7 @@ const StripesWrapper = styled.div.attrs({ "aria-hidden": "" })`
   right: 0;
 
   background: linear-gradient(45deg, #dd47e0 0%, #0787ea 50%, #0b69dd 100%);
-`;
+`
 
 const Stripe = styled.div`
   width: 33%;
@@ -75,11 +75,11 @@ const Stripe = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 
 const Triangle = styled.img.attrs({
   src: triangle,
-  alt: "triangle-logo"
+  alt: 'triangle-logo',
 })`
   height: 450px;
   position: absolute;
@@ -92,7 +92,7 @@ const Triangle = styled.img.attrs({
   @media (${breakPoints.tabletUp}) {
     display: block;
   }
-`;
+`
 
 const Content = styled.div`
   margin-top: 128px;
@@ -105,7 +105,7 @@ const Content = styled.div`
     display: flex;
     flex-direction: row;
   }
-`;
+`
 
 const Greeting = styled.h3`
   font-weight: 300;
@@ -119,7 +119,7 @@ const Greeting = styled.h3`
     font-size: 4rem;
     text-align: center;
   }
-`;
+`
 
 const GreetingSecondary = styled.p`
   line-height: 1.2rem;
@@ -127,7 +127,7 @@ const GreetingSecondary = styled.p`
 
   font-size: 1rem;
   color: white;
-`;
+`
 
 const Stripes = () => (
   <StripesWrapper>
@@ -137,7 +137,7 @@ const Stripes = () => (
     <Stripe />
     <Stripe />
   </StripesWrapper>
-);
+)
 
 const Index = () => (
   <Page active="/" whiteMenu>
@@ -152,6 +152,6 @@ const Index = () => (
       <Triangle />
     </Content>
   </Page>
-);
+)
 
-export default Index;
+export default Index
