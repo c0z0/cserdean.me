@@ -1,15 +1,323 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Projects page matches snapshot 1`] = `
+.c1 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans";
+  background: none;
+  padding-top: 20px;
+  position: static;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 0;
+}
+
+.c3 {
+  height: 40px;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  margin-right: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.c4 {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.c5 * {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 22px;
+  height: 1px;
+  background-color: #484848;
+}
+
+.c6 {
+  -webkit-transform: rotate(0) translateY(-4px);
+  -ms-transform: rotate(0) translateY(-4px);
+  transform: rotate(0) translateY(-4px);
+}
+
+.c7 {
+  -webkit-transform: rotate(0) translateY(4px);
+  -ms-transform: rotate(0) translateY(4px);
+  transform: rotate(0) translateY(4px);
+}
+
+.c8 {
+  padding-top: 20px;
+  display: none;
+}
+
+.c9 {
+  color: #484848;
+  font-size: 12px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  padding: 16px;
+  padding-left: 20px;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+}
+
+.c10 {
+  color: #484848;
+  font-size: 12px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  padding: 16px;
+  padding-left: 20px;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+  background: #eee;
+  border-color: rgba(0,0,0,0);
+}
+
+.c11 {
+  color: #484848;
+  font-size: 12px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  padding: 16px;
+  padding-left: 20px;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+  color: #FE51BB;
+}
+
+.c0 {
+  font-size: 12px;
+  color: #484848;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans";
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.c12 {
+  margin: 80px 0;
+}
+
+.c13 {
+  font-size: 2.5em;
+  margin-bottom: 12px;
+  font-weight: 400;
+  color: #484848;
+}
+
+.c14 {
+  color: #888;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+
+.c16 {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 24px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  border-top: 1px #eee solid;
+}
+
+.c18 {
+  color: #3997F9;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,serif;
+}
+
+.c17 {
+  color: #3997F9;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+@media (min-width:992px) {
+  .c1 {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: none;
+  }
+}
+
+@media (min-width:992px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media (min-width:992px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width:992px) {
+  .c8 {
+    padding: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 12px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+@media (min-width:992px) {
+  .c9 {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 0;
+    color: #999999;
+    text-align: left;
+    border-bottom: none;
+    text-transform: none;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+
+  .c9:hover {
+    color: black;
+  }
+}
+
+@media (min-width:992px) {
+  .c10 {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 0;
+    color: #999999;
+    text-align: left;
+    border-bottom: none;
+    text-transform: none;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    color: black;
+    background: none;
+  }
+
+  .c10:hover {
+    color: black;
+  }
+}
+
+@media (min-width:992px) {
+  .c11 {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 0;
+    color: #999999;
+    text-align: left;
+    border-bottom: none;
+    text-transform: none;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    border-radius: 2rem;
+    background-color: #FE51BB;
+    padding: 0.625rem 1.5rem;
+    color: white;
+    margin: 0;
+    margin-left: 20px;
+  }
+
+  .c11:hover {
+    color: black;
+  }
+}
+
+@media (max-width:992px) {
+  .c12 {
+    margin: 0 20px;
+  }
+}
+
 <div
-  class="sc-dnqmqq hTQmMu"
+  class="c0"
 >
   <header>
     <div
-      class="sc-bdVaJa gSDgBl"
+      class="c1"
     >
       <div
-        class="sc-bwzfXH bsmKCX"
+        class="c2"
       >
         <a
           data-testid="menu-logo"
@@ -17,49 +325,49 @@ exports[`Projects page matches snapshot 1`] = `
         >
           <img
             alt="logo"
-            class="sc-htpNat cqNGZM"
+            class="c3"
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDE2IiBoZWlnaHQ9IjEyMjAiIHZpZXdCb3g9IjAgMCA3MDggNjEwIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNDMUMxQzE7ICAgICAgfSAgICAgIC5jbHMtMSwgLmNscy0yLCAuY2xzLTMgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogI0QwRDBEMDsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICNCNkI2QjY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTg4Ljc4NiwyNTguOTY0bDUzLjQ0MSw5NS4yMDdMNDkxLjMzNCw2MTMuMzQySDk5NC4zMUw5NDQuMDEzLDcwNUgzNDAuNDQxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODcsNjEzLjM0MkwzNDAuNDQxLDcwNSw1ODguNzg2LDI2NS42NzNsMTUwLjg5MywyNjQuOGgxMDAuNkw1OTEuOTI5LDk1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01MzguNjQsNTMxLjE2Nkw0OTAuOCw2MTMuMzQySDk5NUw2OTguMTIyLDk1LjU0SDU5MS4yNEw4MzguNTA5LDUyOC4wMDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjg3IC05NSkiLz48L3N2Zz4="
             title="source"
           />
         </a>
         <button
-          class="sc-bxivhb cGjZfZ"
+          class="c4"
           data-testid="menu-button"
           type="button"
         >
           <div
-            class="sc-ifAKCX ewsDuX"
+            class="c5"
           >
             <div
-              class="sc-EHOje gxQiPh"
+              class="c6"
             />
             <div
-              class="sc-bZQynM hrtvGh"
+              class="c7"
             />
           </div>
         </button>
       </div>
       <div
-        class="sc-gzVnrw jmEgEA"
+        class="c8"
         data-testid="menu-wrapper"
       >
         <div>
           <a
-            class="sc-htoDjs bnKuMz"
+            class="c9"
             data-testid="menu-item-target-/"
             href="/"
           >
             Home
           </a>
           <a
-            class="sc-htoDjs cICBXG"
+            class="c10"
             data-testid="menu-item-target-/projects"
             href="/projects"
           >
             Projects
           </a>
           <a
-            class="sc-htoDjs bnKuMz"
+            class="c9"
             data-testid="menu-item-target-/ai"
             href="/ai"
           >
@@ -68,7 +376,7 @@ exports[`Projects page matches snapshot 1`] = `
         </div>
         <div>
           <a
-            class="sc-htoDjs bnKuMz"
+            class="c9"
             data-testid="menu-item-target-/static/cv_cosmin_serdean.pdf"
             href="/static/cv_cosmin_serdean.pdf"
             rel="noopener noreferrer"
@@ -77,7 +385,7 @@ exports[`Projects page matches snapshot 1`] = `
             CV
           </a>
           <a
-            class="sc-htoDjs bnKuMz"
+            class="c9"
             data-testid="menu-item-target-https://github.com/c0z0"
             href="https://github.com/c0z0"
             rel="noopener noreferrer"
@@ -86,7 +394,7 @@ exports[`Projects page matches snapshot 1`] = `
             GitHub
           </a>
           <a
-            class="sc-htoDjs fAKAhJ"
+            class="c11"
             data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
             href="mailto:cosmoserdean@gmail.com"
             rel="noopener noreferrer"
@@ -99,48 +407,48 @@ exports[`Projects page matches snapshot 1`] = `
     </div>
   </header>
   <div
-    class="sc-iwsKbI eNrzXP"
+    class="c12"
   >
     <div
-      class="sc-gZMcBi cYAHxc"
+      class="c13"
     >
       Projects
     </div>
     <div
-      class="sc-gqjmRU dDbVId"
+      class="c14"
     >
       Small web development projects
     </div>
     <div
-      class="sc-jTzLTM evREvf"
+      class="c15"
     >
       <p
-        class="sc-VigVT kHsFfI"
+        class="c16"
       >
         <a
-          class="sc-jzJRlG cOZFpt"
+          class="c17"
           href="https://s.cserdean.me"
         >
           SHRT - URL shortening app built with Go and Next.js
         </a>
         <a
-          class="sc-fjdhpX mPrkO"
+          class="c18"
           href="https://github.com/c0z0/lambda-shrt"
         >
           [src]
         </a>
       </p>
       <p
-        class="sc-VigVT kHsFfI"
+        class="c16"
       >
         <a
-          class="sc-jzJRlG cOZFpt"
+          class="c17"
           href="https://s.cserdean.me/t"
         >
           Transfer - Tiny file sharing app built with Go and Next.js
         </a>
         <a
-          class="sc-fjdhpX mPrkO"
+          class="c18"
           href="https://github.com/c0z0/lambda-shrt"
         >
           [src]

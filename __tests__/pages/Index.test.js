@@ -1,6 +1,7 @@
 import React from "react";
 import { render, cleanup } from "react-testing-library";
 import Router from "next/router";
+import "jest-styled-components";
 
 import Index from "../../pages/index";
 

@@ -61,6 +61,7 @@ test("Menu opens and closes", () => {
   const { getByTestId } = render(<Menu active="/" />);
 
   const menuButton = getByTestId("menu-button");
+  const menuItem = getByTestId("menu-item-target-/");
   const menuWrapper = getByTestId("menu-wrapper");
 
   expect(menuWrapper).toHaveStyleRule("display", "none");
@@ -69,7 +70,7 @@ test("Menu opens and closes", () => {
 
   expect(menuWrapper).toHaveStyleRule("display", "block");
 
-  fireEvent.click(menuButton);
+  fireEvent.click(menuItem);
 
   expect(menuWrapper).toHaveStyleRule("display", "none");
 });
