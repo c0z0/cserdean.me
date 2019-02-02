@@ -1,31 +1,32 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-const apiRoot = 'https://ai.cserdean.me'
+const apiRoot = "https://ai.cserdean.me";
+
+const Ball = styled.div.attrs({ title: "AI Service Status" })`
+  transition: all 0.2s linear;
+  width: 10px;
+  height: 10px;
+  background: ${({ status }) =>
+    status === "ready" ? "#5ff441" : status === "init" ? "#f4d142" : "#ff001f"};
+  display: inline-block;
+  border-radius: 100%;
+`;
 
 export default function ServiceStatus() {
-  const [status, setStatus] = useState('init')
+  const [status, setStatus] = useState("init");
 
   useEffect(() => {
-    ;(async () => {
-      const res = await fetch(`${apiRoot}/ping`)
-      if (res.ok) {
-        setStatus('ready')
+    (async () => {
+      try {
+        const res = await fetch(`${apiRoot}/ping`);
+        if (res.ok) setStatus("ready");
+        else setStatus("error");
+      } catch (err) {
+        setStatus("error");
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
-  return (
-    <div className="ball" title="AI Service Status">
-      <style jsx>{`
-        .ball {
-          transition: all 0.2s linear;
-          width: 10px;
-          height: 10px;
-          background: ${status === 'init' ? '#f4d142' : '#5ff441'};
-          display: inline-block;
-          border-radius: 100%;
-        }
-      `}</style>
-    </div>
-  )
+  return <Ball status={status} />;
 }
