@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import * as breakPoints from "../utils/breakPoints";
 import Page from "../components/Page";
+import triangle from "../static/svg/triangle-gs.json";
 
 const StripesWrapper = styled.div.attrs({ "aria-hidden": "" })`
   box-shadow: inset 0px -20px 60px -25px rgba(0, 0, 0, 0.25);
@@ -77,7 +78,7 @@ const Stripe = styled.div`
 `;
 
 const Triangle = styled.img.attrs({
-  src: "/static/svg/triangle-gs.svg",
+  src: triangle,
   alt: "triangle-logo"
 })`
   height: 450px;

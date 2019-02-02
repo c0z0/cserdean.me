@@ -1,17 +1,31 @@
 import React from "react";
-import { render, cleanup } from "react-testing-library";
+import { render, cleanup, waitForDomChange } from "react-testing-library";
 import "jest-styled-components";
 
 import ServiceStatus from "../../components/ServiceStatus";
 
 afterEach(cleanup);
 
-test("Matches snapshot", () => {
-  global.fetch = jest.fn(() => ({ ok: true }));
+test("Changes color to green when ready", async () => {
+  global.fetch = jest.fn(async () => ({ ok: true }));
 
-  const { container, rerender } = render(<ServiceStatus />);
+  const { container } = render(<ServiceStatus />);
 
-  expect(container).toMatchSnapshot();
+  expect(container.firstChild).toHaveStyleRule("background", "#f4d142");
 
-  rerender(<ServiceStatus />);
+  await waitForDomChange({ container });
+
+  expect(container.firstChild).toHaveStyleRule("background", "#5ff441");
+});
+
+test("Changes color to green when errors out", async () => {
+  global.fetch = jest.fn(async () => ({ ok: false }));
+
+  const { container } = render(<ServiceStatus />);
+
+  expect(container.firstChild).toHaveStyleRule("background", "#f4d142");
+
+  await waitForDomChange({ container });
+
+  expect(container.firstChild).toHaveStyleRule("background", "#ff001f");
 });

@@ -7,7 +7,8 @@ const Ball = styled.div.attrs({ title: "AI Service Status" })`
   transition: all 0.2s linear;
   width: 10px;
   height: 10px;
-  background: ${({ green }) => (green ? "#5ff441" : "#f4d142")};
+  background: ${({ status }) =>
+    status === "ready" ? "#5ff441" : status === "init" ? "#f4d142" : "#ff001f"};
   display: inline-block;
   border-radius: 100%;
 `;
@@ -17,12 +18,15 @@ export default function ServiceStatus() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`${apiRoot}/ping`);
-      if (res.ok) {
-        setStatus("ready");
+      try {
+        const res = await fetch(`${apiRoot}/ping`);
+        if (res.ok) setStatus("ready");
+        else setStatus("error");
+      } catch (err) {
+        setStatus("error");
       }
     })();
   }, []);
 
-  return <Ball green={status === "ready"} />;
+  return <Ball status={status} />;
 }

@@ -2,8 +2,6 @@ import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-import { text } from "../utils/colors";
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -65,7 +63,11 @@ export default class MyDocument extends Document {
             content="/static/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-
+          <style>{`
+            body {
+              margin: 0;
+            }
+          `}</style>
           <title>Cosmin Serdean</title>
         </Head>
         <body>

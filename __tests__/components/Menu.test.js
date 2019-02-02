@@ -2,6 +2,8 @@ import React from "react";
 import { render, cleanup, fireEvent } from "react-testing-library";
 import Router from "next/router";
 import Menu, { items } from "../../components/Menu";
+import "jest-styled-components";
+import * as breakPoints from "../../utils/breakPoints";
 
 const mockedRouter = {
   push: jest.fn(async () => {}),
@@ -11,64 +13,83 @@ Router.router = mockedRouter;
 
 afterEach(cleanup);
 
-// test("Menu matches snapshot", () => {
-//   const { container } = render(<Menu active="/" />);
+test("Menu matches snapshot", () => {
+  const { container } = render(<Menu active="/" />);
 
-//   expect(container).toMatchSnapshot();
-// });
+  expect(container.firstChild).toMatchSnapshot();
+});
 
-test("Dark menu render", () => {
-  expect(() => {
-    render(<Menu dark active="/" />);
-  }).not.toThrow();
+test("Dark and light menu render", () => {
+  const { getByTestId, rerender } = render(<Menu dark active="/" />);
+
+  const item = getByTestId("menu-item-target-/");
+
+  expect(item).toHaveStyleRule("color", "white");
+
+  rerender(<Menu active="/" />);
+
+  expect(item).toHaveStyleRule("color", "#484848");
 });
 
 test("Menu sets active page correctly", () => {
   const { container, rerender } = render(<Menu active="/" />);
 
   items
-    .filter(item => !item.right)
+    .filter(item => !item.right && item.target !== "/")
     .forEach(item => {
       rerender(<Menu active={item.target} />);
 
-      const activeItem = container.querySelector(".menu__item--active");
+      const activeItem = container.querySelector(`a[href="${item.target}"]`);
 
-      expect(activeItem.getAttribute("href")).toBe(item.target);
+      expect(activeItem).toHaveStyleRule("color", "#484848");
+      expect(activeItem.textContent).toBe(item.title);
+    });
+
+  items
+    .filter(item => !item.right && item.target !== "/")
+    .forEach(item => {
+      rerender(<Menu active={item.target} dark />);
+
+      const activeItem = container.querySelector(`a[href="${item.target}"]`);
+
+      expect(activeItem).toHaveStyleRule("color", "white");
       expect(activeItem.textContent).toBe(item.title);
     });
 });
 
 test("Menu opens and closes", () => {
-  const { container } = render(<Menu active="/" />);
+  const { getByTestId } = render(<Menu active="/" />);
 
-  const menuButton = container.querySelector("button");
+  const menuButton = getByTestId("menu-button");
+  const menuWrapper = getByTestId("menu-wrapper");
 
-  expect(
-    container.querySelector(".menu").classList.contains("menu--open")
-  ).toBeFalsy();
-
-  fireEvent.click(menuButton);
-
-  expect(
-    container.querySelector(".menu").classList.contains("menu--open")
-  ).toBeTruthy();
+  expect(menuWrapper).toHaveStyleRule("display", "none");
 
   fireEvent.click(menuButton);
 
-  expect(
-    container.querySelector(".menu").classList.contains("menu--open")
-  ).toBeFalsy();
+  expect(menuWrapper).toHaveStyleRule("display", "block");
+
+  fireEvent.click(menuButton);
+
+  expect(menuWrapper).toHaveStyleRule("display", "none");
+});
+
+test("Menu visible on desktop", () => {
+  const { getByTestId } = render(<Menu active="/" />);
+
+  const menuWrapper = getByTestId("menu-wrapper");
+  expect(menuWrapper).toHaveStyleRule("display", "flex", {
+    media: `(${breakPoints.tabletUp})`
+  });
 });
 
 test("Menu navigates", () => {
-  const { container } = render(<Menu active="/" />);
+  const { getByTestId } = render(<Menu active="/" />);
 
   items
     .filter(item => !item.right)
     .forEach(item => {
-      fireEvent.click(
-        container.querySelector(`.menu__item[href="${item.target}"]`)
-      );
+      fireEvent.click(getByTestId(`menu-item-target-${item.target}`));
 
       expect(mockedRouter.push).toBeCalledWith(item.target, item.target, {
         shallow: undefined
@@ -81,9 +102,9 @@ test("Menu navigates", () => {
 });
 
 test("Logo right-click navigates to GithubRepo", () => {
-  const { container } = render(<Menu active="/" />);
+  const { getByTestId } = render(<Menu active="/" />);
 
-  const logo = container.querySelector(".menu__logo__wrapper *");
+  const logo = getByTestId("menu-logo");
 
   window.location.assign = jest.fn();
 
