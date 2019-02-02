@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.c2 {
+  position: absolute;
+  background: white;
+  bottom: 0px;
+  height: 1px;
+  -webkit-animation: iHpxMo 2s infinite;
+  animation: iHpxMo 2s infinite;
+}
+
+.c1 {
+  width: 290px;
+  padding-right: 10px;
+  height: 18px;
+  border: none;
+  border-bottom: solid rgba(255,255,255,0.4) 1px;
+  padding: 8px 0;
+  outline: none;
+  font-size: 16px;
+  background: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  color: white;
+  padding-right: 10px;
+}
+
+.c1:focus {
+  border-color: rgba( 255, 255, 255, 0.4 );
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+    data-testid="input-element"
+    placeholder="Type something..."
+    type="text"
+    value=""
+  />
+  <span
+    class="c2"
+    data-testid="input-loading"
+  />
+</div>
+`;
+
+exports[`Matches snapshot 2`] = `
+<div
+  class="sc-bdVaJa drqCWm"
+>
+  .c0 {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.5em;
+  right: -5px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%) rotate(45deg);
+  -ms-transform: translate(0,-50%) rotate(45deg);
+  transform: translate(0,-50%) rotate(45deg);
+}
+
+<button
+    class="c0"
+    data-testid="input-clear-button"
+    type="button"
+  >
+    +
+  </button>
+  <input
+    class="sc-bxivhb frBmxn"
+    data-testid="input-element"
+    placeholder="Type something..."
+    type="text"
+    value="a"
+  />
+</div>
+`;

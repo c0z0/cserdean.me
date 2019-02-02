@@ -1,232 +1,150 @@
-import React, {Component} from 'react'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-import Page from '../../components/Page'
-import * as breakPoints from '../../utils/breakPoints'
+import Page from "../../components/Page";
+import Input from "../../components/Input";
+import * as breakPoints from "../../utils/breakPoints";
+import { errorRed, sentimentColors, blue } from "../../utils/colors";
 
-import {errorRed, sentimentColors} from '../../utils/colors'
+const apiRoot = "https://ai.cserdean.me";
 
-const apiRoot = 'https://ai.cserdean.me'
+const Content = styled.div`
+  text-align: center;
 
-export default class Sentiment extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      initializing: true,
-      text: '',
-      prediction: undefined,
-      loading: false,
-    }
+  @media (${breakPoints.tabletUp}) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
   }
+`;
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(`${apiRoot}/ping`)
+const Title = styled.h4`
+  font-weight: normal;
+  font-size: 1.5em;
+`;
 
-      if (res.ok) {
-        return this.setState({initializing: false})
+const SrcLink = styled.a`
+  color: ${blue};
+  text-decoration: none;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif;
+`;
+
+const Loading = styled.p`
+  opacity: 0.2;
+  font-size: 16px;
+`;
+
+const Error = styled.p`
+  color: ${errorRed};
+  margin-top: 16px;
+  margin-bottom: 32px;
+`;
+
+const Scale = styled.div`
+  margin: 0 auto;
+  position: relative;
+  height: 2px;
+  width: 300px;
+  background: linear-gradient(to right, ${sentimentColors.join(",")});
+`;
+
+const ScaleIndicator = styled.span`
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  background: white;
+  width: 2px;
+  left: ${({ prediction }) => (prediction ? (prediction / 4) * 300 : 150)}px;
+  transition: all 0.5s;
+`;
+
+export default function Sentiment() {
+  const [initializingState, setInitializing] = useState(true);
+  const [errorState, setError] = useState();
+  const [text, setText] = useState("");
+  const [prediction, setPrediction] = useState();
+  const [predictionLoading, setPredictionLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(`${apiRoot}/ping`);
+
+        if (res.ok) {
+          return setInitializing(false);
+        }
+        setInitializing(false);
+        return setError(true);
+      } catch (e) {
+        setInitializing(false);
+        return setError(true);
       }
-      return this.setState({error: true, initializing: false})
-    } catch (e) {
-      return this.setState({error: true, initializing: false})
-    }
-  }
+    })();
+  }, []);
 
-  async predict({target: {value}}) {
-    if (value.length === 0)
-      return this.setState({text: value, prediction: undefined})
+  async function predict({ target: { value } }) {
+    if (value.length === 0) {
+      setText(value);
+      return setPrediction(undefined);
+    }
+
     try {
-      this.setState({loading: true, text: value})
+      setPredictionLoading(true);
+      setText(value);
       const res = await fetch(`${apiRoot}/sentiment`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          text: value,
-        }),
-      })
+          text: value
+        })
+      });
 
       if (res.ok) {
-        const {prediction} = await res.json()
-        return this.setState({prediction, loading: false})
+        const data = await res.json();
+        setPrediction(data.prediction);
+        return setPredictionLoading(false);
       }
-      return this.setState({error: true, loading: false})
+
+      setPredictionLoading(true);
+      return setError(true);
     } catch (e) {
-      return this.setState({error: true, loading: false})
+      setPredictionLoading(true);
+      return setError(true);
     }
   }
 
-  renderInput() {
-    const {loading, text} = this.state
-    return (
-      <div className="input__container">
-        {text.length > 0 && (
-          <button
-            type="button"
-            className="input__clear"
-            onClick={() => this.setState({text: '', prediction: undefined})}>
-            +
-          </button>
+  return (
+    <Page active="/ai" dark>
+      <Content>
+        <Title>
+          Sentiment classifier trained on movie reviews{" "}
+          <SrcLink href="https://github.com/c0z0/sentiment-classifier">
+            [src]
+          </SrcLink>
+        </Title>
+        {initializingState && <Loading>Loading...</Loading>}
+        {errorState && <Error>Something went wrong</Error>}
+        {!(errorState || initializingState) && (
+          <Input
+            loading={predictionLoading}
+            text={text}
+            onClear={() => {
+              setText("");
+              setPrediction(undefined);
+            }}
+            onChange={predict}
+          />
         )}
-        <input
-          value={text}
-          type="text"
-          onChange={this.predict.bind(this)}
-          className={`input ${loading ? '' : 'input--not-loading'}`}
-          placeholder="Type something..."
-        />
-        {loading && <span className="input__loading" />}
-        <style jsx>{`
-          .input__loading {
-            position: absolute;
-            background: white;
-            bottom: 0px;
-            height: 1px;
-            animation: loading 2s infinite;
-          }
-          .input {
-            width: 290px;
-            padding-right: 10px;
-            height: 18px;
-            border: none;
-            border-bottom: solid rgba(255, 255, 255, 0.4) 1px;
-            padding: 8px 0;
-            outline: none;
-            font-size: 16px;
-            background: none;
-            transition: 0.2s all;
-            color: white;
-            padding-right: 10px;
-          }
-          .input--not-loading:focus {
-            border-color: rgba(255, 255, 255, 1);
-          }
-          .input__container {
-            position: relative;
-            display: inline-block;
-            margin-top: 16px;
-            margin-bottom: 32px;
-          }
-
-          .input__clear {
-            background: none;
-            border: none;
-            outline: none;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            font-size: 1.5em;
-            right: -5px;
-            top: 50%;
-            transform: translate(0, -50%) rotate(45deg);
-          }
-
-          @keyframes loading {
-            0% {
-              left: 0;
-              right: 75%;
-            }
-            50% {
-              left: 75%;
-              right: 0;
-            }
-            100% {
-              left: 0;
-              right: 75%;
-            }
-          }
-        `}</style>
-      </div>
-    )
-  }
-
-  render() {
-    const {initializing, error, prediction} = this.state
-
-    return (
-      <Page active="/ai" dark>
-        <div className="content">
-          <h4 className="title">
-            Sentiment classifier trained on movie reviews{' '}
-            <a
-              href="https://github.com/c0z0/sentiment-classifier"
-              className="src">
-              [src]
-            </a>
-          </h4>
-          {initializing && <p className="initializing">loading...</p>}
-          {error && <p className="error">something went wrong</p>}
-          {!(error || initializing) && this.renderInput()}
-          <div className="scale">
-            <span className="scale__indicator" />
-          </div>
-          <style jsx>{`
-            .src {
-              color: white;
-              text-decoration: none;
-            }
-
-            .title {
-              font-weight: normal;
-              font-size: 1.5em;
-            }
-
-            .initializing {
-              opacity: 0.2;
-            }
-
-            .error {
-              color: ${errorRed};
-              margin-top: 16px;
-              margin-bottom: 32px;
-            }
-
-            .scale {
-              margin: 0 auto;
-              position: relative;
-              height: 2px;
-              width: 300px;
-              background: linear-gradient(
-                to right,
-                ${sentimentColors.join(',')}
-              );
-            }
-
-            .scale__indicator {
-              position: absolute;
-              top: -5px;
-              bottom: -5px;
-              background: white;
-              width: 2px;
-              left: ${prediction !== undefined
-                ? (prediction / 4) * 300
-                : 150}px;
-              transition: all 0.5s;
-            }
-
-            .content {
-              text-align: center;
-            }
-
-            @media (${breakPoints.tabletUp}) {
-              .content {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                left: 50%;
-              }
-            }
-          `}</style>
-          <style jsx global>{`
-            body {
-              background: black;
-            }
-          `}</style>
-        </div>
-      </Page>
-    )
-  }
+        <Scale>
+          <ScaleIndicator prediction={prediction} />
+        </Scale>
+      </Content>
+    </Page>
+  );
 }
