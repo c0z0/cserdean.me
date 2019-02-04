@@ -65,6 +65,14 @@ export default function Projects() {
             [src]
           </Experiment.Src>
         </Experiment>
+        <Experiment>
+          <Experiment.Link href="https://www.npmjs.com/package/shrt-url">
+            SHRT CLI - CLI for interacting with the SHRT web app
+          </Experiment.Link>
+          <Experiment.Src href="https://github.com/c0z0/shrt-cli">
+            [src]
+          </Experiment.Src>
+        </Experiment>
       </Experiment.List>
     </Page>
   );
