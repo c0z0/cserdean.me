@@ -19,18 +19,17 @@ exports[`Matches snapshot 1`] = `
 
 .c1 {
   width: 290px;
-  padding-right: 10px;
   height: 18px;
   border: none;
   border-bottom: solid rgba(255,255,255,0.4) 1px;
   padding: 8px 0;
+  padding-right: 10px;
   outline: none;
   font-size: 16px;
   background: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   color: white;
-  padding-right: 10px;
 }
 
 .c1:focus {
@@ -81,7 +80,7 @@ exports[`Matches snapshot 2`] = `
     +
   </button>
   <input
-    class="sc-bxivhb frBmxn"
+    class="sc-bxivhb hezTQd"
     data-testid="input-element"
     placeholder="Type something..."
     type="text"
