@@ -454,6 +454,22 @@ exports[`Projects page matches snapshot 1`] = `
           [src]
         </a>
       </p>
+      <p
+        class="c16"
+      >
+        <a
+          class="c17"
+          href="https://www.npmjs.com/package/shrt-url"
+        >
+          SHRT CLI - CLI for interacting with the SHRT web app
+        </a>
+        <a
+          class="c18"
+          href="https://github.com/c0z0/shrt-cli"
+        >
+          [src]
+        </a>
+      </p>
     </div>
   </div>
   <style>
