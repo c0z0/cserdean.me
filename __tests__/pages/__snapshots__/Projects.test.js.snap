@@ -2,7 +2,7 @@
 
 exports[`Projects page matches snapshot 1`] = `
 .c1 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',serif;
   background: none;
   padding-top: 20px;
   position: static;
@@ -136,7 +136,7 @@ exports[`Projects page matches snapshot 1`] = `
 .c0 {
   font-size: 12px;
   color: #484848;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen", "Ubuntu","Cantarell","Fira Sans";
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',serif;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -305,7 +305,7 @@ exports[`Projects page matches snapshot 1`] = `
 
 @media (max-width:992px) {
   .c12 {
-    margin: 0 20px;
+    margin: 40px 20px;
   }
 }
 
@@ -427,6 +427,22 @@ exports[`Projects page matches snapshot 1`] = `
       >
         <a
           class="c17"
+          href="https://gem.cserdean.me"
+        >
+          Gem - Tiny web app for keeping your online finds
+        </a>
+        <a
+          class="c18"
+          href="https://github.com/c0z0/gem-app"
+        >
+          [src]
+        </a>
+      </p>
+      <p
+        class="c16"
+      >
+        <a
+          class="c17"
           href="https://s.cserdean.me"
         >
           SHRT - URL shortening app built with Go and Next.js
@@ -445,7 +461,7 @@ exports[`Projects page matches snapshot 1`] = `
           class="c17"
           href="https://s.cserdean.me/t"
         >
-          Transfer - Tiny file sharing app built with Go and Next.js
+          Transfer - File sharing app built with Go and Next.js
         </a>
         <a
           class="c18"
