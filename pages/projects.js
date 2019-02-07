@@ -34,7 +34,7 @@ Experiment.Src = styled.a`
   color: ${colors.blue};
   text-decoration: none;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
 `
 
 Experiment.Link = styled.a`

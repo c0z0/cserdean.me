@@ -2,7 +2,7 @@
 
 exports[`Projects page matches snapshot 1`] = `
 .c1 {
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',serif;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',sans-serif;
   background: none;
   padding-top: 20px;
   position: static;
@@ -136,7 +136,7 @@ exports[`Projects page matches snapshot 1`] = `
 .c0 {
   font-size: 12px;
   color: #484848;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',serif;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',sans-serif;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -183,7 +183,7 @@ exports[`Projects page matches snapshot 1`] = `
   color: #3997F9;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
 }
 
 .c17 {
