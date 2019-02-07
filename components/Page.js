@@ -7,7 +7,7 @@ import * as breakPoints from '../utils/breakPoints'
 
 const Container = styled.div`
   font-size: 12px;
-  color: ${({textColor}) => textColor};
+  color: ${({ textColor }) => textColor};
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', serif;
   max-width: 900px;
@@ -18,11 +18,11 @@ const Content = styled.div`
   margin: 80px 0;
 
   @media (${breakPoints.phoneOnly}) {
-    margin: 0 20px;
+    margin: 40px 20px;
   }
 `
 
-export default function Page({children, active, dark, whiteMenu}) {
+export default function Page({ children, active, dark, whiteMenu }) {
   const textColor = !dark ? '#484848' : 'white'
 
   return (
@@ -40,12 +40,12 @@ export default function Page({children, active, dark, whiteMenu}) {
 
 Page.defaultProps = {
   dark: false,
-  whiteMenu: false,
+  whiteMenu: false
 }
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.string.isRequired,
   dark: PropTypes.bool,
-  whiteMenu: PropTypes.bool,
+  whiteMenu: PropTypes.bool
 }

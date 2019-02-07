@@ -333,7 +333,7 @@ exports[`Ai page matches snapshot 1`] = `
 
 @media (max-width:992px) {
   .c12 {
-    margin: 0 20px;
+    margin: 40px 20px;
   }
 }
 

@@ -99,7 +99,7 @@ exports[`Matches snapshot 1`] = `
     </div>
   </header>
   <div
-    class="sc-iwsKbI eNrzXP"
+    class="sc-iwsKbI ceQLln"
   >
     test content
   </div>
@@ -212,7 +212,7 @@ exports[`Matches snapshot 2`] = `
     </div>
   </header>
   <div
-    class="sc-iwsKbI eNrzXP"
+    class="sc-iwsKbI ceQLln"
   >
     test content
   </div>

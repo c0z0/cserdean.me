@@ -297,7 +297,7 @@ exports[`Sentiment page matches snapshot 1`] = `
 
 @media (max-width:992px) {
   .c12 {
-    margin: 0 20px;
+    margin: 40px 20px;
   }
 }
 
@@ -551,7 +551,7 @@ exports[`Sentiment page matches snapshot 2`] = `
     </div>
   </header>
   <div
-    class="sc-iwsKbI eNrzXP"
+    class="sc-iwsKbI ceQLln"
   >
     <div
       class="sc-fjdhpX bisAVX"
