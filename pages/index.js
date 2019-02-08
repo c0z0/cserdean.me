@@ -5,10 +5,10 @@ import * as breakPoints from '../utils/breakPoints'
 import Page from '../components/Page'
 import triangle from '../utils/triangle-gs.json'
 
-const StripesWrapper = styled.div.attrs({'aria-hidden': ''})`
+const StripesWrapper = styled.div.attrs({ 'aria-hidden': '' })`
   box-shadow: inset 0px -20px 60px -25px rgba(0, 0, 0, 0.25);
   height: 95%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   transform: skewY(-12deg);
   top: 0;
@@ -17,6 +17,11 @@ const StripesWrapper = styled.div.attrs({'aria-hidden': ''})`
   right: 0;
 
   background: linear-gradient(45deg, #dd47e0 0%, #0787ea 50%, #0b69dd 100%);
+
+  @media (${breakPoints.phoneOnly}) and (orientation: landscape) {
+    height: 125%;
+    overflow: hidden;
+  }
 `
 
 const Stripe = styled.div`
@@ -79,7 +84,7 @@ const Stripe = styled.div`
 
 const Triangle = styled.img.attrs({
   src: triangle,
-  alt: 'triangle-logo',
+  alt: 'triangle-logo'
 })`
   height: 450px;
   position: absolute;
