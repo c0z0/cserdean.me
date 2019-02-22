@@ -186,7 +186,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
   }
 `
 
-export default function Menu({ active, dark }) {
+export default function Menu({ active, dark, whiteMenu }) {
   const [open, setMenu] = useState(false)
 
   const textColorDesktop =
@@ -248,11 +248,13 @@ export default function Menu({ active, dark }) {
           <div>
             {rightItems.map(({ title, target, primary }) => (
               <MenuItem
-                textColorDesktop={textColorDesktop}
+                textColorDesktop={
+                  whiteMenu ? 'rgba(255, 255, 255, 0.66)' : textColorDesktop
+                }
                 textColorMobile={textColorMobile}
                 activeColorMobile={activeColorMobile}
-                avtiveTextColor={activeTextColor}
-                hoverTextColor={hoverTextColor}
+                activeTextColor={activeTextColor}
+                hoverTextColor={whiteMenu ? 'white' : hoverTextColor}
                 href={target}
                 key={target}
                 active={active === target}
@@ -272,9 +274,11 @@ export default function Menu({ active, dark }) {
 
 Menu.propTypes = {
   active: PropTypes.oneOf(items.map(i => i.target)).isRequired,
-  dark: PropTypes.bool
+  dark: PropTypes.bool,
+  whiteMenu: PropTypes.bool
 }
 
 Menu.defaultProps = {
-  dark: false
+  dark: false,
+  whiteMenu: false
 }
