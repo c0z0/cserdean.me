@@ -8,8 +8,8 @@ import * as breakPoints from '../utils/breakPoints'
 const Container = styled.div`
   font-size: 12px;
   color: ${({ textColor }) => textColor};
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
 `
@@ -27,7 +27,7 @@ export default function Page({ children, active, dark, whiteMenu }) {
 
   return (
     <Container textColor={textColor}>
-      <Menu active={active} dark={dark || whiteMenu} />
+      <Menu active={active} dark={dark} whiteMenu={whiteMenu} />
       <Content>{children}</Content>
       <style>{`
         body {
