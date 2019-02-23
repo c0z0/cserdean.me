@@ -3,14 +3,13 @@ import styled from 'styled-components'
 
 import * as breakPoints from '../utils/breakPoints'
 import Page from '../components/Page'
-import triangle from '../utils/triangle-gs.json'
+import { Triangle, Wave, Bg } from '../components/Svg'
 
-const Triangle = styled.img.attrs({
-  src: triangle,
-  alt: 'triangle-logo',
+const StyledTriangle = styled(Triangle).attrs({
   draggable: false
 })`
   height: 450px;
+  width: 523px;
   position: absolute;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
   top: 50%;
@@ -32,28 +31,6 @@ const Content = styled.div`
   }
 `
 
-const Bg = props => (
-  <svg viewBox="0 0 100 100" style={{}} {...props}>
-    <polygon
-      points="66,0 100,0 100,100 0,100"
-      fill="url(#prefix__paint0_linear)"
-    />
-    <defs>
-      <linearGradient
-        id="prefix__paint0_linear"
-        x1={100}
-        y1={100}
-        x2={33}
-        y2={100}
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#0787EA" />
-        <stop offset={1} stopColor="#B454E2" />
-      </linearGradient>
-    </defs>
-  </svg>
-)
-
 const StyledBg = styled(Bg)`
   position: fixed;
   top: 0;
@@ -74,8 +51,7 @@ const Greeting = styled.p`
   font-size: 24px;
 `
 
-const Wave = styled.img.attrs({ src: '/static/wave.png', draggable: false })`
-  width: 24px;
+const StyledWave = styled(Wave)`
   margin-right: 8px;
 `
 
@@ -104,10 +80,10 @@ const Subtitle = styled.p`
 const Index = () => (
   <Page active="/" whiteMenu>
     <StyledBg />
-    <Triangle />
+    <StyledTriangle />
     <Content>
       <Greeting>
-        <Wave />
+        <StyledWave />
         Hello
       </Greeting>
       <Name>I’m Cosmin</Name>
