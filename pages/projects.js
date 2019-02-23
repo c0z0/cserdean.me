@@ -10,7 +10,6 @@ export const Title = styled.div`
   font-weight: 500;
   line-height: normal;
   font-size: 32px;
-  color: #484848;
   margin-top: 64px;
   margin-bottom: 0;
   display: flex;
@@ -18,7 +17,7 @@ export const Title = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  color: ${({ dark }) => (dark ? 'white' : '#484848')};
+  color: ${({dark}) => (dark ? 'white' : '#484848')};
 `
 
 export const Subtitle = styled.p`

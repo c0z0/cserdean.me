@@ -25,7 +25,6 @@ const ProjectIcon = styled.div`
 const ProjectBorder = styled.div`
   padding: 1px;
   border-radius: 0px 8px 8px 0px;
-  padding: 1px;
   flex: 1;
   background: linear-gradient(270deg, #eee 75%, rgba(253, 253, 253, 0) 90%);
 
@@ -67,7 +66,7 @@ const ProjectDescription = styled.p`
 `
 
 const ProjectTitle = styled.h1`
-  color: ${({ color }) => color};
+  color: ${({color}) => color};
   font-size: 24px;
   margin: 0;
   margin-bottom: 10px;
@@ -101,7 +100,7 @@ export default function Project({
   src,
   href,
   titleColor,
-  icon
+  icon,
 }) {
   return (
     <ProjectBorder>
@@ -129,9 +128,9 @@ Project.propTypes = {
   src: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   titleColor: PropTypes.string,
-  icon: PropTypes.node.isRequired
+  icon: PropTypes.node.isRequired,
 }
 
 Project.defaultProps = {
-  titleColor: '#4848484'
+  titleColor: '#4848484',
 }
