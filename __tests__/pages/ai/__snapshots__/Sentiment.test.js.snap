@@ -32,6 +32,7 @@ exports[`Sentiment page matches snapshot 1`] = `
 
 .c3 {
   height: 40px;
+  width: 47px;
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
@@ -285,7 +286,7 @@ exports[`Sentiment page matches snapshot 1`] = `
     border-radius: 2rem;
     background-color: #FE51BB;
     padding: 0.625rem 1.5rem;
-    color: white;
+    color: white !important;
     margin: 0;
     margin-left: 20px;
   }
@@ -327,12 +328,29 @@ exports[`Sentiment page matches snapshot 1`] = `
           data-testid="menu-logo"
           href="/"
         >
-          <img
-            alt="logo"
+          <svg
             class="c3"
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDE2IiBoZWlnaHQ9IjEyMjAiIHZpZXdCb3g9IjAgMCA3MDggNjEwIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNDMUMxQzE7ICAgICAgfSAgICAgIC5jbHMtMSwgLmNscy0yLCAuY2xzLTMgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogI0QwRDBEMDsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICNCNkI2QjY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTg4Ljc4NiwyNTguOTY0bDUzLjQ0MSw5NS4yMDdMNDkxLjMzNCw2MTMuMzQySDk5NC4zMUw5NDQuMDEzLDcwNUgzNDAuNDQxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODcsNjEzLjM0MkwzNDAuNDQxLDcwNSw1ODguNzg2LDI2NS42NzNsMTUwLjg5MywyNjQuOGgxMDAuNkw1OTEuOTI5LDk1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01MzguNjQsNTMxLjE2Nkw0OTAuOCw2MTMuMzQySDk5NUw2OTguMTIyLDk1LjU0SDU5MS4yNEw4MzguNTA5LDUyOC4wMDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjg3IC05NSkiLz48L3N2Zz4="
+            height="1220"
             title="source"
-          />
+            viewBox="0 0 708 610"
+            width="1416"
+          >
+            <path
+              d="M301.786 163.964l53.441 95.207-150.893 259.171H707.31L657.013 610H53.441z"
+              fill="#c1c1c1"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M0 518.342L53.441 610l248.345-439.327 150.893 264.8h100.6L304.929 0z"
+              fill="#d0d0d0"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M251.64 436.166l-47.84 82.176H708L411.122.54H304.24l247.269 432.465z"
+              fill="#b6b6b6"
+              fill-rule="evenodd"
+            />
+          </svg>
         </a>
         <button
           class="c4"
@@ -467,12 +485,29 @@ exports[`Sentiment page matches snapshot 2`] = `
           data-testid="menu-logo"
           href="/"
         >
-          <img
-            alt="logo"
-            class="sc-htpNat cqNGZM"
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDE2IiBoZWlnaHQ9IjEyMjAiIHZpZXdCb3g9IjAgMCA3MDggNjEwIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNDMUMxQzE7ICAgICAgfSAgICAgIC5jbHMtMSwgLmNscy0yLCAuY2xzLTMgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogI0QwRDBEMDsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICNCNkI2QjY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTg4Ljc4NiwyNTguOTY0bDUzLjQ0MSw5NS4yMDdMNDkxLjMzNCw2MTMuMzQySDk5NC4zMUw5NDQuMDEzLDcwNUgzNDAuNDQxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yODcsNjEzLjM0MkwzNDAuNDQxLDcwNSw1ODguNzg2LDI2NS42NzNsMTUwLjg5MywyNjQuOGgxMDAuNkw1OTEuOTI5LDk1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4NyAtOTUpIi8+ICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01MzguNjQsNTMxLjE2Nkw0OTAuOCw2MTMuMzQySDk5NUw2OTguMTIyLDk1LjU0SDU5MS4yNEw4MzguNTA5LDUyOC4wMDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjg3IC05NSkiLz48L3N2Zz4="
+          <svg
+            class="sc-htpNat fMTaMq"
+            height="1220"
             title="source"
-          />
+            viewBox="0 0 708 610"
+            width="1416"
+          >
+            <path
+              d="M301.786 163.964l53.441 95.207-150.893 259.171H707.31L657.013 610H53.441z"
+              fill="#c1c1c1"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M0 518.342L53.441 610l248.345-439.327 150.893 264.8h100.6L304.929 0z"
+              fill="#d0d0d0"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M251.64 436.166l-47.84 82.176H708L411.122.54H304.24l247.269 432.465z"
+              fill="#b6b6b6"
+              fill-rule="evenodd"
+            />
+          </svg>
         </a>
         <button
           class="sc-bxivhb cGjZfZ"
@@ -538,7 +573,7 @@ exports[`Sentiment page matches snapshot 2`] = `
             GitHub
           </a>
           <a
-            class="sc-htoDjs zizbk"
+            class="sc-htoDjs hSKCPe"
             data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
             href="mailto:cosmoserdean@gmail.com"
             rel="noopener noreferrer"
