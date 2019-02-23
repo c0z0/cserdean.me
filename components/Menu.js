@@ -230,7 +230,9 @@ export default function Menu({ active, dark, whiteMenu }) {
             {leftItems.map(({ title, target }) => (
               <Link href={target} prefetch key={target}>
                 <MenuItem
-                  onClick={() => setMenu(false)}
+                  onClick={() => {
+                    if (active === target) setMenu(false)
+                  }}
                   textColorDesktop={textColorDesktop}
                   textColorMobile={textColorMobile}
                   activeColorMobile={activeColorMobile}
