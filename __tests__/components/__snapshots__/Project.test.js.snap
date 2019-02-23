@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div
+  class="sc-ifAKCX yUlfB"
+>
+  <div
+    class="sc-htpNat giSApe"
+  >
+    <div
+      class="sc-bdVaJa cpnxzd"
+    >
+      <a
+        class="sc-gzVnrw cQudRn"
+        href="test"
+      >
+        <div
+          class="sc-bwzfXH djZZyk"
+        >
+          test
+        </div>
+      </a>
+      <div
+        class="sc-bxivhb lhSSvn"
+      >
+        <h1
+          class="sc-bZQynM itOWLu"
+          color="#4848484"
+        >
+          <a
+            class="sc-gzVnrw cQudRn"
+            href="test"
+          >
+            test
+          </a>
+          <a
+            class="sc-htoDjs dvbSUq"
+            href="test"
+          >
+            [src]
+          </a>
+        </h1>
+        <p
+          class="sc-EHOje iAnNga"
+        >
+          test
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

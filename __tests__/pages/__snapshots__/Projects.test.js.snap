@@ -136,7 +136,7 @@ exports[`Projects page matches snapshot 1`] = `
 .c0 {
   font-size: 12px;
   color: #484848;
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica, Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI', Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
 }
@@ -145,23 +145,137 @@ exports[`Projects page matches snapshot 1`] = `
   margin: 80px 0;
 }
 
-.c13 {
-  font-size: 2.5em;
-  margin-bottom: 12px;
-  font-weight: 400;
-  color: #484848;
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: linear-gradient(270deg,#fdfdfd 75%,rgba(253,253,253,0) 90%);
+  border-radius: 0px 8px 8px 0px;
+  padding: 10px;
+  padding-left: 0;
 }
 
-.c14 {
-  color: #888;
-  margin-bottom: 30px;
-  font-size: 1.5em;
+.c19 {
+  height: 100px;
+  width: 100px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c16 {
-  font-size: 1.5em;
+  padding: 1px;
+  border-radius: 0px 8px 8px 0px;
+  padding: 1px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: linear-gradient(270deg,#eee 75%,rgba(253,253,253,0) 90%);
+}
+
+.c20 {
+  padding: 10px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c15:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.c23 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.c21 {
+  color: #75489B;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-weight: 400;
-  padding: 24px 0;
+}
+
+.c25 {
+  color: #4848484;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-weight: 400;
+}
+
+.c18 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c22 {
+  color: #999999;
+  font-size: 16px;
+  float: right;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.c22:hover {
+  color: #484848;
+}
+
+.c13 {
+  font-weight: 500;
+  line-height: normal;
+  font-size: 32px;
+  color: #484848;
+  margin-top: 64px;
+  margin-bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -173,24 +287,28 @@ exports[`Projects page matches snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #484848;
 }
 
-.c15 {
-  border-top: 1px #eee solid;
+.c14 {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 32px;
+  color: #888888;
 }
 
-.c18 {
-  color: #3997F9;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
-}
-
-.c17 {
-  color: #3997F9;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin-right: 12px;
+.c24 {
+  font-size: 24px;
+  text-align: justify;
+  color: black;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 }
 
 @media (min-width:992px) {
@@ -309,6 +427,28 @@ exports[`Projects page matches snapshot 1`] = `
   }
 }
 
+@media (max-width:992px) {
+  .c16:first-child {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width:992px) {
+  .c16 {
+    display: block;
+  }
+
+  .c16:first-child {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width:992px) {
+  .c15 {
+    display: block;
+  }
+}
+
 <div
   class="c0"
 >
@@ -414,78 +554,208 @@ exports[`Projects page matches snapshot 1`] = `
     >
       Projects
     </div>
-    <div
+    <p
       class="c14"
     >
       Small web development projects
+    </p>
+    <div
+      class="c15"
+    >
+      <div
+        class="c16"
+      >
+        <div
+          class="c17"
+        >
+          <a
+            class="c18"
+            href="https://gem.cserdean.me"
+          >
+            <div
+              class="c19"
+            >
+              <img
+                alt="gem-logo"
+                src="/static/diamond.svg"
+              />
+            </div>
+          </a>
+          <div
+            class="c20"
+          >
+            <h1
+              class="c21"
+              color="#75489B;"
+            >
+              <a
+                class="c18"
+                href="https://gem.cserdean.me"
+              >
+                Gem
+              </a>
+              <a
+                class="c22"
+                href="https://github.com/c0z0/gem-app"
+              >
+                [src]
+              </a>
+            </h1>
+            <p
+              class="c23"
+            >
+              Tiny web app for keeping your online finds. Features desktop client.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c16"
+      >
+        <div
+          class="c17"
+        >
+          <a
+            class="c18"
+            href="https://s.cserdean.me"
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c24"
+              >
+                SHRT
+              </span>
+            </div>
+          </a>
+          <div
+            class="c20"
+          >
+            <h1
+              class="c25"
+              color="#4848484"
+            >
+              <a
+                class="c18"
+                href="https://s.cserdean.me"
+              >
+                SHRT
+              </a>
+              <a
+                class="c22"
+                href="https://github.com/c0z0/lambda-shrt"
+              >
+                [src]
+              </a>
+            </h1>
+            <p
+              class="c23"
+            >
+              URL shortening web app built with Go and Next.js.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="c15"
     >
-      <p
+      <div
         class="c16"
       >
-        <a
+        <div
           class="c17"
-          href="https://gem.cserdean.me"
         >
-          Gem - Tiny web app for keeping your online finds
-        </a>
-        <a
-          class="c18"
-          href="https://github.com/c0z0/gem-app"
-        >
-          [src]
-        </a>
-      </p>
-      <p
+          <a
+            class="c18"
+            href="https://s.cserdean.me/t"
+          >
+            <div
+              class="c19"
+            >
+              <img
+                alt="transfer-logo"
+                src="/static/folder.svg"
+              />
+            </div>
+          </a>
+          <div
+            class="c20"
+          >
+            <h1
+              class="c25"
+              color="#4848484"
+            >
+              <a
+                class="c18"
+                href="https://s.cserdean.me/t"
+              >
+                Transfer
+              </a>
+              <a
+                class="c22"
+                href="https://github.com/c0z0/lambda-shrt"
+              >
+                [src]
+              </a>
+            </h1>
+            <p
+              class="c23"
+            >
+              File sharing web app built with Go and Next.js.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
         class="c16"
       >
-        <a
+        <div
           class="c17"
-          href="https://s.cserdean.me"
         >
-          SHRT - URL shortening app built with Go and Next.js
-        </a>
-        <a
-          class="c18"
-          href="https://github.com/c0z0/lambda-shrt"
-        >
-          [src]
-        </a>
-      </p>
-      <p
-        class="c16"
-      >
-        <a
-          class="c17"
-          href="https://s.cserdean.me/t"
-        >
-          Transfer - File sharing app built with Go and Next.js
-        </a>
-        <a
-          class="c18"
-          href="https://github.com/c0z0/lambda-shrt"
-        >
-          [src]
-        </a>
-      </p>
-      <p
-        class="c16"
-      >
-        <a
-          class="c17"
-          href="https://www.npmjs.com/package/shrt-url"
-        >
-          SHRT CLI - CLI for interacting with the SHRT web app
-        </a>
-        <a
-          class="c18"
-          href="https://github.com/c0z0/shrt-cli"
-        >
-          [src]
-        </a>
-      </p>
+          <a
+            class="c18"
+            href="https://www.npmjs.com/package/shrt-url"
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c24"
+              >
+                CLI
+              </span>
+            </div>
+          </a>
+          <div
+            class="c20"
+          >
+            <h1
+              class="c25"
+              color="#4848484"
+            >
+              <a
+                class="c18"
+                href="https://www.npmjs.com/package/shrt-url"
+              >
+                SHRT CLI
+              </a>
+              <a
+                class="c22"
+                href="https://github.com/c0z0/shrt-cli"
+              >
+                [src]
+              </a>
+            </h1>
+            <p
+              class="c23"
+            >
+              CLI for interacting with the SHRT web app.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <style>
