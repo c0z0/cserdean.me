@@ -5,10 +5,11 @@ import * as breakPoints from '../utils/breakPoints'
 
 const ProjectContainer = styled.div`
   display: flex;
-  background: linear-gradient(270deg, #fdfdfd 75%, rgba(253, 253, 253, 0) 90%);
+  align-items: center;
   border-radius: 0px 8px 8px 0px;
   padding: 10px;
   padding-left: 0;
+  background: white;
 `
 
 const ProjectIcon = styled.div`
@@ -44,7 +45,8 @@ const ProjectBorder = styled.div`
 `
 
 const ProjectContent = styled.div`
-  padding: 10px;
+  padding: 20px;
+  padding-right: 12px;
   flex: 1;
 `
 
@@ -62,11 +64,13 @@ const ProjectRow = styled.div`
 
 const ProjectDescription = styled.p`
   font-size: 16px;
+  color: #999;
   margin: 0;
+  text-align: justify;
 `
 
 const ProjectTitle = styled.h1`
-  color: ${({color}) => color};
+  color: ${({ color }) => color};
   font-size: 24px;
   margin: 0;
   margin-bottom: 10px;
@@ -100,7 +104,7 @@ export default function Project({
   src,
   href,
   titleColor,
-  icon,
+  icon
 }) {
   return (
     <ProjectBorder>
@@ -128,9 +132,9 @@ Project.propTypes = {
   src: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   titleColor: PropTypes.string,
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired
 }
 
 Project.defaultProps = {
-  titleColor: '#4848484',
+  titleColor: '#4848484'
 }
