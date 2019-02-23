@@ -4,17 +4,29 @@ import styled from 'styled-components'
 import Page from '../components/Page'
 import * as colors from '../utils/colors'
 
+import Project from '../components/Project'
+
 export const Title = styled.div`
-  font-size: 2.5em;
-  margin-bottom: 12px;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 32px;
+  color: #484848;
+  margin-top: 64px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
   color: ${({ dark }) => (dark ? 'white' : '#484848')};
 `
 
-export const Subtitle = styled.div`
-  color: #888;
-  margin-bottom: 30px;
-  font-size: 1.5em;
+export const Subtitle = styled.p`
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 32px;
+
+  color: #888888;
 `
 
 export const Experiment = styled.p`
@@ -27,7 +39,7 @@ export const Experiment = styled.p`
 `
 
 Experiment.List = styled.div`
-  border-top: 1px ${({ dark }) => (dark ? '#222' : '#eee')} solid;
+  border-top: 1px #222 solid;
 `
 
 Experiment.Src = styled.a`
@@ -43,45 +55,51 @@ Experiment.Link = styled.a`
   margin-right: 12px;
 `
 
+const SHRTIcon = styled.span`
+  font-size: 24px;
+  text-align: justify;
+  color: black;
+  letter-spacing: 0.1em;
+`
+
 export default function Projects() {
   return (
     <Page active="/projects">
       <Title>Projects</Title>
       <Subtitle>Small web development projects</Subtitle>
-      <Experiment.List>
-        <Experiment>
-          <Experiment.Link href="https://gem.cserdean.me">
-            Gem - Tiny web app for keeping your online finds
-          </Experiment.Link>
-          <Experiment.Src href="https://github.com/c0z0/gem-app">
-            [src]
-          </Experiment.Src>
-        </Experiment>
-        <Experiment>
-          <Experiment.Link href="https://s.cserdean.me">
-            SHRT - URL shortening app built with Go and Next.js
-          </Experiment.Link>
-          <Experiment.Src href="https://github.com/c0z0/lambda-shrt">
-            [src]
-          </Experiment.Src>
-        </Experiment>
-        <Experiment>
-          <Experiment.Link href="https://s.cserdean.me/t">
-            Transfer - File sharing app built with Go and Next.js
-          </Experiment.Link>
-          <Experiment.Src href="https://github.com/c0z0/lambda-shrt">
-            [src]
-          </Experiment.Src>
-        </Experiment>
-        <Experiment>
-          <Experiment.Link href="https://www.npmjs.com/package/shrt-url">
-            SHRT CLI - CLI for interacting with the SHRT web app
-          </Experiment.Link>
-          <Experiment.Src href="https://github.com/c0z0/shrt-cli">
-            [src]
-          </Experiment.Src>
-        </Experiment>
-      </Experiment.List>
+      <Project.Row>
+        <Project
+          icon={<img src="/static/diamond.svg" alt="gem-logo" />}
+          description="Tiny web app for keeping your online finds. Features desktop client."
+          title="Gem"
+          titleColor="#75489B;"
+          src="https://github.com/c0z0/gem-app"
+          href="https://gem.cserdean.me"
+        />
+        <Project
+          icon={<SHRTIcon>SHRT</SHRTIcon>}
+          description="URL shortening web app built with Go and Next.js."
+          title="SHRT"
+          src="https://github.com/c0z0/lambda-shrt"
+          href="https://s.cserdean.me"
+        />
+      </Project.Row>
+      <Project.Row>
+        <Project
+          icon={<img src="/static/folder.svg" alt="transfer-logo" />}
+          description="File sharing web app built with Go and Next.js."
+          title="Transfer"
+          src="https://github.com/c0z0/lambda-shrt"
+          href="https://s.cserdean.me/t"
+        />
+        <Project
+          icon={<SHRTIcon>CLI</SHRTIcon>}
+          description="CLI for interacting with the SHRT web app."
+          title="SHRT CLI"
+          src="https://github.com/c0z0/shrt-cli"
+          href="https://www.npmjs.com/package/shrt-url"
+        />
+      </Project.Row>
     </Page>
   )
 }

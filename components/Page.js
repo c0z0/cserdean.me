@@ -8,8 +8,9 @@ import * as breakPoints from '../utils/breakPoints'
 const Container = styled.div`
   font-size: 12px;
   color: ${({ textColor }) => textColor};
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
 `

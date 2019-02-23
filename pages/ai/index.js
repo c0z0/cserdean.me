@@ -1,24 +1,16 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
+import React from 'react'
+import Link from 'next/link'
 
-import Page from "../../components/Page";
-import ServiceStatus from "../../components/ServiceStatus";
-import { Experiment, Title, Subtitle } from "../projects";
-
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
+import Page from '../../components/Page'
+import ServiceStatus from '../../components/ServiceStatus'
+import { Experiment, Title, Subtitle } from '../projects'
 
 const Ai = () => (
   <Page active="/ai" dark>
-    <TitleWrapper>
-      <Title dark>AI Experiments</Title>
+    <Title dark>
+      <span>AI Experiments</span>
       <ServiceStatus />
-    </TitleWrapper>
+    </Title>
     <Subtitle>Tiny Machine Learning demos</Subtitle>
     <Experiment.List dark>
       <Experiment>
@@ -38,6 +30,6 @@ const Ai = () => (
       </div> */}
     </Experiment.List>
   </Page>
-);
+)
 
-export default Ai;
+export default Ai
