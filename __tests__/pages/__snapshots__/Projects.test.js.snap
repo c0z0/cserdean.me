@@ -150,10 +150,14 @@ exports[`Projects page matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: linear-gradient(270deg,#fdfdfd 75%,rgba(253,253,253,0) 90%);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 0px 8px 8px 0px;
   padding: 10px;
   padding-left: 0;
+  background: white;
 }
 
 .c19 {
@@ -186,7 +190,8 @@ exports[`Projects page matches snapshot 1`] = `
 }
 
 .c20 {
-  padding: 10px;
+  padding: 20px;
+  padding-right: 12px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -205,7 +210,9 @@ exports[`Projects page matches snapshot 1`] = `
 
 .c23 {
   font-size: 16px;
+  color: #999;
   margin: 0;
+  text-align: justify;
 }
 
 .c21 {
@@ -575,6 +582,7 @@ exports[`Projects page matches snapshot 1`] = `
             >
               <img
                 alt="gem-logo"
+                draggable="false"
                 src="/static/diamond.svg"
               />
             </div>
@@ -674,6 +682,7 @@ exports[`Projects page matches snapshot 1`] = `
             >
               <img
                 alt="transfer-logo"
+                draggable="false"
                 src="/static/folder.svg"
               />
             </div>

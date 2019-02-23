@@ -17,7 +17,7 @@ export const Title = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  color: ${({dark}) => (dark ? 'white' : '#484848')};
+  color: ${({ dark }) => (dark ? 'white' : '#484848')};
 `
 
 export const Subtitle = styled.p`
@@ -68,7 +68,9 @@ export default function Projects() {
       <Subtitle>Small web development projects</Subtitle>
       <Project.Row>
         <Project
-          icon={<img src="/static/diamond.svg" alt="gem-logo" />}
+          icon={
+            <img src="/static/diamond.svg" alt="gem-logo" draggable={false} />
+          }
           description="Tiny web app for keeping your online finds. Features desktop client."
           title="Gem"
           titleColor="#75489B;"
@@ -85,7 +87,13 @@ export default function Projects() {
       </Project.Row>
       <Project.Row>
         <Project
-          icon={<img src="/static/folder.svg" alt="transfer-logo" />}
+          icon={
+            <img
+              src="/static/folder.svg"
+              alt="transfer-logo"
+              draggable={false}
+            />
+          }
           description="File sharing web app built with Go and Next.js."
           title="Transfer"
           src="https://github.com/c0z0/lambda-shrt"
