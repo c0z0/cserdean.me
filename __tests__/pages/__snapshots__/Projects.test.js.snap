@@ -179,7 +179,6 @@ exports[`Projects page matches snapshot 1`] = `
 .c16 {
   padding: 1px;
   border-radius: 0px 8px 8px 0px;
-  padding: 1px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -273,7 +272,6 @@ exports[`Projects page matches snapshot 1`] = `
   font-weight: 500;
   line-height: normal;
   font-size: 32px;
-  color: #484848;
   margin-top: 64px;
   margin-bottom: 0;
   display: -webkit-box;

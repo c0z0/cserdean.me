@@ -159,7 +159,6 @@ exports[`Ai page matches snapshot 1`] = `
   font-weight: 500;
   line-height: normal;
   font-size: 32px;
-  color: #484848;
   margin-top: 64px;
   margin-bottom: 0;
   display: -webkit-box;
