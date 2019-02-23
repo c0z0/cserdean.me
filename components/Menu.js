@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { pink } from '../utils/colors'
 import * as breakPoints from '../utils/breakPoints'
-import triangle from '../utils/triangle-gs.json'
+import { Triangle } from './Svg'
 
 export const items = [
   {
@@ -69,12 +69,9 @@ const LogoWrapper = styled.div`
   }
 `
 
-const Logo = styled.img.attrs({
-  alt: 'menu-logo',
-  title: 'Source code',
-  src: triangle
-})`
+const Logo = styled(Triangle)`
   height: 40px;
+  width: 47px;
   transform-origin: center;
   margin-right: 20px;
   transition: all 0.5s ease-in-out;
@@ -176,7 +173,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
       `  border-radius: 2rem;
           background-color: ${pink};
           padding: 0.625rem 1.5rem;
-          color: white;
+          color: white !important;
           margin: 0;
           margin-left: 20px;`}
 
@@ -193,9 +190,9 @@ export default function Menu({ active, dark, whiteMenu }) {
     !dark || open ? '#999999' : 'rgba(255, 255, 255, 0.66)'
   const textColorMobile = !dark || open ? '#484848' : 'white'
 
-  const hoverTextColor = !dark || open ? 'black' : 'white'
+  const hoverTextColor = !dark || open ? '#484848' : 'white'
 
-  const activeTextColor = !dark || open ? 'black' : 'white'
+  const activeTextColor = !dark || open ? '#484848' : 'white'
 
   const activeColorMobile = !dark || open ? '#eee' : 'rgba(255, 255, 255, .2)'
 
@@ -215,7 +212,7 @@ export default function Menu({ active, dark, whiteMenu }) {
                 window.location.assign('http://github.com/c0z0/cserdean.me')
               }}
             >
-              <Logo src={triangle} alt="logo" title="source" />
+              <Logo title="source" />
             </a>
           </Link>
           <MenuButton onClick={() => setMenu(!open)}>

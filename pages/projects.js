@@ -5,9 +5,10 @@ import Page from '../components/Page'
 import * as colors from '../utils/colors'
 
 import Project from '../components/Project'
+import { Diamond, Folder } from '../components/Svg'
 
 export const Title = styled.div`
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   font-size: 32px;
   margin-top: 64px;
@@ -57,7 +58,7 @@ Experiment.Link = styled.a`
 const SHRTIcon = styled.span`
   font-size: 24px;
   text-align: justify;
-  color: black;
+  color: #222;
   letter-spacing: 0.1em;
 `
 
@@ -68,9 +69,7 @@ export default function Projects() {
       <Subtitle>Small web development projects</Subtitle>
       <Project.Row>
         <Project
-          icon={
-            <img src="/static/diamond.svg" alt="gem-logo" draggable={false} />
-          }
+          icon={<Diamond />}
           description="Tiny web app for keeping your online finds. Features desktop client."
           title="Gem"
           titleColor="#75489B;"
@@ -87,13 +86,7 @@ export default function Projects() {
       </Project.Row>
       <Project.Row>
         <Project
-          icon={
-            <img
-              src="/static/folder.svg"
-              alt="transfer-logo"
-              draggable={false}
-            />
-          }
+          icon={<Folder />}
           description="File sharing web app built with Go and Next.js."
           title="Transfer"
           src="https://github.com/c0z0/lambda-shrt"
