@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const apiRoot = "https://ai.cserdean.me";
+const apiRoot = "https://ai.cserdean.com";
 
 const Ball = styled.div.attrs({ title: "AI Service Status" })`
   transition: all 0.2s linear;
