@@ -13,11 +13,11 @@ after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   - provider: script
-    script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias cserdean.me
+    script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias cserdean.com
     on:
       branch: master
   - provider: script
-    script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias dev.cserdean.me
+    script: npm install -g now && now --token=$NOW_TOKEN && now --token=$NOW_TOKEN alias dev.cserdean.com
     on:
       branch: dev
 notifications:

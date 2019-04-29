@@ -6,7 +6,7 @@ import Input from '../../components/Input'
 import * as breakPoints from '../../utils/breakPoints'
 import { errorRed, sentimentColors, blue } from '../../utils/colors'
 
-const apiRoot = 'https://ai.cserdean.me'
+const apiRoot = 'https://ai.cserdean.com'
 
 const Content = styled.div`
   text-align: center;

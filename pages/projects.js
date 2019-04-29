@@ -74,14 +74,14 @@ export default function Projects() {
           title="Gem"
           titleColor="#75489B;"
           src="https://github.com/c0z0/gem-app"
-          href="https://gem.cserdean.me"
+          href="https://gem.cserdean.com"
         />
         <Project
           icon={<SHRTIcon>SHRT</SHRTIcon>}
           description="URL shortening web app built with Go and Next.js."
           title="SHRT"
           src="https://github.com/c0z0/lambda-shrt"
-          href="https://s.cserdean.me"
+          href="https://s.cserdean.com"
         />
       </Project.Row>
       <Project.Row>
@@ -90,7 +90,7 @@ export default function Projects() {
           description="File sharing web app built with Go and Next.js."
           title="Transfer"
           src="https://github.com/c0z0/lambda-shrt"
-          href="https://s.cserdean.me/t"
+          href="https://s.cserdean.com/t"
         />
         <Project
           icon={<SHRTIcon>CLI</SHRTIcon>}
