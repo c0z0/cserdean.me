@@ -104,8 +104,8 @@ exports[`Matches snapshot 1`] = `
           </a>
           <a
             class="sc-htoDjs ehrQze"
-            data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
-            href="mailto:cosmoserdean@gmail.com"
+            data-testid="menu-item-target-mailto:cosmin@cserdean.com"
+            href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -234,8 +234,8 @@ exports[`Matches snapshot 2`] = `
           </a>
           <a
             class="sc-htoDjs hSKCPe"
-            data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
-            href="mailto:cosmoserdean@gmail.com"
+            data-testid="menu-item-target-mailto:cosmin@cserdean.com"
+            href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
             target="_blank"
           >

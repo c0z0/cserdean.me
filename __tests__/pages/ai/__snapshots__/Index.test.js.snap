@@ -441,8 +441,8 @@ exports[`Ai page matches snapshot 1`] = `
           </a>
           <a
             class="c11"
-            data-testid="menu-item-target-mailto:cosmoserdean@gmail.com"
-            href="mailto:cosmoserdean@gmail.com"
+            data-testid="menu-item-target-mailto:cosmin@cserdean.com"
+            href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
             target="_blank"
           >

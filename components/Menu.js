@@ -32,7 +32,7 @@ export const items = [
   },
   {
     title: 'Email',
-    target: 'mailto:cosmoserdean@gmail.com',
+    target: 'mailto:cosmin@cserdean.com',
     right: true,
     primary: true
   }
