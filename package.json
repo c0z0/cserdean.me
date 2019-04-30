@@ -12,8 +12,9 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next",
+    "build": "yarn prebuild && next build",
+    "prebuild": "node genSiteMap.js",
+    "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:style": "stylelint --ignore-path .gitignore **/*.js",
     "test": "jest",
