@@ -593,7 +593,7 @@ exports[`Projects page matches snapshot 1`] = `
         >
           <a
             class="c18"
-            href="https://gem.cserdean.me"
+            href="https://gem.cserdean.com"
           >
             <div
               class="c19"
@@ -643,7 +643,7 @@ exports[`Projects page matches snapshot 1`] = `
             >
               <a
                 class="c18"
-                href="https://gem.cserdean.me"
+                href="https://gem.cserdean.com"
               >
                 Gem
               </a>
@@ -670,7 +670,7 @@ exports[`Projects page matches snapshot 1`] = `
         >
           <a
             class="c18"
-            href="https://s.cserdean.me"
+            href="https://s.cserdean.com"
           >
             <div
               class="c19"
@@ -691,7 +691,7 @@ exports[`Projects page matches snapshot 1`] = `
             >
               <a
                 class="c18"
-                href="https://s.cserdean.me"
+                href="https://s.cserdean.com"
               >
                 SHRT
               </a>
@@ -722,7 +722,7 @@ exports[`Projects page matches snapshot 1`] = `
         >
           <a
             class="c18"
-            href="https://s.cserdean.me/t"
+            href="https://s.cserdean.com/t"
           >
             <div
               class="c19"
@@ -748,7 +748,7 @@ exports[`Projects page matches snapshot 1`] = `
             >
               <a
                 class="c18"
-                href="https://s.cserdean.me/t"
+                href="https://s.cserdean.com/t"
               >
                 Transfer
               </a>
