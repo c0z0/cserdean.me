@@ -69,7 +69,7 @@ export const Wave = props => (
 export const Bg = props => (
   <svg viewBox="0 0 100 100" style={{}} {...props}>
     <polygon
-      points="66,0 100,0 100,100 0,100"
+      points="65,0 100,0 100,100 5,100"
       fill="url(#prefix__paint0_linear)"
     />
     <defs>
