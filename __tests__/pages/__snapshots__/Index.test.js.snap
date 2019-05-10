@@ -496,7 +496,7 @@ exports[`Index page matches snapshot 1`] = `
     >
       <polygon
         fill="url(#prefix__paint0_linear)"
-        points="66,0 100,0 100,100 0,100"
+        points="65,0 100,0 100,100 5,100"
       />
       <defs>
         <lineargradient
