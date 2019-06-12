@@ -8,5 +8,11 @@
       "src": "package.json",
       "use": "@now/next"
     }
+  ],
+  "routes": [
+    {
+      "src": "*",
+      "headers": { "cache-control": "s-maxage=5, stale-while-revalidate" }
+    }
   ]
 }
