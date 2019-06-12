@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/*",
-      "headers": { "cache-control": "s-maxage=5, stale-while-revalidate" }
+      "headers": {"cache-control": "s-maxage=30, stale-while-revalidate"}
     }
   ]
 }
