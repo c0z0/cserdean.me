@@ -11,7 +11,7 @@
   ],
   "routes": [
     {
-      "src": "*",
+      "src": "/*",
       "headers": { "cache-control": "s-maxage=5, stale-while-revalidate" }
     }
   ]
