@@ -27,6 +27,23 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <div
+            // eslint-disable-next-line
+            dangerouslySetInnerHTML={{
+              __html: `
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86522507-2"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'UA-86522507-2');
+          </script>
+          
+          `
+            }}
+          />
           <script
             // eslint-disable-next-line
             dangerouslySetInnerHTML={{
@@ -40,7 +57,6 @@ export default class MyDocument extends Document {
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`
             }}
           />
-
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#ffffff" />
           <meta
