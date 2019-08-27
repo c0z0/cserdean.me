@@ -31,6 +31,17 @@ export default class MyDocument extends Document {
         <Head>
           <GoogleAnalytics />
           <Hotjar />
+          <meta property="og:title" content="Cosmin Serdean" />
+          <meta
+            property="og:description"
+            content="JavaScript Developer
+& Machine Learning Enthusiast"
+          />
+          <meta property="og:url" content="https://cserdean.com" />
+          <meta
+            property="og:image"
+            content="https://cserdean.com/static/avatar.jpg"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#ffffff" />
           <meta
