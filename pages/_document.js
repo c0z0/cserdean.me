@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <html lang="en" amp>
         <Head>
           <GoogleAnalytics />
           <Hotjar />
@@ -78,12 +78,6 @@ export default class MyDocument extends Document {
             content="/static/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-          <style>{`
-            body {
-              margin: 0;
-            }
-          `}</style>
-          <title>Cosmin Serdean</title>
         </Head>
         <body>
           <Main />

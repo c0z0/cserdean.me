@@ -173,7 +173,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
       `  border-radius: 2rem;
           background-color: ${pink};
           padding: 0.625rem 1.5rem;
-          color: white !important;
+          color: white;
           margin: 0;
           margin-left: 20px;`}
 

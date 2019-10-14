@@ -286,7 +286,7 @@ exports[`Sentiment page matches snapshot 1`] = `
     border-radius: 2rem;
     background-color: #FE51BB;
     padding: 0.625rem 1.5rem;
-    color: white !important;
+    color: white;
     margin: 0;
     margin-left: 20px;
   }
@@ -573,7 +573,7 @@ exports[`Sentiment page matches snapshot 2`] = `
             GitHub
           </a>
           <a
-            class="sc-htoDjs hSKCPe"
+            class="sc-htoDjs zizbk"
             data-testid="menu-item-target-mailto:cosmin@cserdean.com"
             href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
