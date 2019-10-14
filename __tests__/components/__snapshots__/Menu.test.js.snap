@@ -234,7 +234,7 @@ exports[`Menu matches snapshot 1`] = `
     border-radius: 2rem;
     background-color: #FE51BB;
     padding: 0.625rem 1.5rem;
-    color: white !important;
+    color: white;
     margin: 0;
     margin-left: 20px;
   }

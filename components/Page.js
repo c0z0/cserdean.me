@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Head from 'next/head'
 
 import Menu from './Menu'
 import * as breakPoints from '../utils/breakPoints'
@@ -28,6 +29,9 @@ export default function Page({ children, active, dark, whiteMenu }) {
 
   return (
     <Container textColor={textColor}>
+      <Head>
+        <title>Cosmin Serdean</title>
+      </Head>
       <Menu active={active} dark={dark} whiteMenu={whiteMenu} />
       <Content>{children}</Content>
       <style>{`

@@ -103,7 +103,7 @@ exports[`Matches snapshot 1`] = `
             GitHub
           </a>
           <a
-            class="sc-htoDjs ehrQze"
+            class="sc-htoDjs jFAYEy"
             data-testid="menu-item-target-mailto:cosmin@cserdean.com"
             href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
@@ -233,7 +233,7 @@ exports[`Matches snapshot 2`] = `
             GitHub
           </a>
           <a
-            class="sc-htoDjs hSKCPe"
+            class="sc-htoDjs zizbk"
             data-testid="menu-item-target-mailto:cosmin@cserdean.com"
             href="mailto:cosmin@cserdean.com"
             rel="noopener noreferrer"
