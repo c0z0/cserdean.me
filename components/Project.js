@@ -16,7 +16,7 @@ const ProjectIcon = styled.div`
   height: 100px;
   width: 100px;
   background: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+/*  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
   border-radius: 15px;
   display: flex;
   align-items: center;
