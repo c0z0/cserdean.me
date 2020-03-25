@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { ThemeContext as StyledThemeContext } from 'styled-components';
 
 import ThemeContext from '../utils/ThemeContext';
 import onClickOutSide from '../utils/onClickOutside';
@@ -87,18 +87,39 @@ const EllipsisButton = styled.button`
   padding-bottom: 15px;
 `;
 
-const Ellipsis = ({ onClick }) => (
-  <EllipsisButton onClick={onClick} type="button">
-    <svg width="13" height="3" viewBox="0 0 13 3" fill="none">
-      <rect width="3" height="3" rx="1.5" fill="#ffffff" opacity=".66" />
-      <rect x="5" width="3" height="3" rx="1.5" fill="#fff" opacity=".66" />
-      <rect x="10" width="3" height="3" rx="1.5" fill="#fff" opacity=".66" />
-    </svg>
-  </EllipsisButton>
-);
+const Ellipsis = ({ onClick, inverted, active }) => {
+  const theme = useContext(StyledThemeContext);
+  const fill = inverted ? '#fff' : theme.colors.foreground;
+  const opacity = active ? '1' : '.66';
+  return (
+    <EllipsisButton onClick={onClick} type="button">
+      <svg width="13" height="3" viewBox="0 0 13 3" fill="none">
+        <rect width="3" height="3" rx="1.5" opacity={opacity} fill={fill} />
+        <rect
+          x="5"
+          width="3"
+          height="3"
+          rx="1.5"
+          fill={fill}
+          opacity={opacity}
+        />
+        <rect
+          x="10"
+          width="3"
+          height="3"
+          rx="1.5"
+          fill={fill}
+          opacity={opacity}
+        />
+      </svg>
+    </EllipsisButton>
+  );
+};
 
 Ellipsis.propTypes = {
   onClick: PropTypes.func.isRequired,
+  inverted: PropTypes.bool.isRequired,
+  active: PropTypes.bool.isRequired,
 };
 
 const DropdownBody = styled.div`
@@ -133,7 +154,7 @@ const DropdownBody = styled.div`
   }
 `;
 
-export const Dropdown = () => {
+export const Dropdown = ({ inverted }) => {
   const [dropdownState, setDropdownState] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -141,12 +162,22 @@ export const Dropdown = () => {
 
   return (
     <DropdownWrapper ref={dropdownRef}>
-      <Ellipsis onClick={() => setDropdownState(!dropdownState)}>⋅⋅⋅</Ellipsis>
+      <Ellipsis
+        onClick={() => setDropdownState(!dropdownState)}
+        inverted={inverted}
+        active={dropdownState}
+      >
+        ⋅⋅⋅
+      </Ellipsis>
       <DropdownBody open={dropdownState}>
         <ThemeSwitch />
       </DropdownBody>
     </DropdownWrapper>
   );
+};
+
+Dropdown.propTypes = {
+  inverted: PropTypes.bool.isRequired,
 };
 
 export default ThemeSwitch;

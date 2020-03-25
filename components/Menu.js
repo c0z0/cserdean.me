@@ -247,7 +247,7 @@ export default function Menu({ active }) {
             ))}
           </div>
           <div>
-            <Dropdown />
+            <Dropdown inverted={active === '/'} />
             {rightItems.map(({ title, target, primary }) => (
               <MenuItem
                 inverted={active === '/'}
