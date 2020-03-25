@@ -6,6 +6,7 @@ import ThemeContext from '../utils/ThemeContext';
 import { pink } from '../utils/colors';
 import * as breakPoints from '../utils/breakPoints';
 import { Triangle } from './Svg';
+import ThemeSwitch, { Dropdown } from './ThemeSwitch';
 
 export const items = [
   {
@@ -135,6 +136,12 @@ const MenuItemsWrapper = styled.div.attrs({
     justify-content: space-between;
     font-size: 12px;
     flex: 1;
+
+    & div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   ${({ open, theme }) =>
@@ -182,7 +189,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
           color: white;
           margin: 0;
           opacity: 1;
-          margin-left: 20px;`}
+          `}
 
     &:hover {
       opacity: 1;
@@ -240,6 +247,7 @@ export default function Menu({ active }) {
             ))}
           </div>
           <div>
+            <Dropdown />
             {rightItems.map(({ title, target, primary }) => (
               <MenuItem
                 inverted={active === '/'}
@@ -253,6 +261,7 @@ export default function Menu({ active }) {
                 {title}
               </MenuItem>
             ))}
+            <ThemeSwitch hideDesktop />
           </div>
         </MenuItemsWrapper>
       </Wrapper>
