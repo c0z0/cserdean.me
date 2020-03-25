@@ -12,11 +12,6 @@ const GlobalStyle = createGlobalStyle`
     },
   }) => background};
  }
-
- body, h1, h2, h3, h4, h5, h6, p {
-   transition: background .2s linear; 
-
- }
 `;
 
 const theme = {
