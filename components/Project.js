@@ -10,12 +10,10 @@ const ProjectContainer = styled.div`
   padding: 10px;
   padding-left: 0;
   background: ${p => p.theme.colors.background};
-  transition: all 0.2s linear;
 `;
 
 const ProjectIcon = styled.div`
   height: 100px;
-  transition: all 0.2s linear;
   width: 100px;
   background: #ffffff;
   /*  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
@@ -29,7 +27,6 @@ const ProjectBorder = styled.div`
   padding: 1px;
   border-radius: 0px 8px 8px 0px;
   flex: 1;
-  transition: all 0.2s linear;
   background: linear-gradient(
     270deg,
     ${p => p.theme.colors.highlight} 75%,
@@ -98,7 +95,7 @@ const ProjectSrc = styled.a`
   float: right;
   text-decoration: none;
   opacity: 0.66;
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear;
   :hover {
     opacity: 1;
   }

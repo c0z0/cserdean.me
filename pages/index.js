@@ -75,7 +75,7 @@ const Name = styled.h1`
   line-height: normal;
   font-size: 64px;
 
-  color: ${p => p.theme.colors.name};
+  color: ${p => p.theme.colors.primary};
   margin: 0;
 `;
 
