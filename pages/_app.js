@@ -1,4 +1,5 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment } from 'react';
+import cookie from 'cookie';
 import { ThemeProvider } from 'styled-components';
 
 import ThemeContext from '../utils/ThemeContext';
@@ -8,14 +9,17 @@ const { GlobalStyle } = theme;
 
 const THEME_STORAGE_KEY = 'THEME';
 // eslint-disable-next-line react/prop-types
-function MyApp({ Component, pageProps }) {
-  const [themeState, setThemeState] = useState(true);
-  useEffect(() => {
-    setThemeState(localStorage.getItem(THEME_STORAGE_KEY) !== 'dark');
-  }, []);
+function MyApp({ Component, pageProps, isLight }) {
+  const [themeState, setThemeState] = useState(isLight);
 
   const toggleTheme = () => {
-    localStorage.setItem(THEME_STORAGE_KEY, !themeState ? 'light' : 'dark');
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = cookie.serialize(
+      THEME_STORAGE_KEY,
+      !themeState ? 'light' : 'dark',
+      { expires },
+    );
     setThemeState(!themeState);
   };
 
@@ -35,5 +39,16 @@ function MyApp({ Component, pageProps }) {
     </ThemeContext.Provider>
   );
 }
+
+MyApp.getInitialProps = async ({ ctx: { req } }) => {
+  if (req) {
+    return {
+      isLight: cookie.parse(req.headers.cookie)[THEME_STORAGE_KEY] !== 'dark',
+    };
+  }
+  return {
+    isLight: cookie.parse(document.cookie)[THEME_STORAGE_KEY] !== 'dark',
+  };
+};
 
 export default MyApp;

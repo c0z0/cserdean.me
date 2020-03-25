@@ -190,7 +190,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
   }
 `;
 
-export default function Menu({ active, }) {
+export default function Menu({ active }) {
   const [open, setMenu] = useState(false);
 
   const leftItems = items.filter(({ right }) => !right);
@@ -202,7 +202,7 @@ export default function Menu({ active, }) {
     <header>
       <Wrapper open={open}>
         <LogoWrapper>
-          <Link href="/" prefetch>
+          <Link href="/">
             <a
               data-testid="menu-logo"
               href="/"
@@ -225,7 +225,7 @@ export default function Menu({ active, }) {
         <MenuItemsWrapper open={open}>
           <div>
             {leftItems.map(({ title, target }) => (
-              <Link href={target} prefetch key={target}>
+              <Link href={target} key={target}>
                 <MenuItem
                   onClick={() => {
                     if (active === target) setMenu(false);

@@ -14,7 +14,7 @@ const Ai = () => (
     <Subtitle>Tiny Machine Learning demos</Subtitle>
     <Experiment.List dark>
       <Experiment>
-        <Link href="/ai/sentiment" prefetch passHref>
+        <Link href="/ai/sentiment" passHref>
           <Experiment.Link>
             Sentiment classifier trained on movie reviews
           </Experiment.Link>
