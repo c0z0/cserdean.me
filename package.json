@@ -15,13 +15,14 @@
     "build": "yarn prebuild && next build",
     "prebuild": "node genSiteMap.js",
     "start": "next start",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .eslintignore .",
     "lint:style": "stylelint --ignore-path .gitignore **/*.js",
-    "test": "jest",
+    "test": "echo 'no tests'",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@testing-library/react": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",

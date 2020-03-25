@@ -1,0 +1,11 @@
+node_modules/
+__tests__/
+.next
+node_modules
+yarn-error.log
+**/.DS_Store
+static/.DS_Store
+static/.DS_Store
+out
+static/.DS_Store
+coverage

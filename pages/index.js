@@ -1,12 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react';
+import styled from 'styled-components';
 
-import * as breakPoints from '../utils/breakPoints'
-import Page from '../components/Page'
-import { Triangle, Wave, Bg } from '../components/Svg'
+import * as breakPoints from '../utils/breakPoints';
+import Page from '../components/Page';
+import { Triangle, Wave, Bg, DarkBg } from '../components/Svg';
+import ThemeContext from '../utils/ThemeContext';
 
 const StyledTriangle = styled(Triangle).attrs({
-  draggable: false
+  draggable: false,
 })`
   height: 450px;
   width: 523px;
@@ -20,7 +21,7 @@ const StyledTriangle = styled(Triangle).attrs({
   @media (${breakPoints.tabletUp}) {
     display: block;
   }
-`
+`;
 
 const Content = styled.div`
   margin-top: 64px;
@@ -29,7 +30,7 @@ const Content = styled.div`
     text-align: left;
     margin-top: 232px;
   }
-`
+`;
 
 const StyledBg = styled(Bg)`
   position: fixed;
@@ -42,18 +43,31 @@ const StyledBg = styled(Bg)`
   @media (${breakPoints.phoneOnly}) {
     display: none;
   }
-`
+`;
+
+const StyledDarkBg = styled(DarkBg)`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+
+  @media (${breakPoints.phoneOnly}) {
+    display: none;
+  }
+`;
 
 const Greeting = styled.p`
   font-weight: 400;
-  color: #98a4a8;
+  color: ${props => props.theme.colors.foreground};
   margin: 0;
   font-size: 24px;
-`
+`;
 
 const StyledWave = styled(Wave)`
   margin-right: 8px;
-`
+`;
 
 const Name = styled.h1`
   font-style: normal;
@@ -61,38 +75,41 @@ const Name = styled.h1`
   line-height: normal;
   font-size: 64px;
 
-  color: #af54df;
+  color: ${p => p.theme.colors.name};
   margin: 0;
-`
+`;
 
 const Subtitle = styled.p`
   font-size: 24px;
   margin: 0;
   font-weight: 300;
-  color: #98a4a8;
+  color: ${props => props.theme.colors.foreground};
 
   @media (${breakPoints.phoneOnly}) {
     font-size: 18px;
     margin-top: 12px;
   }
-`
+`;
 
-const Index = () => (
-  <Page active="/" whiteMenu>
-    <StyledBg />
-    <StyledTriangle />
-    <Content>
-      <Greeting>
-        <StyledWave />
-        Hello
-      </Greeting>
-      <Name>I’m Cosmin</Name>
-      <Subtitle>
-        JavaScript Developer
-        <br />& Machine Learning Enthusiast
-      </Subtitle>
-    </Content>
-  </Page>
-)
-
-export default Index
+const Index = () => {
+  const { light } = useContext(ThemeContext);
+  return (
+    <Page active="/">
+      {light && <StyledBg />}
+      <StyledDarkBg />
+      <StyledTriangle />
+      <Content>
+        <Greeting>
+          <StyledWave />
+          Hello
+        </Greeting>
+        <Name>I’m Cosmin</Name>
+        <Subtitle>
+          JavaScript Developer
+          <br />& Machine Learning Enthusiast
+        </Subtitle>
+      </Content>
+    </Page>
+  );
+};
+export default Index;

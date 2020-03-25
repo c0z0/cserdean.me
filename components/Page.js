@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Head from 'next/head'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Head from 'next/head';
 
-import Menu from './Menu'
-import * as breakPoints from '../utils/breakPoints'
+import Menu from './Menu';
+import * as breakPoints from '../utils/breakPoints';
 
 const Container = styled.div`
   font-size: 12px;
@@ -14,7 +14,7 @@ const Container = styled.div`
     'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
-`
+`;
 
 const Content = styled.div`
   margin: 80px 0;
@@ -22,35 +22,21 @@ const Content = styled.div`
   @media (${breakPoints.phoneOnly}) {
     margin: 40px 20px;
   }
-`
+`;
 
-export default function Page({ children, active, dark, whiteMenu }) {
-  const textColor = !dark ? '#484848' : 'white'
-
+export default function Page({ children, active }) {
   return (
-    <Container textColor={textColor}>
+    <Container>
       <Head>
         <title>Cosmin Serdean</title>
       </Head>
-      <Menu active={active} dark={dark} whiteMenu={whiteMenu} />
+      <Menu active={active} />
       <Content>{children}</Content>
-      <style>{`
-        body {
-          background: ${dark ? 'black' : 'none'};
-        }
-      `}</style>
     </Container>
-  )
-}
-
-Page.defaultProps = {
-  dark: false,
-  whiteMenu: false
+  );
 }
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.string.isRequired,
-  dark: PropTypes.bool,
-  whiteMenu: PropTypes.bool
-}
+};

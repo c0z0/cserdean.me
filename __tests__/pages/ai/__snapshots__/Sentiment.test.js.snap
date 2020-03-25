@@ -2,9 +2,8 @@
 
 exports[`Sentiment page matches snapshot 1`] = `
 .c1 {
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',sans-serif;
   background: none;
-  padding-top: 20px;
+  padding-top: 30px;
   position: static;
   z-index: 100;
   top: 0;
@@ -40,9 +39,9 @@ exports[`Sentiment page matches snapshot 1`] = `
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(calc(90deg + 0deg));
+  -ms-transform: rotate(calc(90deg + 0deg));
+  transform: rotate(calc(90deg + 0deg));
 }
 
 .c4 {
@@ -75,7 +74,7 @@ exports[`Sentiment page matches snapshot 1`] = `
   transition: all 0.2s;
   width: 22px;
   height: 1px;
-  background-color: white;
+  background-color: #484848;
 }
 
 .c6 {
@@ -96,47 +95,46 @@ exports[`Sentiment page matches snapshot 1`] = `
 }
 
 .c9 {
-  color: white;
+  color: #484848;
   font-size: 12px;
   -webkit-text-decoration: none;
   text-decoration: none;
   display: block;
   padding: 16px;
   padding-left: 20px;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid #eee;
   text-transform: uppercase;
 }
 
 .c10 {
-  color: white;
+  color: #484848;
   font-size: 12px;
   -webkit-text-decoration: none;
   text-decoration: none;
   display: block;
   padding: 16px;
   padding-left: 20px;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid #eee;
   text-transform: uppercase;
-  background: rgba(255,255,255,.2);
+  background: #eee;
   border-color: rgba(0,0,0,0);
 }
 
 .c11 {
-  color: white;
+  color: #484848;
   font-size: 12px;
   -webkit-text-decoration: none;
   text-decoration: none;
   display: block;
   padding: 16px;
   padding-left: 20px;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid #eee;
   text-transform: uppercase;
   color: #FE51BB;
 }
 
 .c0 {
   font-size: 12px;
-  color: white;
   font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI', Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
@@ -151,6 +149,7 @@ exports[`Sentiment page matches snapshot 1`] = `
 }
 
 .c14 {
+  color: #484848;
   font-weight: normal;
   font-size: 1.5em;
 }
@@ -179,7 +178,7 @@ exports[`Sentiment page matches snapshot 1`] = `
   position: absolute;
   top: -5px;
   bottom: -5px;
-  background: white;
+  background: #484848;
   width: 2px;
   left: 150px;
   -webkit-transition: all 0.5s;
@@ -239,7 +238,8 @@ exports[`Sentiment page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: rgba(255,255,255,0.66);
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
@@ -248,7 +248,7 @@ exports[`Sentiment page matches snapshot 1`] = `
   }
 
   .c9:hover {
-    color: white;
+    opacity: 1;
   }
 }
 
@@ -257,18 +257,19 @@ exports[`Sentiment page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: rgba(255,255,255,0.66);
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
-    color: white;
+    opacity: 1;
     background: none;
   }
 
   .c10:hover {
-    color: white;
+    opacity: 1;
   }
 }
 
@@ -277,7 +278,8 @@ exports[`Sentiment page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: rgba(255,255,255,0.66);
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
@@ -288,11 +290,12 @@ exports[`Sentiment page matches snapshot 1`] = `
     padding: 0.625rem 1.5rem;
     color: white;
     margin: 0;
+    opacity: 1;
     margin-left: 20px;
   }
 
   .c11:hover {
-    color: white;
+    opacity: 1;
   }
 }
 
@@ -460,13 +463,6 @@ exports[`Sentiment page matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  <style>
-    
-        body {
-          background: black;
-        }
-      
-  </style>
 </div>
 `;
 
