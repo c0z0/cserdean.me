@@ -111,6 +111,7 @@ const DropdownBody = styled.div`
   border-radius: 0.25rem;
   width: 150px;
   box-shadow: ${p => p.theme.shadow};
+  z-index: 10;
 
   background: ${p => p.theme.colors.background};
   ${p => !p.open && `display: none !important;`}
