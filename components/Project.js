@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import * as breakPoints from '../utils/breakPoints'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import * as breakPoints from '../utils/breakPoints';
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -9,25 +9,32 @@ const ProjectContainer = styled.div`
   border-radius: 0px 8px 8px 0px;
   padding: 10px;
   padding-left: 0;
-  background: white;
-`
+  background: ${p => p.theme.colors.background};
+  transition: all 0.2s linear;
+`;
 
 const ProjectIcon = styled.div`
   height: 100px;
+  transition: all 0.2s linear;
   width: 100px;
   background: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  /*  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const ProjectBorder = styled.div`
   padding: 1px;
   border-radius: 0px 8px 8px 0px;
   flex: 1;
-  background: linear-gradient(270deg, #eee 75%, rgba(253, 253, 253, 0) 90%);
+  transition: all 0.2s linear;
+  background: linear-gradient(
+    270deg,
+    ${p => p.theme.colors.highlight} 75%,
+    rgba(253, 253, 253, 0) 90%
+  );
 
   @media (${breakPoints.phoneOnly}) {
     &:first-child {
@@ -42,13 +49,13 @@ const ProjectBorder = styled.div`
       margin-right: 40px;
     }
   }
-`
+`;
 
 const ProjectContent = styled.div`
   padding: 20px;
   padding-right: 12px;
   flex: 1;
-`
+`;
 
 const ProjectRow = styled.div`
   display: flex;
@@ -60,17 +67,17 @@ const ProjectRow = styled.div`
   @media (${breakPoints.phoneOnly}) {
     display: block;
   }
-`
+`;
 
 const ProjectDescription = styled.p`
   font-size: 16px;
   color: #999;
   margin: 0;
   text-align: justify;
-`
+`;
 
 const ProjectTitle = styled.h1`
-  color: ${({ color }) => color};
+  color: ${({ color, theme }) => color || theme.colors.foreground};
   font-size: 24px;
   margin: 0;
   margin-bottom: 10px;
@@ -78,25 +85,24 @@ const ProjectTitle = styled.h1`
   align-items: center;
   justify-content: space-between;
   font-weight: 400;
-`
+`;
 
 const ProjectUrl = styled.a`
   color: inherit;
   text-decoration: none;
-`
+`;
 
 const ProjectSrc = styled.a`
-  color: #999999;
+  color: ${p => p.theme.colors.foreground};
   font-size: 16px;
-
   float: right;
   text-decoration: none;
-  transition: all 0.2s;
-
-  &:hover {
-    color: #484848;
+  opacity: 0.66;
+  transition: all 0.2s linear;
+  :hover {
+    opacity: 1;
   }
-`
+`;
 
 export default function Project({
   title,
@@ -104,7 +110,7 @@ export default function Project({
   src,
   href,
   titleColor,
-  icon
+  icon,
 }) {
   return (
     <ProjectBorder>
@@ -121,10 +127,10 @@ export default function Project({
         </ProjectContent>
       </ProjectContainer>
     </ProjectBorder>
-  )
+  );
 }
 
-Project.Row = ProjectRow
+Project.Row = ProjectRow;
 
 Project.propTypes = {
   title: PropTypes.string.isRequired,
@@ -132,9 +138,9 @@ Project.propTypes = {
   src: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   titleColor: PropTypes.string,
-  icon: PropTypes.node.isRequired
-}
+  icon: PropTypes.node.isRequired,
+};
 
 Project.defaultProps = {
-  titleColor: '#4848484'
-}
+  titleColor: null,
+};

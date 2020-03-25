@@ -13,6 +13,7 @@ exports[`Colors match snapshot 1`] = `
 Object {
   "blue": "#3997F9",
   "errorRed": "#ff001f",
+  "menu": Object {},
   "pink": "#FE51BB",
   "red": "#ff0080",
   "sentimentColors": Array [
@@ -23,5 +24,6 @@ Object {
     "#28CC6C",
   ],
   "text": "#484848",
+  "white": "#fff",
 }
 `;

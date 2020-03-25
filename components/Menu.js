@@ -1,48 +1,51 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-
-import { pink } from '../utils/colors'
-import * as breakPoints from '../utils/breakPoints'
-import { Triangle } from './Svg'
+import React, { useState, useContext } from 'react';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import ThemeContext from '../utils/ThemeContext';
+import { pink } from '../utils/colors';
+import * as breakPoints from '../utils/breakPoints';
+import { Triangle } from './Svg';
 
 export const items = [
   {
     title: 'Home',
-    target: '/'
+    target: '/',
   },
   {
     title: 'Projects',
-    target: '/projects'
+    target: '/projects',
   },
   {
     title: 'AI Experiments',
-    target: '/ai'
+    target: '/ai',
   },
   {
     title: 'CV',
     target: '/static/cv_cosmin_serdean.pdf',
-    right: true
+    right: true,
   },
   {
     title: 'GitHub',
     target: 'https://github.com/c0z0',
-    right: true
+    right: true,
   },
   {
     title: 'Email',
     target: 'mailto:cosmin@cserdean.com',
     right: true,
-    primary: true
-  }
-]
+    primary: true,
+  },
+];
 
 const Wrapper = styled.div`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', sans-serif;
-  background: ${({ open }) => (open ? 'white' : 'none')};
-  padding-top: 20px;
+  background: ${({
+    open,
+    theme: {
+      colors: { background },
+    },
+  }) => (open ? background : 'none')};
+  padding-top: 30px;
   position: ${({ open }) => (open ? 'fixed' : 'static')};
   z-index: 100;
   top: 0;
@@ -55,7 +58,7 @@ const Wrapper = styled.div`
     display: flex;
     background: none;
   }
-`
+`;
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -67,7 +70,7 @@ const LogoWrapper = styled.div`
   @media (${breakPoints.tabletUp}) {
     margin: 0;
   }
-`
+`;
 
 const Logo = styled(Triangle)`
   height: 40px;
@@ -76,12 +79,12 @@ const Logo = styled(Triangle)`
   margin-right: 20px;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  transform: rotate(90deg);
-`
+  transform: rotate(calc(90deg + ${p => p.theme.logoRotate}deg));
+`;
 
 const MenuButton = styled.button.attrs({
   type: 'button',
-  'data-testid': 'menu-button'
+  'data-testid': 'menu-button',
 })`
   background: none;
   border: none;
@@ -98,29 +101,29 @@ const MenuButton = styled.button.attrs({
   @media (${breakPoints.tabletUp}) {
     display: none;
   }
-`
+`;
 
 const MenuIcon = styled.div`
   & * {
     transition: all 0.2s;
     width: 22px;
     height: 1px;
-    background-color: ${({ background }) => background};
+    background-color: ${p => p.theme.colors.foreground};
   }
-`
+`;
 
 const MenuIconTop = styled.div`
   transform: ${({ open }) => `rotate(${open ? '45deg' : 0})
               translateY(${open ? '1px' : '-4px'})`};
-`
+`;
 
 const MenuIconBottom = styled.div`
   transform: ${({ open }) => `rotate(${open ? '-45deg' : 0})
               translateY(${open ? '-1px' : '4px'})`};
-`
+`;
 
 const MenuItemsWrapper = styled.div.attrs({
-  'data-testid': 'menu-wrapper'
+  'data-testid': 'menu-wrapper',
 })`
   padding-top: 20px;
   display: none;
@@ -134,24 +137,25 @@ const MenuItemsWrapper = styled.div.attrs({
     flex: 1;
   }
 
-  ${({ open }) => open && `background: white; display: block;`}
-`
+  ${({ open, theme }) =>
+    open && `background: ${theme.colors.background}; display: block;`}
+`;
 
 const MenuItem = styled.a.attrs(({ href }) => ({
-  'data-testid': `menu-item-target-${href}`
+  'data-testid': `menu-item-target-${href}`,
 }))`
-  color: ${({ textColorMobile }) => textColorMobile};
+  color: ${p => p.theme.colors.foreground};
   font-size: 12px;
   text-decoration: none;
   display: block;
   padding: 16px;
   padding-left: 20px;
-  border-bottom: 1px solid ${({ activeColorMobile }) => activeColorMobile};
+  border-bottom: 1px solid ${p => p.theme.colors.highlight};
   text-transform: uppercase;
 
-  ${({ active, activeColorMobile }) =>
+  ${({ active, theme }) =>
     active &&
-    `background: ${activeColorMobile}; border-color: rgba(0, 0, 0, 0);`}
+    `background: ${theme.colors.highlight}; border-color: rgba(0, 0, 0, 0);`}
 
   ${({ primary }) => primary && `color: ${pink};`}
 
@@ -159,14 +163,16 @@ const MenuItem = styled.a.attrs(({ href }) => ({
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: ${({ textColorDesktop }) => textColorDesktop};
+    color: ${p => p.theme.colors.foreground};
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
     transition: all 0.2s linear;
 
-    ${({ active, activeTextColor }) =>
-      active && `color: ${activeTextColor}; background: none;`}
+    ${({ active }) => active && `opacity: 1; background: none;`}
+
+    ${({ inverted }) => inverted && 'color: white;'}
 
     ${({ primary }) =>
       primary &&
@@ -175,30 +181,23 @@ const MenuItem = styled.a.attrs(({ href }) => ({
           padding: 0.625rem 1.5rem;
           color: white;
           margin: 0;
+          opacity: 1;
           margin-left: 20px;`}
 
     &:hover {
-      color: ${({ hoverTextColor }) => hoverTextColor};
+      opacity: 1;
     }
   }
-`
+`;
 
-export default function Menu({ active, dark, whiteMenu }) {
-  const [open, setMenu] = useState(false)
+export default function Menu({ active, }) {
+  const [open, setMenu] = useState(false);
 
-  const textColorDesktop =
-    !dark || open ? '#999999' : 'rgba(255, 255, 255, 0.66)'
-  const textColorMobile = !dark || open ? '#484848' : 'white'
+  const leftItems = items.filter(({ right }) => !right);
 
-  const hoverTextColor = !dark || open ? '#484848' : 'white'
+  const rightItems = items.filter(({ right }) => right);
 
-  const activeTextColor = !dark || open ? '#484848' : 'white'
-
-  const activeColorMobile = !dark || open ? '#eee' : 'rgba(255, 255, 255, .2)'
-
-  const leftItems = items.filter(({ right }) => !right)
-
-  const rightItems = items.filter(({ right }) => right)
+  const { toggleTheme } = useContext(ThemeContext);
   return (
     <header>
       <Wrapper open={open}>
@@ -208,15 +207,16 @@ export default function Menu({ active, dark, whiteMenu }) {
               data-testid="menu-logo"
               href="/"
               onContextMenu={e => {
-                e.preventDefault()
-                window.location.assign('http://github.com/c0z0/cserdean.me')
+                e.preventDefault();
+                toggleTheme();
+                // window.location.assign('http://github.com/c0z0/cserdean.me');
               }}
             >
               <Logo title="source" />
             </a>
           </Link>
           <MenuButton onClick={() => setMenu(!open)}>
-            <MenuIcon background={textColorMobile}>
+            <MenuIcon>
               <MenuIconTop open={open} />
               <MenuIconBottom open={open} />
             </MenuIcon>
@@ -228,13 +228,8 @@ export default function Menu({ active, dark, whiteMenu }) {
               <Link href={target} prefetch key={target}>
                 <MenuItem
                   onClick={() => {
-                    if (active === target) setMenu(false)
+                    if (active === target) setMenu(false);
                   }}
-                  textColorDesktop={textColorDesktop}
-                  textColorMobile={textColorMobile}
-                  activeColorMobile={activeColorMobile}
-                  activeTextColor={activeTextColor}
-                  hoverTextColor={hoverTextColor}
                   href={target}
                   key={target}
                   active={active === target}
@@ -247,13 +242,7 @@ export default function Menu({ active, dark, whiteMenu }) {
           <div>
             {rightItems.map(({ title, target, primary }) => (
               <MenuItem
-                textColorDesktop={
-                  whiteMenu ? 'rgba(255, 255, 255, 0.66)' : textColorDesktop
-                }
-                textColorMobile={textColorMobile}
-                activeColorMobile={activeColorMobile}
-                activeTextColor={activeTextColor}
-                hoverTextColor={whiteMenu ? 'white' : hoverTextColor}
+                inverted={active === '/'}
                 href={target}
                 key={target}
                 active={active === target}
@@ -268,16 +257,9 @@ export default function Menu({ active, dark, whiteMenu }) {
         </MenuItemsWrapper>
       </Wrapper>
     </header>
-  )
+  );
 }
 
 Menu.propTypes = {
   active: PropTypes.oneOf(items.map(i => i.target)).isRequired,
-  dark: PropTypes.bool,
-  whiteMenu: PropTypes.bool
-}
-
-Menu.defaultProps = {
-  dark: false,
-  whiteMenu: false
-}
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const Diamond = props => (
   <svg width={60} height={60} fill="none" {...props}>
@@ -13,7 +13,7 @@ export const Diamond = props => (
     <path d="M17.797 20.172L30 55.345l12.203-35.173H17.797z" fill="#FFAA64" />
     <path d="M0 20.172l30 35.173-12.203-35.173H0z" fill="#FF8C5A" />
   </svg>
-)
+);
 
 export const Folder = props => (
   <svg width={60} height={51} fill="none" {...props}>
@@ -22,7 +22,7 @@ export const Folder = props => (
       fill="#222"
     />
   </svg>
-)
+);
 
 export const Triangle = props => (
   <svg width={1416} height={1220} viewBox="0 0 708 610" {...props}>
@@ -42,7 +42,7 @@ export const Triangle = props => (
       fillRule="evenodd"
     />
   </svg>
-)
+);
 
 export const Wave = props => (
   <svg width={24} height={25} fill="none" {...props}>
@@ -64,9 +64,33 @@ export const Wave = props => (
       />
     </defs>
   </svg>
-)
+);
 
 export const Bg = props => (
+  <div>
+    <svg viewBox="0 0 100 100" style={{}} {...props}>
+      <polygon
+        points="65,0 100,0 100,100 5,100"
+        fill="url(#prefix__paint0_linear)"
+      />
+      <defs>
+        <linearGradient
+          id="prefix__paint0_linear"
+          x1={100}
+          y1={100}
+          x2={33}
+          y2={100}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#0787EA" />
+          <stop offset={1} stopColor="#B454E2" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+);
+
+export const DarkBg = props => (
   <svg viewBox="0 0 100 100" style={{}} {...props}>
     <polygon
       points="65,0 100,0 100,100 5,100"
@@ -81,9 +105,9 @@ export const Bg = props => (
         y2={100}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#0787EA" />
-        <stop offset={1} stopColor="#B454E2" />
+        <stop stopColor="#222" />
+        <stop offset={1} stopColor="#111" />
       </linearGradient>
     </defs>
   </svg>
-)
+);

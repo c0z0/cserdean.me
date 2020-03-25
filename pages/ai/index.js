@@ -1,13 +1,13 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
-import Page from '../../components/Page'
-import ServiceStatus from '../../components/ServiceStatus'
-import { Experiment, Title, Subtitle } from '../projects'
+import Page from '../../components/Page';
+import ServiceStatus from '../../components/ServiceStatus';
+import { Experiment, Title, Subtitle } from '../projects';
 
 const Ai = () => (
-  <Page active="/ai" dark>
-    <Title dark>
+  <Page active="/ai">
+    <Title>
       <span>AI Experiments</span>
       <ServiceStatus />
     </Title>
@@ -30,6 +30,6 @@ const Ai = () => (
       </div> */}
     </Experiment.List>
   </Page>
-)
+);
 
-export default Ai
+export default Ai;

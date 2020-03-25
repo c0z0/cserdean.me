@@ -2,9 +2,8 @@
 
 exports[`Index page matches snapshot 1`] = `
 .c1 {
-  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen', 'Ubuntu','Cantarell','Fira Sans',sans-serif;
   background: none;
-  padding-top: 20px;
+  padding-top: 30px;
   position: static;
   z-index: 100;
   top: 0;
@@ -40,9 +39,9 @@ exports[`Index page matches snapshot 1`] = `
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(calc(90deg + 0deg));
+  -ms-transform: rotate(calc(90deg + 0deg));
+  transform: rotate(calc(90deg + 0deg));
 }
 
 .c4 {
@@ -148,7 +147,6 @@ exports[`Index page matches snapshot 1`] = `
 
 .c0 {
   font-size: 12px;
-  color: #484848;
   font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI', Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: 900px;
   margin: 0 auto;
@@ -158,7 +156,7 @@ exports[`Index page matches snapshot 1`] = `
   margin: 80px 0;
 }
 
-.c15 {
+.c16 {
   height: 450px;
   width: 523px;
   position: absolute;
@@ -172,7 +170,7 @@ exports[`Index page matches snapshot 1`] = `
   transform: rotate(10deg) translate(0,-50%);
 }
 
-.c16 {
+.c17 {
   margin-top: 64px;
   text-align: center;
 }
@@ -186,18 +184,27 @@ exports[`Index page matches snapshot 1`] = `
   z-index: -1;
 }
 
-.c17 {
+.c15 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.c18 {
   font-weight: 400;
-  color: #98a4a8;
+  color: #484848;
   margin: 0;
   font-size: 24px;
 }
 
-.c18 {
+.c19 {
   margin-right: 8px;
 }
 
-.c19 {
+.c20 {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -206,11 +213,11 @@ exports[`Index page matches snapshot 1`] = `
   margin: 0;
 }
 
-.c20 {
+.c21 {
   font-size: 24px;
   margin: 0;
   font-weight: 300;
-  color: #98a4a8;
+  color: #484848;
 }
 
 @media (min-width:992px) {
@@ -266,18 +273,19 @@ exports[`Index page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: #999999;
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
-    color: #484848;
+    opacity: 1;
     background: none;
   }
 
   .c9:hover {
-    color: #484848;
+    opacity: 1;
   }
 }
 
@@ -286,7 +294,8 @@ exports[`Index page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: #999999;
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
@@ -295,7 +304,7 @@ exports[`Index page matches snapshot 1`] = `
   }
 
   .c10:hover {
-    color: #484848;
+    opacity: 1;
   }
 }
 
@@ -304,16 +313,18 @@ exports[`Index page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: rgba(255,255,255,0.66);
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
+    color: white;
   }
 
   .c11:hover {
-    color: white;
+    opacity: 1;
   }
 }
 
@@ -322,22 +333,25 @@ exports[`Index page matches snapshot 1`] = `
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: rgba(255,255,255,0.66);
+    color: #484848;
+    opacity: .66;
     text-align: left;
     border-bottom: none;
     text-transform: none;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
+    color: white;
     border-radius: 2rem;
     background-color: #FE51BB;
     padding: 0.625rem 1.5rem;
     color: white;
     margin: 0;
+    opacity: 1;
     margin-left: 20px;
   }
 
   .c12:hover {
-    color: white;
+    opacity: 1;
   }
 }
 
@@ -348,13 +362,13 @@ exports[`Index page matches snapshot 1`] = `
 }
 
 @media (min-width:992px) {
-  .c15 {
+  .c16 {
     display: block;
   }
 }
 
 @media (min-width:992px) {
-  .c16 {
+  .c17 {
     text-align: left;
     margin-top: 232px;
   }
@@ -367,7 +381,13 @@ exports[`Index page matches snapshot 1`] = `
 }
 
 @media (max-width:992px) {
-  .c20 {
+  .c15 {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .c21 {
     font-size: 18px;
     margin-top: 12px;
   }
@@ -490,8 +510,37 @@ exports[`Index page matches snapshot 1`] = `
   <div
     class="c13"
   >
+    <div>
+      <svg
+        class="c14"
+        viewBox="0 0 100 100"
+      >
+        <polygon
+          fill="url(#prefix__paint0_linear)"
+          points="65,0 100,0 100,100 5,100"
+        />
+        <defs>
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="prefix__paint0_linear"
+            x1="100"
+            x2="33"
+            y1="100"
+            y2="100"
+          >
+            <stop
+              stop-color="#0787EA"
+            />
+            <stop
+              offset="1"
+              stop-color="#B454E2"
+            />
+          </lineargradient>
+        </defs>
+      </svg>
+    </div>
     <svg
-      class="c14"
+      class="c15"
       viewBox="0 0 100 100"
     >
       <polygon
@@ -508,17 +557,17 @@ exports[`Index page matches snapshot 1`] = `
           y2="100"
         >
           <stop
-            stop-color="#0787EA"
+            stop-color="#222"
           />
           <stop
             offset="1"
-            stop-color="#B454E2"
+            stop-color="#111"
           />
         </lineargradient>
       </defs>
     </svg>
     <svg
-      class="c15"
+      class="c16"
       draggable="false"
       height="1220"
       viewBox="0 0 708 610"
@@ -541,13 +590,13 @@ exports[`Index page matches snapshot 1`] = `
       />
     </svg>
     <div
-      class="c16"
+      class="c17"
     >
       <p
-        class="c17"
+        class="c18"
       >
         <svg
-          class="c18"
+          class="c19"
           fill="none"
           height="25"
           width="24"
@@ -579,12 +628,12 @@ exports[`Index page matches snapshot 1`] = `
         Hello
       </p>
       <h1
-        class="c19"
+        class="c20"
       >
         I’m Cosmin
       </h1>
       <p
-        class="c20"
+        class="c21"
       >
         JavaScript Developer
         <br />
@@ -592,12 +641,5 @@ exports[`Index page matches snapshot 1`] = `
       </p>
     </div>
   </div>
-  <style>
-    
-        body {
-          background: none;
-        }
-      
-  </style>
 </div>
 `;
