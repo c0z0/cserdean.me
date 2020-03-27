@@ -43,7 +43,8 @@ function MyApp({ Component, pageProps, isLight }) {
 MyApp.getInitialProps = async ({ ctx: { req } }) => {
   if (req) {
     return {
-      isLight: cookie.parse(req.headers.cookie)[THEME_STORAGE_KEY] !== 'dark',
+      isLight:
+        cookie.parse(req.headers.cookie || '')[THEME_STORAGE_KEY] !== 'dark',
     };
   }
   return {
