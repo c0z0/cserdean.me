@@ -86,6 +86,7 @@ const Logo = styled(Triangle)`
 const MenuButton = styled.button.attrs({
   type: 'button',
   'data-testid': 'menu-button',
+  'aria-label': 'open menu',
 })`
   background: none;
   border: none;
