@@ -76,7 +76,9 @@ const DropdownWrapper = styled.div`
   }
 `;
 
-const EllipsisButton = styled.button`
+const EllipsisButton = styled.button.attrs({
+  'aria-label': 'more pages',
+})`
   margin: 0;
   padding: 0;
   background: none;
