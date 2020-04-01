@@ -182,12 +182,12 @@ const MenuItem = styled.a.attrs(({ href }) => ({
 
     ${({ inverted }) => inverted && 'color: white;'}
 
-    ${({ primary }) =>
+    ${({ primary, theme, inverted }) =>
       primary &&
       `  border-radius: 2rem;
-          background-color: ${pink};
+          background-color: ${inverted ? 'white' : theme.colors.foreground};
           padding: 0.625rem 1.5rem;
-          color: white;
+          color: ${inverted ? 'black' : theme.colors.background};
           margin: 0;
           opacity: 1;
           `}
