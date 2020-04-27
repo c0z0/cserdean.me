@@ -1,6 +1,6 @@
 <h1 align="center">
 	<a href="https://cserdean.com">
-		<img src="static/svg/triangle-gs.svg" alt="logo" width="200">
+		<img src="static/triangle.svg" alt="logo" width="200">
 	</a>
 </h1>
 
