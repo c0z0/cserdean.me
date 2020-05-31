@@ -76,7 +76,7 @@ export default function Projects() {
       <Project.Row>
         <Project
           icon={<Diamond />}
-          description="Tiny web app for keeping your online finds. Features desktop client."
+          description="Tiny web app for keeping your online finds. Features a desktop client."
           title="Gem"
           titleColor="#75489B;"
           src="https://github.com/c0z0/gem-app"
