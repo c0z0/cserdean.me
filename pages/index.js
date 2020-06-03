@@ -17,6 +17,7 @@ const StyledTriangle = styled(Triangle).attrs({
   left: 50%;
   display: none;
   transform: rotate(10deg) translate(0, -50%);
+  z-index: 3;
 
   @media (${breakPoints.tabletUp}) {
     display: block;
@@ -38,7 +39,7 @@ const StyledBg = styled(Bg)`
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
 
   @media (${breakPoints.phoneOnly}) {
     display: none;
@@ -51,7 +52,7 @@ const StyledDarkBg = styled(DarkBg)`
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: 2;
 
   @media (${breakPoints.phoneOnly}) {
     display: none;
@@ -60,7 +61,7 @@ const StyledDarkBg = styled(DarkBg)`
 
 const Greeting = styled.p`
   font-weight: 400;
-  color: ${props => props.theme.colors.foreground};
+  color: ${(props) => props.theme.colors.foreground};
   margin: 0;
   font-size: 24px;
 `;
@@ -75,7 +76,7 @@ const Name = styled.h1`
   line-height: normal;
   font-size: 64px;
 
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
   margin: 0;
 `;
 
@@ -83,7 +84,7 @@ const Subtitle = styled.p`
   font-size: 24px;
   margin: 0;
   font-weight: 300;
-  color: ${props => props.theme.colors.foreground};
+  color: ${(props) => props.theme.colors.foreground};
 
   @media (${breakPoints.phoneOnly}) {
     font-size: 18px;
@@ -96,7 +97,7 @@ const Index = () => {
   return (
     <Page active="/">
       {light && <StyledBg />}
-      <StyledDarkBg />
+      {!light && <StyledDarkBg />}
       <StyledTriangle />
       <Content>
         <Greeting>

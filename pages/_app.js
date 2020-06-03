@@ -1,5 +1,4 @@
-import React, { useState, Fragment } from 'react';
-import cookie from 'cookie';
+import React, { useState, Fragment, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import ThemeContext from '../utils/ThemeContext';
@@ -9,19 +8,19 @@ const { GlobalStyle } = theme;
 
 const THEME_STORAGE_KEY = 'THEME';
 // eslint-disable-next-line react/prop-types
-function MyApp({ Component, pageProps, isLight }) {
-  const [themeState, setThemeState] = useState(isLight);
+function MyApp({ Component, pageProps }) {
+  const [themeState, setThemeState] = useState(true);
+  const [renderedState, setRenderedState] = useState(false);
 
   const toggleTheme = () => {
-    const expires = new Date();
-    expires.setFullYear(expires.getFullYear() + 1);
-    document.cookie = cookie.serialize(
-      THEME_STORAGE_KEY,
-      !themeState ? 'light' : 'dark',
-      { expires },
-    );
+    localStorage.setItem(THEME_STORAGE_KEY, !themeState ? 'light' : 'dark');
     setThemeState(!themeState);
   };
+
+  useEffect(() => {
+    setThemeState(localStorage.getItem(THEME_STORAGE_KEY) === 'light');
+    setRenderedState(true);
+  }, []);
 
   return (
     <ThemeContext.Provider
@@ -33,23 +32,13 @@ function MyApp({ Component, pageProps, isLight }) {
       <ThemeProvider theme={themeState ? theme.light : theme.dark}>
         <Fragment>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <div style={renderedState ? null : { visibility: 'hidden' }}>
+            <Component {...pageProps} />
+          </div>
         </Fragment>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
 }
-
-MyApp.getInitialProps = async ({ ctx: { req } }) => {
-  if (req) {
-    return {
-      isLight:
-        cookie.parse(req.headers.cookie || '')[THEME_STORAGE_KEY] !== 'dark',
-    };
-  }
-  return {
-    isLight: cookie.parse(document.cookie)[THEME_STORAGE_KEY] !== 'dark',
-  };
-};
 
 export default MyApp;
