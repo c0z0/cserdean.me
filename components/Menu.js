@@ -80,7 +80,7 @@ const Logo = styled(Triangle)`
   margin-right: 20px;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  transform: rotate(calc(90deg + ${p => p.theme.logoRotate}deg));
+  transform: rotate(calc(90deg + ${(p) => p.theme.logoRotate}deg));
 `;
 
 const MenuButton = styled.button.attrs({
@@ -110,7 +110,7 @@ const MenuIcon = styled.div`
     transition: all 0.2s;
     width: 22px;
     height: 1px;
-    background-color: ${p => p.theme.colors.foreground};
+    background-color: ${(p) => p.theme.colors.foreground};
   }
 `;
 
@@ -129,6 +129,8 @@ const MenuItemsWrapper = styled.div.attrs({
 })`
   padding-top: 20px;
   display: none;
+  z-index: 3;
+
   @media (${breakPoints.tabletUp}) {
     padding: 0;
     display: flex;
@@ -152,13 +154,13 @@ const MenuItemsWrapper = styled.div.attrs({
 const MenuItem = styled.a.attrs(({ href }) => ({
   'data-testid': `menu-item-target-${href}`,
 }))`
-  color: ${p => p.theme.colors.foreground};
+  color: ${(p) => p.theme.colors.foreground};
   font-size: 12px;
   text-decoration: none;
   display: block;
   padding: 16px;
   padding-left: 20px;
-  border-bottom: 1px solid ${p => p.theme.colors.highlight};
+  border-bottom: 1px solid ${(p) => p.theme.colors.highlight};
   text-transform: uppercase;
 
   ${({ active, theme }) =>
@@ -171,7 +173,7 @@ const MenuItem = styled.a.attrs(({ href }) => ({
     margin: 0 10px;
     display: inline-block;
     padding: 0;
-    color: ${p => p.theme.colors.foreground};
+    color: ${(p) => p.theme.colors.foreground};
     opacity: .66;
     text-align: left;
     border-bottom: none;
@@ -214,7 +216,7 @@ export default function Menu({ active }) {
             <a
               data-testid="menu-logo"
               href="/"
-              onContextMenu={e => {
+              onContextMenu={(e) => {
                 e.preventDefault();
                 toggleTheme();
                 // window.location.assign('http://github.com/c0z0/cserdean.me');
@@ -271,5 +273,5 @@ export default function Menu({ active }) {
 }
 
 Menu.propTypes = {
-  active: PropTypes.oneOf(items.map(i => i.target)).isRequired,
+  active: PropTypes.oneOf(items.map((i) => i.target)).isRequired,
 };
