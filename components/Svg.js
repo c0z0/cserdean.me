@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Diamond = props => (
+export const Diamond = (props) => (
   <svg width={60} height={60} fill="none" {...props}>
     <path d="M42.203 20.172L30 55.345l30-35.173H42.203z" fill="#FFE182" />
     <path
@@ -15,7 +15,7 @@ export const Diamond = props => (
   </svg>
 );
 
-export const Folder = props => (
+export const Folder = (props) => (
   <svg width={60} height={51} fill="none" {...props}>
     <path
       d="M58.75 12.102a4.894 4.894 0 0 0-1.765-1.112V7.588c0-2.028-1.636-3.663-3.598-3.663h-25.25L24.733.785A2.782 2.782 0 0 0 22.837 0H6.55C4.52 0 2.95 1.635 2.95 3.663v7.196a6.202 6.202 0 0 0-1.766 1.112c-.85.916-1.243 2.028-1.178 3.14L1.25 45.857c.065 2.29 2.028 4.187 4.383 4.187h48.735c2.355 0 4.252-1.832 4.383-4.187l1.243-30.746c.065-.981-.393-2.159-1.243-3.009zm-52.986-1.44V3.73c0-.458.327-.85.785-.85h16.157l3.86 3.401c.262.13.524.327.916.327h25.905c.392 0 .785.393.785.85v3.206H5.764zm48.604 36.634h-48.8c-.851 0-1.505-.654-1.505-1.44L2.82 15.112c0-.458.13-.785.392-1.112.327-.327.72-.458 1.178-.458H55.61c.393 0 .85.197 1.178.458.261.262.392.654.392 1.047L55.873 45.79c-.066.85-.72 1.505-1.505 1.505z"
@@ -24,7 +24,7 @@ export const Folder = props => (
   </svg>
 );
 
-export const Triangle = props => (
+export const Triangle = (props) => (
   <svg width={1416} height={1220} viewBox="0 0 708 610" {...props}>
     <path
       d="M301.786 163.964l53.441 95.207-150.893 259.171H707.31L657.013 610H53.441z"
@@ -44,7 +44,7 @@ export const Triangle = props => (
   </svg>
 );
 
-export const Wave = props => (
+export const Wave = (props) => (
   <svg width={24} height={25} fill="none" {...props}>
     <path d="M0 24.08h24v-24H0v24z" fill="url(#prefix__pattern0)" />
     <defs>
@@ -66,12 +66,13 @@ export const Wave = props => (
   </svg>
 );
 
-export const Bg = props => (
+export const Bg = (props) => (
   <div>
     <svg viewBox="0 0 100 100" style={{}} {...props}>
       <polygon
+        className="gradient-bg"
         points="65,0 100,0 100,100 5,100"
-        fill="url(#prefix__paint0_linear)"
+        // fill="url(#prefix__paint0_linear)"
       />
       <defs>
         <linearGradient
@@ -85,12 +86,24 @@ export const Bg = props => (
           <stop stopColor="#0787EA" />
           <stop offset={1} stopColor="#B454E2" />
         </linearGradient>
+
+        <linearGradient
+          id="prefix__paint1_linear"
+          x1={100}
+          y1={100}
+          x2={33}
+          y2={100}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#222" />
+          <stop offset={1} stopColor="#111" />
+        </linearGradient>
       </defs>
     </svg>
   </div>
 );
 
-export const DarkBg = props => (
+export const DarkBg = (props) => (
   <svg viewBox="0 0 100 100" style={{}} {...props}>
     <polygon
       points="65,0 100,0 100,100 5,100"

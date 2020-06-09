@@ -10,16 +10,24 @@ const THEME_STORAGE_KEY = 'THEME';
 // eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps }) {
   const [themeState, setThemeState] = useState(true);
-  const [renderedState, setRenderedState] = useState(false);
 
   const toggleTheme = () => {
     localStorage.setItem(THEME_STORAGE_KEY, !themeState ? 'light' : 'dark');
+    document.documentElement.className = `${
+      !themeState ? 'light' : 'dark'
+    }-theme`;
     setThemeState(!themeState);
   };
 
   useEffect(() => {
-    setThemeState(localStorage.getItem(THEME_STORAGE_KEY) === 'light');
-    setRenderedState(true);
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+
+    if (!stored)
+      return setThemeState(
+        !window.matchMedia('(prefers-color-scheme: dark)').matches,
+      );
+
+    setThemeState(stored === 'light');
   }, []);
 
   return (
@@ -32,9 +40,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={themeState ? theme.light : theme.dark}>
         <Fragment>
           <GlobalStyle />
-          <div style={renderedState ? null : { visibility: 'hidden' }}>
-            <Component {...pageProps} />
-          </div>
+          <Component {...pageProps} />
         </Fragment>
       </ThemeProvider>
     </ThemeContext.Provider>

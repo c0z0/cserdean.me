@@ -12,7 +12,8 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -29,8 +30,24 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <GoogleAnalytics />
-          <Hotjar />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `(function() {
+    try {
+      var mode = localStorage.getItem('THEME');
+      var supportDarkMode =
+        window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+      if (!mode && supportDarkMode)
+        document.documentElement.classList.add('dark-theme');
+      if (!mode) return;
+      document.documentElement.classList.add(mode + '-theme');
+    } catch (e) {}
+  })();`,
+            }}
+          />
+          {/* <GoogleAnalytics />
+          <Hotjar /> */}
           <meta property="og:title" content="Cosmin Serdean" />
           <meta
             property="og:description"

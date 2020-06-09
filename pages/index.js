@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import * as breakPoints from '../utils/breakPoints';
 import Page from '../components/Page';
 import { Triangle, Wave, Bg, DarkBg } from '../components/Svg';
-import ThemeContext from '../utils/ThemeContext';
 
 const StyledTriangle = styled(Triangle).attrs({
   draggable: false,
@@ -93,11 +92,9 @@ const Subtitle = styled.p`
 `;
 
 const Index = () => {
-  const { light } = useContext(ThemeContext);
   return (
     <Page active="/">
-      {light && <StyledBg />}
-      {!light && <StyledDarkBg />}
+      <StyledBg />
       <StyledTriangle />
       <Content>
         <Greeting>
