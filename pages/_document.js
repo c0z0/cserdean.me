@@ -38,9 +38,9 @@ export default class MyDocument extends Document {
       var mode = localStorage.getItem('THEME');
       var supportDarkMode =
         window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-      if (!mode && supportDarkMode)
-        document.documentElement.classList.add('dark-theme');
-      if (!mode) return;
+      if (!mode) {
+        document.documentElement.classList.add(supportDarkMode ? 'dark-theme': 'light-theme');
+      }
       document.documentElement.classList.add(mode + '-theme');
     } catch (e) {}
   })();`,
