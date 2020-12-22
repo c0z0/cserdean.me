@@ -9,3 +9,4 @@ static/.DS_Store
 coverage
 
 .now
+.vercel
